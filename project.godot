@@ -10,9 +10,18 @@ config_version=5
 
 [application]
 
-config/name="watch-your-step"
+config/name="Watch Your Step"
+config/description="There are some baby tomatos lost in the woods. Collect all of them before the dawn!"
+run/main_scene="uid://b113pu734dsjr"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/size/mode=2
+window/stretch/mode="viewport"
 
 [rendering]
 
