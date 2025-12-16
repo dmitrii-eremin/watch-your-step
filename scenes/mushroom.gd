@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal player_caught_mushroom(player: Node2D, mushroom: Node2D)
 
-@export var speed: float = 25.0
+@export var speed: float = 75.0
 
 @onready var _sprite = $AnimatedSprite2D
 

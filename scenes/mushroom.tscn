@@ -18,7 +18,7 @@ script = ExtResource("1_b0s10")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0bdi0")
 autoplay = "default"
-frame_progress = 0.66201293
+frame_progress = 0.16773446
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
