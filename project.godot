@@ -23,6 +23,11 @@ window/size/viewport_height=240
 window/size/mode=2
 window/stretch/mode="viewport"
 
+[global_group]
+
+player=""
+mushroom=""
+
 [input]
 
 go_left={
