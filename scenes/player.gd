@@ -48,6 +48,8 @@ func _update_checkpoints() -> void:
 func _update_velocity() -> void:
 	var direction: Vector2 = Input.get_vector("go_left", "go_right", "go_up", "go_down")
 	if velocity.x != 0:
+		if _old_velocity.x != 0:
+			_sprite.flip_h = velocity.x < 0
 		_old_velocity = velocity
 	velocity = speed * direction
 

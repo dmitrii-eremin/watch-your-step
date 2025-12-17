@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlgniouxy3wtk"]
+[gd_scene load_steps=6 format=3 uid="uid://dlgniouxy3wtk"]
 
 [ext_resource type="Script" uid="uid://cwbt24sknouwh" path="res://scenes/hud.gd" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://ocqdsfosqwja" path="res://assets/sprites/characters/mushroom_brown.png" id="2_5ysmq"]
@@ -7,6 +7,11 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
 atlas = ExtResource("2_5ysmq")
 region = Rect2(0, 16, 16, 16)
+margin = Rect2(0, -2, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ysmq"]
+atlas = ExtResource("2_5ysmq")
+region = Rect2(48, 48, 16, 16)
 margin = Rect2(0, -2, 0, 0)
 
 [node name="HUD" type="CanvasLayer"]
@@ -28,16 +33,31 @@ theme_override_constants/margin_bottom = 8
 [node name="Control" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
 layout_mode = 1
-offset_right = 60.0
-offset_bottom = 16.0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_6fi6k")
 
-[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer"]
+[node name="CaughtMushroomsLabel" type="Label" parent="MarginContainer/Control/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "12/43"
+label_settings = ExtResource("3_5ysmq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_5ysmq")
+
+[node name="SavedMushroomsLabel" type="Label" parent="MarginContainer/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "0"
 label_settings = ExtResource("3_5ysmq")

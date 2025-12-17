@@ -99,7 +99,7 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dqkch")
 autoplay = "default"
-frame_progress = 0.25361818
+frame_progress = 0.4578742
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
