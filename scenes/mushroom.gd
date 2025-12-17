@@ -8,11 +8,13 @@ signal collected(mushroom: Node2D)
 @onready var _brown_mushroom_tileset = preload("res://animations/brown_mushroom.tres")
 @onready var _blue_mushroom_tileset = preload("res://animations/blue_mushroom.tres")
 
-@export var speed: float = 75.0
+@export var mushroom_speed: float = 25.0
+@export var player_speed: float = 75.0
 
 @onready var _sprite = $AnimatedSprite2D
 
 @onready var _target: Vector2 = global_position
+@onready var _original_position: Vector2 = global_position
 var _final_target: Node2D
 
 var _old_velocity: Vector2 = Vector2.ONE
@@ -23,6 +25,8 @@ var _is_reached: bool = false
 func set_is_caught(value: bool) -> void:
 	_is_caught = value
 	_sprite.sprite_frames = _blue_mushroom_tileset if _is_caught else _brown_mushroom_tileset
+	if not _is_caught:
+		set_target(_original_position)
 	
 func is_caught() -> bool:
 	return _is_caught
@@ -50,6 +54,7 @@ func _physics_process(_delta: float) -> void:
 		var direction = (target - global_position).normalized() if diff.length_squared() > 2 ** 2 else Vector2.ZERO
 		if velocity.x != 0:
 			_old_velocity = velocity
+		var speed = player_speed if is_caught() else mushroom_speed
 		velocity = speed * direction
 		
 		if _final_target != null and direction.length_squared() == 0:

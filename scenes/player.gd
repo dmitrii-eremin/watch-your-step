@@ -20,8 +20,9 @@ func remove_mushroom(mushroom: Node2D) -> void:
 	var index: int = _mushrooms.find(mushroom)
 	if index == -1:
 		return
-	_mushrooms[index].set_is_caught(false)
-	_mushrooms.remove_at(index)
+	for i in range(_mushrooms.size() - 1, index - 1, -1):
+		_mushrooms[i].set_is_caught(false)
+		_mushrooms.remove_at(i)
 	
 func save_mushrooms(point: Node2D) -> void:
 	for mushroom in _mushrooms:
