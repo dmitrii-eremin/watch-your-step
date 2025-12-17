@@ -34,6 +34,9 @@ func set_final_target(point: Node2D) -> void:
 func set_target(target: Vector2) -> void:
 	_target = target
 	
+func hit() -> void:
+	take_damage.emit(self)
+	
 func die() -> void:
 	_is_dying = true
 
@@ -87,7 +90,9 @@ func _on_player_detection_area_body_entered(body: Node2D) -> void:
 		if not _is_caught:
 			player_caught_mushroom.emit(body, self)
 		elif _final_target == null:
-			take_damage.emit(self)
+			hit()
+	elif body.is_in_group("enemy") and _final_target == null:
+		hit()
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if _sprite.animation == &"dead":

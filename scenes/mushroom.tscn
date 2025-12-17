@@ -9,7 +9,7 @@ height = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxrkd"]
 radius = 5.0
-height = 12.0
+height = 14.0
 
 [node name="Mushroom" type="CharacterBody2D" groups=["mushroom"]]
 collision_layer = 0
@@ -21,7 +21,6 @@ animation = &"walk"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 5)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_0bdi0")
@@ -31,7 +30,6 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_qxrkd")
 
