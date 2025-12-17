@@ -20,6 +20,11 @@ func _on_mushroom_dead(mushroom: Node2D) -> void:
 func _on_mushroom_dead_timer_timeout() -> void:
 	_hud.call_deferred("update_mushrooms")
 
-
 func _on_mushroom_house_player_hit(point: Node2D) -> void:
-	pass # Replace with function body.
+	_player.save_mushrooms(point)
+
+func _on_mushroom_collected(mushroom: Node2D) -> void:
+	_player.remove_mushroom(mushroom)
+	_hud.call_deferred("collect_mushroom")
+	_hud.call_deferred("update_mushrooms")
+	_mushroom_dead_timer.start()

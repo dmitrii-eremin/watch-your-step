@@ -3,8 +3,12 @@ extends CanvasLayer
 @onready var _mushrooms_count_label: Label = $MarginContainer/Control/VBoxContainer/HBoxContainer/CaughtMushroomsLabel
 @onready var _saved_mushrooms_label: Label = $MarginContainer/Control/VBoxContainer/HBoxContainer2/SavedMushroomsLabel
 
-func update_saved_mushrooms() -> void:
-	_saved_mushrooms_label.text = "0"
+var _collected_mushrooms_count: int = 0
+var _original_mushrooms_count: int = 0
+
+func collect_mushroom() -> void:
+	_collected_mushrooms_count += 1
+	_update_collected_mushrooms_label()
 
 func update_mushrooms() -> void:
 	var all_mushrooms: Array = get_tree().get_nodes_in_group("mushroom")
@@ -12,4 +16,9 @@ func update_mushrooms() -> void:
 	_mushrooms_count_label.text = "%d/%d" % [caught_mushrooms.size(), all_mushrooms.size()]
 	
 func _ready() -> void:
+	_original_mushrooms_count = get_tree().get_nodes_in_group("mushroom").size()
 	update_mushrooms()
+	_update_collected_mushrooms_label()
+
+func _update_collected_mushrooms_label() -> void:
+	_saved_mushrooms_label.text = "%d/%d" % [_collected_mushrooms_count, _original_mushrooms_count]

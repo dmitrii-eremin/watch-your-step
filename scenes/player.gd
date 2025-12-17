@@ -20,6 +20,10 @@ func remove_mushroom(mushroom: Node2D) -> void:
 		return
 	_mushrooms[index].set_is_caught(false)
 	_mushrooms.remove_at(index)
+	
+func save_mushrooms(point: Node2D) -> void:
+	for mushroom in _mushrooms:
+		mushroom.set_final_target(point)
 
 func _physics_process(_delta: float) -> void:
 	_update_velocity()
