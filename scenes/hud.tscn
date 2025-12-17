@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlgniouxy3wtk"]
+
+[ext_resource type="Script" uid="uid://cwbt24sknouwh" path="res://scenes/hud.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://ocqdsfosqwja" path="res://assets/sprites/characters/mushroom_brown.png" id="2_5ysmq"]
+[ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="3_5ysmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
+atlas = ExtResource("2_5ysmq")
+region = Rect2(0, 16, 16, 16)
+margin = Rect2(0, -2, 0, 0)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ahhtf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Control" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control"]
+layout_mode = 1
+offset_right = 60.0
+offset_bottom = 16.0
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6fi6k")
+
+[node name="Label" type="Label" parent="MarginContainer/Control/HBoxContainer"]
+layout_mode = 2
+text = "12/43"
+label_settings = ExtResource("3_5ysmq")

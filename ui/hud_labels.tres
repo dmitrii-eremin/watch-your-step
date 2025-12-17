@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bhlktkb5elsox"]
+
+[ext_resource type="FontFile" uid="uid://c66ry4c5sfiia" path="res://assets/fonts/main.ttf" id="1_ng26d"]
+
+[resource]
+font = ExtResource("1_ng26d")
+font_size = 8
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)

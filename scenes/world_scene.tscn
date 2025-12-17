@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=4 uid="uid://b113pu734dsjr"]
+[gd_scene load_steps=6 format=4 uid="uid://b113pu734dsjr"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_jedrf"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_kjcoe"]
+[ext_resource type="PackedScene" uid="uid://dlgniouxy3wtk" path="res://scenes/hud.tscn" id="2_krmi5"]
 [ext_resource type="PackedScene" uid="uid://bgxpiyl86u1wq" path="res://scenes/player.tscn" id="3_qiqor"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_ow06g"]
 
 [node name="WorldScene" type="Node2D"]
 script = ExtResource("1_jedrf")
+
+[node name="HUD" parent="." instance=ExtResource("2_krmi5")]
 
 [node name="WorldMap" type="Node2D" parent="."]
 
@@ -67,6 +70,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0
 
+[node name="MushroomDeadTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [connection signal="dead" from="Mushrooms/Mushroom" to="." method="_on_mushroom_dead"]
 [connection signal="player_caught_mushroom" from="Mushrooms/Mushroom" to="." method="_on_mushroom_player_caught_mushroom"]
 [connection signal="take_damage" from="Mushrooms/Mushroom" to="." method="_on_mushroom_take_damage"]
@@ -100,3 +107,4 @@ position_smoothing_speed = 12.0
 [connection signal="dead" from="Mushrooms/Mushroom11" to="." method="_on_mushroom_dead"]
 [connection signal="player_caught_mushroom" from="Mushrooms/Mushroom11" to="." method="_on_mushroom_player_caught_mushroom"]
 [connection signal="take_damage" from="Mushrooms/Mushroom11" to="." method="_on_mushroom_take_damage"]
+[connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]

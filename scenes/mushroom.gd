@@ -17,6 +17,9 @@ var _is_dying: bool = false
 func set_is_caught(value: bool) -> void:
 	_is_caught = value
 	
+func is_caught() -> bool:
+	return _is_caught
+	
 func set_target(target: Vector2) -> void:
 	_target = target
 	
