@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var _player = $Player
+@onready var _player = $YSortedObjects/Player
 @onready var _hud = $HUD
 @onready var _mushroom_dead_timer = $MushroomDeadTimer
 
@@ -19,3 +19,7 @@ func _on_mushroom_dead(mushroom: Node2D) -> void:
 
 func _on_mushroom_dead_timer_timeout() -> void:
 	_hud.call_deferred("update_mushrooms")
+
+
+func _on_mushroom_house_player_hit(point: Node2D) -> void:
+	pass # Replace with function body.
