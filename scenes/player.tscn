@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bgxpiyl86u1wq"]
+[gd_scene load_steps=31 format=3 uid="uid://bgxpiyl86u1wq"]
 
 [ext_resource type="Texture2D" uid="uid://fjv74j3ie6ge" path="res://assets/sprites/characters/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cn8vb4qegf53e" path="res://scenes/player.gd" id="1_g2els"]
@@ -11,6 +11,22 @@ region = Rect2(48, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4ail"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a38lo"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(24, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ni07"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(48, 144, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l71n6"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(72, 144, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
 atlas = ExtResource("1_3vyb7")
@@ -56,6 +72,23 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4ail")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a38lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ni07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l71n6")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -140,6 +173,11 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }, {
+"frames": [],
+"loop": false,
+"name": &"die",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jej6c")
@@ -180,15 +218,14 @@ script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dqkch")
+animation = &"die"
 autoplay = "default"
-frame_progress = 0.15115911
 
 [node name="NekoSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_jej6c")
-animation = &"walk"
+animation = &"die"
 autoplay = "default"
-frame_progress = 0.9821805
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

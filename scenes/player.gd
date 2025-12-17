@@ -10,6 +10,7 @@ extends CharacterBody2D
 var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
 var _checkpoints: Array[Vector2] = []
+var _is_dead: bool = false
 
 func add_mushroom(mushroom: Node2D) -> void:
 	_mushrooms.push_back(mushroom)
@@ -28,12 +29,27 @@ func save_mushrooms(point: Node2D) -> void:
 		
 func set_neko_suit(is_suit_visible: bool) -> void:
 	_neko_sprite.visible = is_suit_visible
+	
+func take_damage_and_die() -> void:
+	if _is_dead:
+		return
+	_is_dead = true
+	for mushroom in _mushrooms:
+		mushroom.set_is_caught(false)
+	_mushrooms.clear()
+	_checkpoints.clear()
+	_sprite.play(&"die")
+	_neko_sprite.play(&"die")
 
 func _physics_process(_delta: float) -> void:
+	if _is_dead:
+		return
+
 	_update_velocity()
 	
 	move_and_slide()
 	
+	_process_collisions()
 	_update_checkpoints()
 	
 	for i in range(_mushrooms.size()):
@@ -47,6 +63,13 @@ func _ready() -> void:
 	_sprite.stop()
 	_neko_sprite.stop()
 	_select_animation()
+	
+func _process_collisions() -> void:
+	for i in range(get_slide_collision_count()):
+		var col = get_slide_collision(i)
+		var body = col.get_collider()
+		if body.is_in_group("enemy"):
+			take_damage_and_die()
 	
 func _update_checkpoints() -> void:
 	var diff: Vector2 = global_position - _old_global_pos
@@ -68,11 +91,13 @@ func _update_velocity() -> void:
 	velocity = speed * direction
 
 func _select_animation() -> void:
+	if _is_dead:
+		return
 	if (velocity.x < 0 and _old_velocity.x > 0) or (velocity.x > 0 and _old_velocity.x < 0):
 		_sprite.flip_h = velocity.x < 0
 	if velocity.x != 0 or velocity.y != 0:
-		_sprite.play("walk")
-		_neko_sprite.play("walk")
+		_sprite.play(&"walk")
+		_neko_sprite.play(&"walk")
 	else:
-		_sprite.play("default")
-		_neko_sprite.play("default")
+		_sprite.play(&"default")
+		_neko_sprite.play(&"default")
