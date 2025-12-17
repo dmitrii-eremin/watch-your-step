@@ -13,6 +13,12 @@ var _checkpoints: Array[Vector2] = []
 func add_mushroom(mushroom: Node2D) -> void:
 	_mushrooms.push_back(mushroom)
 	mushroom.set_is_caught(true)
+	
+func remove_mushroom(mushroom: Node2D) -> void:
+	var index: int = _mushrooms.find(mushroom)
+	if index == -1:
+		return
+	_mushrooms.remove_at(index)
 
 func _physics_process(_delta: float) -> void:
 	_update_velocity()
@@ -22,7 +28,7 @@ func _physics_process(_delta: float) -> void:
 	_update_checkpoints()
 	
 	for i in range(_mushrooms.size()):
-		var target: Vector2 = _checkpoints[i] if i < _checkpoints.size() else _checkpoints[_checkpoints.size() - 1]
+		var target: Vector2 = _checkpoints[i + 1] if i + 1 < _checkpoints.size() else _checkpoints[_checkpoints.size() - 1]
 		_mushrooms[i].set_target(target)
 
 func _process(_delta: float) -> void:
@@ -35,8 +41,8 @@ func _update_checkpoints() -> void:
 	var checkpoint: Vector2 = _old_global_pos + diff.normalized() * checkpoint_distance
 	_checkpoints.push_front(checkpoint)
 	_old_global_pos = checkpoint
-	if _checkpoints.size() > _mushrooms.size() + 1:
-		_checkpoints.resize(_mushrooms.size() + 1)
+	if _checkpoints.size() > _mushrooms.size() + 2:
+		_checkpoints.resize(_mushrooms.size() + 2)
 	
 func _update_velocity() -> void:
 	var direction: Vector2 = Input.get_vector("go_left", "go_right", "go_up", "go_down")

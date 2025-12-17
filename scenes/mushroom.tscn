@@ -17,8 +17,8 @@ script = ExtResource("1_b0s10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("2_0bdi0")
+animation = &"dead"
 autoplay = "default"
-frame_progress = 0.16773446
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -35,4 +35,5 @@ visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_qxrkd")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
