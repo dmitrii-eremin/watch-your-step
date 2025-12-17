@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://y1k0bbofm7jh"]
+
+[ext_resource type="Texture2D" uid="uid://dpfoda3y7078k" path="res://tilesets/stone1_atlas.tres" id="1_hmdus"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hmdus"]
+radius = 6.0
+
+[node name="Stone" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+texture = ExtResource("1_hmdus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hmdus")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://b113pu734dsjr"]
+[gd_scene load_steps=9 format=4 uid="uid://b113pu734dsjr"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_jedrf"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_kjcoe"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_ow06g"]
 [ext_resource type="PackedScene" uid="uid://bi3db3u4t6gm1" path="res://scenes/mushroom_house.tscn" id="4_rckap"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="7_wed4g"]
+[ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="8_n7tow"]
 
 [node name="WorldScene" type="Node2D"]
 script = ExtResource("1_jedrf")
@@ -189,6 +190,39 @@ position = Vector2(1080, 88)
 
 [node name="Tree35" parent="YSortedObjects/Trees" instance=ExtResource("7_wed4g")]
 position = Vector2(80, 808)
+
+[node name="Stones" type="Node2D" parent="YSortedObjects"]
+y_sort_enabled = true
+
+[node name="Stone" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(928, 464)
+
+[node name="Stone2" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(1224, 520)
+
+[node name="Stone3" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(1248, 255)
+
+[node name="Stone4" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(656, 465)
+
+[node name="Stone5" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(568, 847)
+
+[node name="Stone6" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(240, 799)
+
+[node name="Stone7" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(312, 336)
+
+[node name="Stone8" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(56, 104)
+
+[node name="Stone9" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(1360, 822)
+
+[node name="Stone10" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
+position = Vector2(1576, 129)
 
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_mushroom_house_player_hit"]

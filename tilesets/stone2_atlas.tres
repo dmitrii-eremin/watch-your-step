@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dcytgta5t874x"]
+
+[ext_resource type="Texture2D" uid="uid://fpbo30grw362" path="res://assets/sprites/objects/summer_and_spring.png" id="1_mrcbe"]
+
+[resource]
+atlas = ExtResource("1_mrcbe")
+region = Rect2(64, 144, 32, 16)
