@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var checkpoint_distance: float = 20.0
 
 @onready var _sprite = $AnimatedSprite2D
+@onready var _neko_sprite = $NekoSprite2D
 @onready var _old_global_pos: Vector2 = global_position
 
 var _old_velocity: Vector2 = Vector2.ONE
@@ -24,6 +25,9 @@ func remove_mushroom(mushroom: Node2D) -> void:
 func save_mushrooms(point: Node2D) -> void:
 	for mushroom in _mushrooms:
 		mushroom.set_final_target(point)
+		
+func set_neko_suit(is_suit_visible: bool) -> void:
+	_neko_sprite.visible = is_suit_visible
 
 func _physics_process(_delta: float) -> void:
 	_update_velocity()
@@ -37,6 +41,11 @@ func _physics_process(_delta: float) -> void:
 		_mushrooms[i].set_target(target)
 
 func _process(_delta: float) -> void:
+	_select_animation()
+	
+func _ready() -> void:
+	_sprite.stop()
+	_neko_sprite.stop()
 	_select_animation()
 	
 func _update_checkpoints() -> void:
@@ -54,6 +63,7 @@ func _update_velocity() -> void:
 	if velocity.x != 0:
 		if _old_velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0
+			_neko_sprite.flip_h = _sprite.flip_h
 		_old_velocity = velocity
 	velocity = speed * direction
 
@@ -62,5 +72,7 @@ func _select_animation() -> void:
 		_sprite.flip_h = velocity.x < 0
 	if velocity.x != 0 or velocity.y != 0:
 		_sprite.play("walk")
+		_neko_sprite.play("walk")
 	else:
 		_sprite.play("default")
+		_neko_sprite.play("default")
