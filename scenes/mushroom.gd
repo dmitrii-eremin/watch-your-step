@@ -5,6 +5,9 @@ signal take_damage(mushroom: Node2D)
 signal dead(mushroom: Node2D)
 signal collected(mushroom: Node2D)
 
+@onready var _brown_mushroom_tileset = preload("res://animations/brown_mushroom.tres")
+@onready var _blue_mushroom_tileset = preload("res://animations/blue_mushroom.tres")
+
 @export var speed: float = 75.0
 
 @onready var _sprite = $AnimatedSprite2D
@@ -19,6 +22,7 @@ var _is_reached: bool = false
 
 func set_is_caught(value: bool) -> void:
 	_is_caught = value
+	_sprite.sprite_frames = _blue_mushroom_tileset if _is_caught else _brown_mushroom_tileset
 	
 func is_caught() -> bool:
 	return _is_caught

@@ -27,6 +27,7 @@ window/stretch/mode="viewport"
 
 player=""
 mushroom=""
+enemy=""
 
 [input]
 

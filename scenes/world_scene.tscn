@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://b113pu734dsjr"]
+[gd_scene load_steps=11 format=4 uid="uid://b113pu734dsjr"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_jedrf"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_kjcoe"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://bi3db3u4t6gm1" path="res://scenes/mushroom_house.tscn" id="4_rckap"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="7_wed4g"]
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="8_n7tow"]
+[ext_resource type="PackedScene" uid="uid://c5dyq0xckel6v" path="res://scenes/enemy.tscn" id="9_jqln6"]
+
+[sub_resource type="Curve2D" id="Curve2D_sn7ua"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1048, 456, 0, 0, 0, 0, 1048, 360, 0, 0, 0, 0, 1048, 456)
+}
+point_count = 3
 
 [node name="WorldScene" type="Node2D"]
 script = ExtResource("1_jedrf")
@@ -223,6 +230,22 @@ position = Vector2(1360, 822)
 
 [node name="Stone10" parent="YSortedObjects/Stones" instance=ExtResource("8_n7tow")]
 position = Vector2(1576, 129)
+
+[node name="Enemies" type="Node2D" parent="YSortedObjects"]
+y_sort_enabled = true
+
+[node name="Slime1" type="Node2D" parent="YSortedObjects/Enemies"]
+
+[node name="Enemy" parent="YSortedObjects/Enemies/Slime1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
+position = Vector2(1048, 456)
+path_follower = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Slime1"]
+curve = SubResource("Curve2D_sn7ua")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Slime1/Path2D"]
+position = Vector2(1048, 456)
+rotation = -1.5707964
 
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_mushroom_house_player_hit"]
