@@ -22,9 +22,12 @@ var _is_caught: bool = false
 var _is_dying: bool = false 
 var _is_reached: bool = false
 
+func is_blue() -> bool:
+	return _is_caught or _final_target != null
+
 func set_is_caught(value: bool) -> void:
 	_is_caught = value
-	_sprite.sprite_frames = _blue_mushroom_tileset if _is_caught else _brown_mushroom_tileset
+	_sprite.sprite_frames = _blue_mushroom_tileset if is_blue() else _brown_mushroom_tileset
 	if not _is_caught:
 		set_target(_original_position)
 	
@@ -54,7 +57,7 @@ func _physics_process(_delta: float) -> void:
 		var direction = (target - global_position).normalized() if diff.length_squared() > 2 ** 2 else Vector2.ZERO
 		if velocity.x != 0:
 			_old_velocity = velocity
-		var speed = player_speed if is_caught() else mushroom_speed
+		var speed = player_speed if is_blue() else mushroom_speed
 		velocity = speed * direction
 		
 		if _final_target != null and direction.length_squared() == 0:

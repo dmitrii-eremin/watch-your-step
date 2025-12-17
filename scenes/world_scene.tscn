@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b113pu734dsjr"]
+[gd_scene load_steps=14 format=4 uid="uid://b113pu734dsjr"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_jedrf"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_kjcoe"]
@@ -21,6 +21,18 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 728, 520, 0, 0, 0, 0, 808, 520, 0, 0, 0, 0, 728, 520)
 }
 point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_p8wvt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 720, 520, 0, 0, 0, 0, 880, 520, 0, 0, 0, 0, 720, 520)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_ljjuw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1128, 200, 0, 0, 0, 0, 1128, 144, 0, 0, 0, 0, 1040, 144, 0, 0, 0, 0, 1040, 200, 0, 0, 0, 0, 1128, 200)
+}
+point_count = 5
 
 [node name="WorldScene" type="Node2D"]
 script = ExtResource("1_jedrf")
@@ -243,28 +255,60 @@ y_sort_enabled = true
 [node name="Slime1" type="Node2D" parent="YSortedObjects/Enemies"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Slime1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(1048, 456)
+position = Vector2(1048, 413.33652)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Slime1"]
 curve = SubResource("Curve2D_sn7ua")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Slime1/Path2D"]
-position = Vector2(1048, 456)
+position = Vector2(1048, 413.33652)
 rotation = -1.5707964
+progress = 42.66665
 
 [node name="Slime2" type="Node2D" parent="YSortedObjects/Enemies"]
 position = Vector2(88, 32)
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Slime2" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(728, 520)
+position = Vector2(770.66876, 520)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Slime2"]
 curve = SubResource("Curve2D_jqln6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Slime2/Path2D"]
-position = Vector2(728, 520)
+position = Vector2(770.66876, 520)
+progress = 42.66665
+
+[node name="Snake1" type="Node2D" parent="YSortedObjects/Enemies"]
+position = Vector2(64, -312)
+
+[node name="Enemy" parent="YSortedObjects/Enemies/Snake1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
+position = Vector2(762.6585, 520)
+path_follower = NodePath("../Path2D/PathFollow2D")
+enemy_type = 1
+
+[node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Snake1"]
+curve = SubResource("Curve2D_p8wvt")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Snake1/Path2D"]
+position = Vector2(762.6585, 520)
+progress = 42.66665
+
+[node name="Spider1" type="Node2D" parent="YSortedObjects/Enemies"]
+
+[node name="Enemy" parent="YSortedObjects/Enemies/Spider1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
+position = Vector2(1128, 157.32344)
+path_follower = NodePath("../Path2D/PathFollow2D")
+enemy_type = 6
+
+[node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Spider1"]
+curve = SubResource("Curve2D_ljjuw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Spider1/Path2D"]
+position = Vector2(1128, 157.32344)
+rotation = -1.5707964
+progress = 42.66665
 
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_mushroom_house_player_hit"]
