@@ -1,17 +1,8 @@
 extends Node2D
 
-@onready var _player: Node2D
-@onready var _hud: CanvasLayer
-@onready var _mushroom_dead_timer: Timer
-
-func _ready() -> void:
-	if not has_node("YSortedObjects/Player"):
-		var gen: LevelGenerator = LevelGenerator.new()
-		gen.generate(self)
-
-	_player = $YSortedObjects/Player
-	_hud = $HUD
-	_mushroom_dead_timer = $MushroomDeadTimer
+@onready var _player: Node2D = $YSortedObjects/Player
+@onready var _hud: CanvasLayer = $HUD
+@onready var _mushroom_dead_timer: Timer = $MushroomDeadTimer
 
 func _on_mushroom_player_caught_mushroom(player: Node2D, mushroom: Node2D) -> void:
 	player.add_mushroom(mushroom)
