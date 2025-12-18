@@ -3,6 +3,15 @@ extends Node2D
 @onready var _player: Node2D = $YSortedObjects/Player
 @onready var _hud: CanvasLayer = $HUD
 @onready var _mushroom_dead_timer: Timer = $MushroomDeadTimer
+@onready var _tilemap: TileMapLayer = $WorldMap/TileMapLayer
+@onready var _camera = $YSortedObjects/Player/PlayerCamera
+
+func _ready() -> void:
+	var world_size: Rect2i = _tilemap.get_used_rect()
+	_camera.limit_left = world_size.position.x
+	_camera.limit_top = world_size.position.y
+	_camera.limit_right = world_size.size.x
+	_camera.limit_bottom = world_size.size.y
 
 func _on_mushroom_player_caught_mushroom(player: Node2D, mushroom: Node2D) -> void:
 	player.add_mushroom(mushroom)

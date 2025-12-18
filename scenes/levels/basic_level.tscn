@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://ddtoa4aqk6jy3"]
+
+[ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_7fkf7"]
+[ext_resource type="PackedScene" uid="uid://dlgniouxy3wtk" path="res://scenes/hud.tscn" id="1_voqo3"]
+[ext_resource type="PackedScene" uid="uid://bnt2vvpyq1ugb" path="res://scenes/virtual_joystick.tscn" id="2_cmhs5"]
+[ext_resource type="PackedScene" uid="uid://bgxpiyl86u1wq" path="res://scenes/player.tscn" id="3_kuyue"]
+[ext_resource type="PackedScene" uid="uid://clyiqj78jd4n" path="res://scenes/player_camera.tscn" id="4_7fkf7"]
+[ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="4_cv06b"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_7fkf7")
+
+[node name="HUD" parent="." instance=ExtResource("1_voqo3")]
+
+[node name="VirtualJoystick" parent="HUD" instance=ExtResource("2_cmhs5")]
+
+[node name="MushroomDeadTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[node name="WorldMap" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="WorldMap"]
+tile_set = ExtResource("4_cv06b")
+
+[node name="SecondGroundLevelLayer" type="TileMapLayer" parent="WorldMap"]
+tile_set = ExtResource("4_cv06b")
+
+[node name="YSortedObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Player" parent="YSortedObjects" instance=ExtResource("3_kuyue")]
+
+[node name="PlayerCamera" parent="YSortedObjects/Player" instance=ExtResource("4_7fkf7")]
+limit_right = 1600
+limit_bottom = 960
+
+[connection signal="on_joystick_input" from="HUD/VirtualJoystick" to="." method="_on_virtual_joystick_on_joystick_input"]
+[connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
