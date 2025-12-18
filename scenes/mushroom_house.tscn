@@ -19,7 +19,7 @@ region = Rect2(96, 0, 48, 32)
 radius = 16.0
 height = 80.0
 
-[node name="MushroomHouse" type="StaticBody2D"]
+[node name="MushroomHouse" type="StaticBody2D" groups=["house"]]
 script = ExtResource("1_37ubo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
