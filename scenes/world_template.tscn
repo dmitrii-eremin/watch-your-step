@@ -16,9 +16,6 @@ script = ExtResource("1_vipyp")
 wait_time = 0.25
 one_shot = true
 
-[node name="YSortedObjects" type="Node2D" parent="."]
-y_sort_enabled = true
-
 [node name="WorldMap" type="Node2D" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="WorldMap"]
@@ -27,4 +24,8 @@ tile_set = ExtResource("4_ur8f7")
 [node name="SecondGroundLevelLayer" type="TileMapLayer" parent="WorldMap"]
 tile_set = ExtResource("4_ur8f7")
 
+[node name="YSortedObjects" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[connection signal="on_joystick_input" from="HUD/VirtualJoystick" to="." method="_on_virtual_joystick_on_joystick_input"]
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]

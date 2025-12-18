@@ -2,6 +2,14 @@ extends Node
 class_name LevelGenerator
 
 var PlayerScene: PackedScene = preload("res://scenes/player.tscn")
+var CameraScene: PackedScene = preload("res://scenes/player_camera.tscn")
+
+enum GroundTileType {
+	Grass,
+	Water,
+}
+
+const CELL_SIZE: int = 16
 
 class WorldObjects:
 	var tilemap: TileMapLayer
@@ -21,14 +29,35 @@ func generate(world: Node2D) -> void:
 	if not objects.is_valid():
 		return
 
-	_create_player(objects)
+	var world_size: Vector2i = Vector2i(100, 70)
+	var data: Dictionary[Vector2i, GroundTileType] = _create_ground(world_size)
 
-func _create_player(objects: WorldObjects, position: Vector2 = Vector2.ZERO) -> void:
+	_create_player(objects, world_size)
+	_render_data_to_nodes(objects, data)
+
+func _render_data_to_nodes(objects: WorldObjects, data: Dictionary[Vector2i, GroundTileType]) -> void:
+	for coords in data.keys():
+		var cell: GroundTileType = data[coords]
+		match cell:
+			GroundTileType.Grass:
+				objects.tilemap.set_cell(Vector2i(coords.x, coords.y), 0, Vector2i(3, 1))
+			GroundTileType.Water:
+				pass
+
+func _create_ground(world_size: Vector2i) -> Dictionary[Vector2i, GroundTileType]:
+	var data: Dictionary[Vector2i, GroundTileType] = {}
+	for ix in range(world_size.x):
+		for iy in range(world_size.y):
+			data[Vector2i(ix, iy)] = GroundTileType.Grass
+	return data
+
+func _create_player(objects: WorldObjects, world_size: Vector2i, position: Vector2 = Vector2.ZERO) -> void:
 	var player = PlayerScene.instantiate()
 	objects.y_sorted_objects.add_child(player)
 	player.global_position = position
 
-	var camera: Camera2D = Camera2D.new()
-	camera.position_smoothing_enabled = true
-	camera.position_smoothing_speed = 12
+	var camera = CameraScene.instantiate()
+	camera.limit_right = world_size.x * CELL_SIZE
+	camera.limit_bottom = world_size.y * CELL_SIZE
+
 	player.add_child(camera)
