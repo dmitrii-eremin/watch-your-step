@@ -11,6 +11,10 @@ var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
 var _checkpoints: Array[Vector2] = []
 var _is_dead: bool = false
+var _virtual_joystick: Vector2 = Vector2.ZERO
+
+func update_virtual_joystick(direction: Vector2) -> void:
+	_virtual_joystick = direction
 
 func add_mushroom(mushroom: Node2D) -> void:
 	_mushrooms.push_back(mushroom)
@@ -84,6 +88,9 @@ func _update_checkpoints() -> void:
 	
 func _update_velocity() -> void:
 	var direction: Vector2 = Input.get_vector("go_left", "go_right", "go_up", "go_down")
+	if direction == Vector2.ZERO:
+		direction = _virtual_joystick
+
 	if velocity.x != 0:
 		if _old_velocity.x != 0:
 			_sprite.flip_h = velocity.x < 0

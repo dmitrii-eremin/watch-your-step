@@ -28,3 +28,6 @@ func _on_mushroom_collected(mushroom: Node2D) -> void:
 	_hud.call_deferred("collect_mushroom")
 	_hud.call_deferred("update_mushrooms")
 	_mushroom_dead_timer.start()
+
+func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
+	_player.update_virtual_joystick(direction)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnt2vvpyq1ugb"]
+
+[ext_resource type="Script" uid="uid://b05kgm68sl7nw" path="res://scenes/virtual_joystick.gd" id="1_f8ypf"]
+
+[node name="VirtualJoystick" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f8ypf")

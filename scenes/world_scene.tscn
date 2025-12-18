@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://b113pu734dsjr"]
+[gd_scene load_steps=15 format=4 uid="uid://b113pu734dsjr"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_jedrf"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_kjcoe"]
 [ext_resource type="PackedScene" uid="uid://dlgniouxy3wtk" path="res://scenes/hud.tscn" id="2_krmi5"]
 [ext_resource type="PackedScene" uid="uid://bgxpiyl86u1wq" path="res://scenes/player.tscn" id="3_qiqor"]
+[ext_resource type="PackedScene" uid="uid://bnt2vvpyq1ugb" path="res://scenes/virtual_joystick.tscn" id="3_sn7ua"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_ow06g"]
 [ext_resource type="PackedScene" uid="uid://bi3db3u4t6gm1" path="res://scenes/mushroom_house.tscn" id="4_rckap"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="7_wed4g"]
@@ -38,6 +39,8 @@ point_count = 5
 script = ExtResource("1_jedrf")
 
 [node name="HUD" parent="." instance=ExtResource("2_krmi5")]
+
+[node name="VirtualJoystick" parent="HUD" instance=ExtResource("3_sn7ua")]
 
 [node name="WorldMap" type="Node2D" parent="."]
 
@@ -255,36 +258,37 @@ y_sort_enabled = true
 [node name="Slime1" type="Node2D" parent="YSortedObjects/Enemies"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Slime1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(1048, 413.33652)
+position = Vector2(1048, 420.65897)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Slime1"]
 curve = SubResource("Curve2D_sn7ua")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Slime1/Path2D"]
-position = Vector2(1048, 413.33652)
-rotation = -1.5707964
-progress = 42.66665
+position = Vector2(1048, 420.65897)
+rotation = 1.5707964
+progress = 156.65233
 
 [node name="Slime2" type="Node2D" parent="YSortedObjects/Enemies"]
 position = Vector2(88, 32)
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Slime2" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(770.66876, 520)
+position = Vector2(763.3327, 520)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Slime2"]
 curve = SubResource("Curve2D_jqln6")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Slime2/Path2D"]
-position = Vector2(770.66876, 520)
-progress = 42.66665
+position = Vector2(763.3327, 520)
+rotation = 3.1415925
+progress = 124.663925
 
 [node name="Snake1" type="Node2D" parent="YSortedObjects/Enemies"]
 position = Vector2(64, -312)
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Snake1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(762.6585, 520)
+position = Vector2(755.31726, 520)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 1
 
@@ -292,13 +296,14 @@ enemy_type = 1
 curve = SubResource("Curve2D_p8wvt")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Snake1/Path2D"]
-position = Vector2(762.6585, 520)
-progress = 42.66665
+position = Vector2(755.31726, 520)
+rotation = 3.1415925
+progress = 284.6714
 
 [node name="Spider1" type="Node2D" parent="YSortedObjects/Enemies"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Spider1" node_paths=PackedStringArray("path_follower") instance=ExtResource("9_jqln6")]
-position = Vector2(1128, 157.32344)
+position = Vector2(1040, 156.63914)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 6
 
@@ -306,10 +311,11 @@ enemy_type = 6
 curve = SubResource("Curve2D_ljjuw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Spider1/Path2D"]
-position = Vector2(1128, 157.32344)
-rotation = -1.5707964
-progress = 42.66665
+position = Vector2(1040, 156.63914)
+rotation = 1.5707964
+progress = 156.65732
 
+[connection signal="on_joystick_input" from="HUD/VirtualJoystick" to="." method="_on_virtual_joystick_on_joystick_input"]
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_mushroom_house_player_hit"]
 [connection signal="collected" from="YSortedObjects/Mushrooms/Mushroom" to="." method="_on_mushroom_collected"]
