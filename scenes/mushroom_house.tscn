@@ -52,9 +52,10 @@ rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_2ppoj")
 
 [node name="DoorPoint" type="Node2D" parent="."]
-position = Vector2(-8, 16)
+position = Vector2(-8, 8)
 
 [node name="Label" parent="." instance=ExtResource("3_4mnpy")]
+visible = false
 offset_left = -64.0
 offset_top = 43.0
 offset_right = 64.0

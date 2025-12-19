@@ -29,31 +29,31 @@ theme_override_constants/margin_bottom = 8
 [node name="Control" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
+[node name="StatsVBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
 layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/StatsVBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/StatsVBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture = SubResource("AtlasTexture_6fi6k")
 
-[node name="CaughtMushroomsLabel" type="Label" parent="MarginContainer/Control/VBoxContainer/HBoxContainer"]
+[node name="CaughtMushroomsLabel" type="Label" parent="MarginContainer/Control/StatsVBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "12/43"
 label_settings = ExtResource("3_5ysmq")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Control/StatsVBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/VBoxContainer/HBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/StatsVBoxContainer/HBoxContainer2"]
 layout_mode = 2
 texture = ExtResource("4_6fi6k")
 
-[node name="SavedMushroomsLabel" type="Label" parent="MarginContainer/Control/VBoxContainer/HBoxContainer2"]
+[node name="SavedMushroomsLabel" type="Label" parent="MarginContainer/Control/StatsVBoxContainer/HBoxContainer2"]
 layout_mode = 2
 text = "0"
 label_settings = ExtResource("3_5ysmq")
