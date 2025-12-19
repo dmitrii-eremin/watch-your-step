@@ -8,4 +8,4 @@ func _ready() -> void:
 	_original_mushroom_house.call_deferred("queue_free")
 
 func _on_start_game(_point: Node2D) -> void:
-	_change_level_scene("res://scenes/levels/level_03.tscn")
+	_change_level_scene("res://scenes/levels/level_00.tscn")

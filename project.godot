@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Transition="*res://scenes/ui/transition.tscn"
+Globals="*res://sources/globals.gd"
 
 [display]
 

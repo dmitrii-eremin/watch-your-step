@@ -64,7 +64,12 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
 
 func _level_completed() -> void:
-	_change_level_scene("res://scenes/levels/menu_level.tscn")
+	var next_level: String = Globals.get_next_level()
+	if next_level.is_empty():
+		_change_level_scene("res://scenes/levels/menu_level.tscn")
+	else:
+		Globals.current_level = next_level
+		_change_level_scene(Globals.LEVELS[next_level])
 
 func _on_player_dead() -> void:
 	pass
