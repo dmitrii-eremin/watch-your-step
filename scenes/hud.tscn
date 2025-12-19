@@ -1,20 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlgniouxy3wtk"]
+[gd_scene load_steps=8 format=3 uid="uid://dlgniouxy3wtk"]
 
 [ext_resource type="Script" uid="uid://cwbt24sknouwh" path="res://scenes/hud.gd" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://ocqdsfosqwja" path="res://assets/sprites/characters/mushroom_brown.png" id="2_5ysmq"]
 [ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="3_5ysmq"]
 [ext_resource type="Texture2D" uid="uid://dgs2vs7k2tpas" path="res://assets/sprites/icons/house.png" id="4_6fi6k"]
-[ext_resource type="Texture2D" uid="uid://do7t2cf4sjr2d" path="res://assets/sprites/icons/buttons.png" id="5_uo2fv"]
 [ext_resource type="PackedScene" uid="uid://dxoliq3ja2k75" path="res://scenes/ui/pause_menu.tscn" id="6_047uy"]
+[ext_resource type="PackedScene" uid="uid://d2nytwo5l1yjr" path="res://scenes/ui/pause_button.tscn" id="7_5pdws"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
 atlas = ExtResource("2_5ysmq")
 region = Rect2(0, 16, 16, 16)
 margin = Rect2(0, -2, 0, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_047uy"]
-atlas = ExtResource("5_uo2fv")
-region = Rect2(80, 48, 16, 16)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ahhtf")
@@ -67,13 +63,14 @@ layout_mode = 2
 text = "0"
 label_settings = ExtResource("3_5ysmq")
 
-[node name="PauseButton" type="TextureButton" parent="MarginContainer/Control"]
-z_index = 200
-layout_mode = 0
+[node name="PauseButton" parent="MarginContainer/Control" instance=ExtResource("7_5pdws")]
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = 328.0
-offset_right = 344.0
-offset_bottom = 16.0
-button_mask = 7
-texture_normal = SubResource("AtlasTexture_047uy")
+offset_right = 328.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]

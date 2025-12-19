@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2nytwo5l1yjr"]
+
+[ext_resource type="PackedScene" uid="uid://kddpdx5d4dba" path="res://scenes/ui/game_button.tscn" id="1_23jja"]
+[ext_resource type="Texture2D" uid="uid://do7t2cf4sjr2d" path="res://assets/sprites/icons/buttons.png" id="2_q8tpf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjjq4"]
+atlas = ExtResource("2_q8tpf")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s75l5"]
+atlas = ExtResource("2_q8tpf")
+region = Rect2(80, 96, 16, 16)
+
+[node name="PauseButton" instance=ExtResource("1_23jja")]
+
+[node name="TextureButton" parent="." index="0"]
+offset_right = 16.0
+offset_bottom = 16.0
+texture_normal = SubResource("AtlasTexture_kjjq4")
+texture_pressed = SubResource("AtlasTexture_s75l5")

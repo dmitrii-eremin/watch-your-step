@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var _stats_container: VBoxContainer = $MarginContainer/Control/StatsVBoxContainer
 @onready var _mushrooms_count_label: Label = $MarginContainer/Control/StatsVBoxContainer/HBoxContainer/CaughtMushroomsLabel
 @onready var _saved_mushrooms_label: Label = $MarginContainer/Control/StatsVBoxContainer/HBoxContainer2/SavedMushroomsLabel
-@onready var _pause_button: TextureButton = $MarginContainer/Control/PauseButton
+@onready var _pause_button := $MarginContainer/Control/PauseButton
 @onready var _pause_menu = $PauseMenu
 
 var _collected_mushrooms_count: int = 0
