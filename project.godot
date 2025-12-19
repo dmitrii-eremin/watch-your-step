@@ -14,7 +14,7 @@ config/name="Watch Your Step"
 config/description="There are some baby tomatos lost in the woods. Collect all of them before the dawn!"
 run/main_scene="uid://bkdmhajy8tit8"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b1v4qqmliwxls"
 
 [autoload]
 
