@@ -7,8 +7,8 @@ const LEVELS: Dictionary[String, String] = {
 	"level03": "res://scenes/levels/level_03.tscn",
 }
 
-var current_level: String = "level02"
-var level_to_continue: String = "level02"
+var current_level: String = "level00"
+var level_to_continue: String = "level00"
 
 var target_mushrooms_count: int = 0
 var collected_mushrooms_count: int = 0

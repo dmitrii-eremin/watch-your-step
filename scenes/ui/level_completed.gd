@@ -6,6 +6,8 @@ extends Node2D
 @onready var _action_label: Label = $CanvasLayer/JumpingLabel2
 @onready var _collected: Label = $CanvasLayer/CollectedLabel
 
+var _is_already_handler: bool = false
+
 const TITLES: Dictionary[bool, String] = {
 	false: "Level Completed!",
 	true: "You lost. Maybe next time...",
@@ -38,6 +40,9 @@ func _process(_delta: float) -> void:
 		_goto_next_level()
 
 func _goto_next_level() -> void:
+	if _is_already_handler:
+		return
+	_is_already_handler = true
 	var next_level: String = Globals.get_next_level() if not is_died else Globals.current_level
 	if next_level.is_empty():
 		Transition.change_scene("res://scenes/levels/menu_level.tscn")
