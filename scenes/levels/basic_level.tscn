@@ -40,3 +40,4 @@ limit_bottom = 960
 
 [connection signal="on_joystick_input" from="HUD/VirtualJoystick" to="." method="_on_virtual_joystick_on_joystick_input"]
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]
+[connection signal="dead" from="YSortedObjects/Player" to="." method="_on_player_dead"]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal dead()
+
 @export var speed: float = 75.0
 @export var checkpoint_distance: float = 20.0
 
@@ -45,6 +47,7 @@ func take_damage_and_die() -> void:
 	_checkpoints.clear()
 	_sprite.play(&"die")
 	_neko_sprite.play(&"die")
+	dead.emit()
 
 func _physics_process(_delta: float) -> void:
 	if _is_dead:
