@@ -78,6 +78,3 @@ position = Vector2(160, 336)
 
 [node name="Mushroom7" parent="YSortedObjects/Mushrooms" index="6" instance=ExtResource("4_uvc87")]
 position = Vector2(360, 328)
-
-[node name="Mushroom8" parent="YSortedObjects/Mushrooms" index="7" instance=ExtResource("4_uvc87")]
-position = Vector2(28, 127)
