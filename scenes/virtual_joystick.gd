@@ -27,7 +27,7 @@ func _input(event: InputEvent) -> void:
 
 func _handle_touch_input(event: InputEventScreenTouch) -> void:
 	if event.pressed:
-		if not _is_pressed:
+		if not _is_pressed and event.position.y > 48:
 			_is_pressed = true
 			_touch_index = event.index
 			_base_position = event.position - global_position

@@ -19,6 +19,9 @@ region = Rect2(80, 48, 16, 16)
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_ahhtf")
 
+[node name="PauseMenu" parent="." instance=ExtResource("6_047uy")]
+visible = false
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,13 +68,12 @@ text = "0"
 label_settings = ExtResource("3_5ysmq")
 
 [node name="PauseButton" type="TextureButton" parent="MarginContainer/Control"]
+z_index = 200
 layout_mode = 0
 offset_left = 328.0
 offset_right = 344.0
 offset_bottom = 16.0
+button_mask = 7
 texture_normal = SubResource("AtlasTexture_047uy")
-
-[node name="PauseMenu" parent="." instance=ExtResource("6_047uy")]
-visible = false
 
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]
