@@ -64,7 +64,10 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
 
 func _level_completed() -> void:
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/levels/menu_level.tscn")
+	_change_level_scene("res://scenes/levels/menu_level.tscn")
 
 func _on_player_dead() -> void:
 	pass
+
+func _change_level_scene(path: String) -> void:
+	Transition.change_scene(path)
