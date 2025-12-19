@@ -72,4 +72,5 @@ func _level_completed() -> void:
 	Transition.change_scene("res://scenes/ui/level_completed.tscn")
 
 func _on_player_dead() -> void:
-	pass
+	Globals.is_died = true
+	Transition.change_scene("res://scenes/ui/level_completed.tscn")

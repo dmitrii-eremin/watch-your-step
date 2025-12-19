@@ -8,6 +8,7 @@ signal dead()
 @onready var _sprite = $AnimatedSprite2D
 @onready var _neko_sprite = $NekoSprite2D
 @onready var _old_global_pos: Vector2 = global_position
+@onready var _died_timer: Timer = $DiedTimer
 
 var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
@@ -47,7 +48,6 @@ func take_damage_and_die() -> void:
 	_checkpoints.clear()
 	_sprite.play(&"die")
 	_neko_sprite.play(&"die")
-	dead.emit()
 
 func _physics_process(_delta: float) -> void:
 	if _is_dead:
@@ -112,3 +112,10 @@ func _select_animation() -> void:
 	else:
 		_sprite.play(&"default")
 		_neko_sprite.play(&"default")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if _sprite.animation == &"die":
+		_died_timer.start()
+
+func _on_died_timer_timeout() -> void:
+	dead.emit()
