@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://doocrvi4mvtx0"]
+
+[ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="1_k5jc1"]
+[ext_resource type="Script" uid="uid://det70afahvwu5" path="res://scenes/ui/jumping_label.gd" id="2_1r6nf"]
+
+[node name="JumpingLabel" type="Label"]
+offset_right = 96.0
+offset_bottom = 8.0
+text = "EXAMPLE TEXT"
+label_settings = ExtResource("1_k5jc1")
+script = ExtResource("2_1r6nf")

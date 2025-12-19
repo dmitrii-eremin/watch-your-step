@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bi3db3u4t6gm1"]
+[gd_scene load_steps=8 format=3 uid="uid://bi3db3u4t6gm1"]
 
 [ext_resource type="Script" uid="uid://dbtiv17vvd3dl" path="res://scenes/mushroom_house.gd" id="1_37ubo"]
 [ext_resource type="Texture2D" uid="uid://fpbo30grw362" path="res://assets/sprites/objects/summer_and_spring.png" id="2_2ppoj"]
+[ext_resource type="PackedScene" uid="uid://doocrvi4mvtx0" path="res://scenes/ui/jumping_label.tscn" id="3_4mnpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4mnpy"]
 atlas = ExtResource("2_2ppoj")
@@ -27,15 +28,16 @@ position = Vector2(0, -15)
 texture = SubResource("AtlasTexture_4mnpy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(0, -15)
 polygon = PackedVector2Array(-27, 44, 29, 44, 30, 35, 31, 22, 31, 15, -29, 15, -29, 21, -28, 35)
 
 [node name="ClosedDoorSprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-8, 16)
 texture = SubResource("AtlasTexture_2ppoj")
 
 [node name="OpenedDoorSprite" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-8, 16)
 texture = SubResource("AtlasTexture_bai3w")
 
@@ -50,5 +52,13 @@ shape = SubResource("CapsuleShape2D_2ppoj")
 
 [node name="DoorPoint" type="Node2D" parent="."]
 position = Vector2(-8, 16)
+
+[node name="Label" parent="." instance=ExtResource("3_4mnpy")]
+offset_left = -64.0
+offset_top = 43.0
+offset_right = 64.0
+offset_bottom = 61.999977
+text = ""
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
