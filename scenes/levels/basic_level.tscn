@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddtoa4aqk6jy3"]
+[gd_scene load_steps=8 format=3 uid="uid://ddtoa4aqk6jy3"]
 
 [ext_resource type="Script" uid="uid://chcvkgfflbpgb" path="res://scenes/world_scene.gd" id="1_7fkf7"]
 [ext_resource type="PackedScene" uid="uid://dlgniouxy3wtk" path="res://scenes/hud.tscn" id="1_voqo3"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgxpiyl86u1wq" path="res://scenes/player.tscn" id="3_kuyue"]
 [ext_resource type="PackedScene" uid="uid://clyiqj78jd4n" path="res://scenes/player_camera.tscn" id="4_7fkf7"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="4_cv06b"]
+[ext_resource type="PackedScene" uid="uid://bi3db3u4t6gm1" path="res://scenes/mushroom_house.tscn" id="5_m7iyv"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_7fkf7")
@@ -28,6 +29,8 @@ tile_set = ExtResource("4_cv06b")
 
 [node name="YSortedObjects" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="MushroomHouse" parent="YSortedObjects" instance=ExtResource("5_m7iyv")]
 
 [node name="Player" parent="YSortedObjects" instance=ExtResource("3_kuyue")]
 
