@@ -25,4 +25,5 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventMouseButton and not event.pressed and _pressed:
 		_btn.toggle_mode = false
 		_btn.button_pressed = false
-		_on_texture_button_pressed()
+		if _btn.get_global_rect().has_point(event.position):
+			_on_texture_button_pressed()
