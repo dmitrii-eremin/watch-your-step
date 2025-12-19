@@ -10,6 +10,9 @@ const LEVELS: Dictionary[String, String] = {
 var current_level: String = "level00"
 var level_to_continue: String = "level00"
 
+var target_mushrooms_count: int = 0
+var collected_mushrooms_count: int = 0
+
 func get_next_level() -> String:
     var keys: Array[String] = LEVELS.keys()
     var current_index: int = keys.find(current_level)

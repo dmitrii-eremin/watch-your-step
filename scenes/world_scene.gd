@@ -18,6 +18,10 @@ func _initialize_house() -> void:
 	
 func _initialize_mushrooms() -> void:
 	var mushrooms = get_tree().get_nodes_in_group(&"mushroom")
+
+	Globals.target_mushrooms_count = mushrooms.size()
+	Globals.collected_mushrooms_count = 0
+
 	for mushroom in mushrooms:
 		mushroom.player_caught_mushroom.connect(_on_mushroom_player_caught_mushroom)
 		mushroom.take_damage.connect(_on_mushroom_take_damage)
@@ -55,6 +59,7 @@ func _on_mushroom_house_player_hit(point: Node2D) -> void:
 	_player.save_mushrooms(point)
 
 func _on_mushroom_collected(mushroom: Node2D) -> void:
+	Globals.collected_mushrooms_count += 1
 	_player.remove_mushroom(mushroom)
 	_hud.call_deferred("collect_mushroom")
 	_hud.call_deferred("update_mushrooms")
@@ -64,15 +69,7 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
 
 func _level_completed() -> void:
-	var next_level: String = Globals.get_next_level()
-	if next_level.is_empty():
-		_change_level_scene("res://scenes/levels/menu_level.tscn")
-	else:
-		Globals.current_level = next_level
-		_change_level_scene(Globals.LEVELS[next_level])
+	Transition.change_scene("res://scenes/ui/level_completed.tscn")
 
 func _on_player_dead() -> void:
 	pass
-
-func _change_level_scene(path: String) -> void:
-	Transition.change_scene(path)
