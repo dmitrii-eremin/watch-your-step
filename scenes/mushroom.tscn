@@ -16,22 +16,31 @@ collision_layer = 0
 script = ExtResource("1_b0s10")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 8)
 sprite_frames = ExtResource("2_0bdi0")
 animation = &"walk"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+visible = false
+position = Vector2(0, 13)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_0bdi0")
 
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
+position = Vector2(0, 8)
 collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_qxrkd")
 
+[node name="FreeWillTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="timeout" from="FreeWillTimer" to="." method="_on_free_will_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bkdmhajy8tit8"]
+[gd_scene load_steps=9 format=4 uid="uid://bkdmhajy8tit8"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_innd5"]
 [ext_resource type="Script" uid="uid://rybh67mjuw1o" path="res://scenes/menu_level.gd" id="2_p36d1"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="5_xnw2a"]
 [ext_resource type="PackedScene" uid="uid://doocrvi4mvtx0" path="res://scenes/ui/jumping_label.tscn" id="6_xnw2a"]
 [ext_resource type="PackedScene" uid="uid://dapajjda17nh" path="res://scenes/secret_npc.tscn" id="7_xvx8b"]
+[ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="8_o3mdm"]
 
 [node name="MenuLevel" instance=ExtResource("1_innd5")]
 script = ExtResource("2_p36d1")
@@ -21,7 +22,7 @@ tile_map_data = PackedByteArray("AAAbAA8AAAAIAAcAAAAgAA8AAAAIAAcAAAAfAAoAAAAJAAc
 position = Vector2(-224, 8)
 
 [node name="Player" parent="YSortedObjects" index="1"]
-position = Vector2(184, 120)
+position = Vector2(48, 136)
 
 [node name="Houses" type="Node2D" parent="YSortedObjects" index="2"]
 y_sort_enabled = true
@@ -114,6 +115,34 @@ y_sort_enabled = true
 
 [node name="SecretNpc" parent="YSortedObjects/NPC" index="0" instance=ExtResource("7_xvx8b")]
 position = Vector2(680, 239)
+
+[node name="Mushroom" parent="YSortedObjects/NPC" index="1" instance=ExtResource("8_o3mdm")]
+position = Vector2(48, 176)
+free_will = true
+
+[node name="Mushroom2" parent="YSortedObjects/NPC" index="2" instance=ExtResource("8_o3mdm")]
+position = Vector2(128, -3)
+free_will = true
+
+[node name="Mushroom3" parent="YSortedObjects/NPC" index="3" instance=ExtResource("8_o3mdm")]
+position = Vector2(312, 50)
+free_will = true
+
+[node name="Mushroom4" parent="YSortedObjects/NPC" index="4" instance=ExtResource("8_o3mdm")]
+position = Vector2(216, 239)
+free_will = true
+
+[node name="Mushroom5" parent="YSortedObjects/NPC" index="5" instance=ExtResource("8_o3mdm")]
+position = Vector2(520, 94)
+free_will = true
+
+[node name="Mushroom6" parent="YSortedObjects/NPC" index="6" instance=ExtResource("8_o3mdm")]
+position = Vector2(616, -8)
+free_will = true
+
+[node name="Mushroom7" parent="YSortedObjects/NPC" index="7" instance=ExtResource("8_o3mdm")]
+position = Vector2(608, 51)
+free_will = true
 
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_start_game"]
 [connection signal="player_hit" from="YSortedObjects/Houses/StartGameHouse" to="." method="_on_start_game"]

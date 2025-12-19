@@ -5,22 +5,50 @@ signal take_damage(mushroom: Node2D)
 signal dead(mushroom: Node2D)
 signal collected(mushroom: Node2D)
 
+@export var mushroom_speed: float = 25.0
+@export var player_speed: float = 75.0
+@export var free_will: bool = false
+
 @onready var _brown_mushroom_tileset = preload("res://animations/brown_mushroom.tres")
 @onready var _blue_mushroom_tileset = preload("res://animations/blue_mushroom.tres")
 
-@export var mushroom_speed: float = 25.0
-@export var player_speed: float = 75.0
-
-@onready var _sprite = $AnimatedSprite2D
+@onready var _sprite := $AnimatedSprite2D
+@onready var _player_detection_area := $PlayerDetectionArea
+@onready var _free_will_timer := $FreeWillTimer
 
 @onready var _target: Vector2 = global_position
 @onready var _original_position: Vector2 = global_position
+@onready var _timer_delay: float = _free_will_timer.wait_time
 var _final_target: Node2D
 
 var _old_velocity: Vector2 = Vector2.ONE
 var _is_caught: bool = false
 var _is_dying: bool = false 
 var _is_reached: bool = false
+
+const _free_will_walking_radius: float = 64.0
+
+func _ready() -> void:
+	if not free_will:
+		return
+	_player_detection_area.collision_mask = 0
+	_schedule_next_move()
+	
+func _schedule_next_move() -> void:
+	if not free_will:
+		return
+	_free_will_timer.wait_time = randf_range(0.5 * _timer_delay, 1.5 * _timer_delay)
+	_free_will_timer.start()
+	
+func _on_free_will_timer_timeout() -> void:
+	_target.x = randf_range(
+		_original_position.x - _free_will_walking_radius,
+		_original_position.x + _free_will_walking_radius,
+	)
+	_target.y = randf_range(
+		_original_position.y - _free_will_walking_radius,
+		_original_position.y + _free_will_walking_radius,
+	)
 
 func is_blue() -> bool:
 	return _is_caught or _final_target != null
@@ -62,9 +90,22 @@ func _physics_process(_delta: float) -> void:
 		
 		if _final_target != null and direction.length_squared() == 0:
 			_on_reached_final_destination()
+			
+		if free_will and _free_will_timer.is_stopped() and _final_target == null and target != null and velocity == Vector2.ZERO:
+			_on_reached_target()
 
 	move_and_slide()
+	
+	if free_will and get_slide_collision_count() > 0 and velocity != Vector2.ZERO:
+		_on_stuck()
+
 	_select_animation()
+	
+func _on_stuck() -> void:
+	_target = global_position
+	
+func _on_reached_target() -> void:
+	_schedule_next_move()
 	
 func _on_reached_final_destination() -> void:
 	if _is_reached:
@@ -75,7 +116,8 @@ func _on_reached_final_destination() -> void:
 	call_deferred("queue_free")
 
 func _process(_delta: float) -> void:
-	pass
+	if not free_will:
+		return
 
 func _select_animation() -> void:
 	if _is_reached:
