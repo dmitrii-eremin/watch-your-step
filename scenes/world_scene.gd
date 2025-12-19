@@ -47,6 +47,9 @@ func _on_mushroom_dead(mushroom: Node2D) -> void:
 
 func _on_mushroom_dead_timer_timeout() -> void:
 	_hud.call_deferred("update_mushrooms")
+	var mushrooms_left: int = get_tree().get_nodes_in_group("mushroom").size()
+	if mushrooms_left == 0:
+		_level_completed()
 
 func _on_mushroom_house_player_hit(point: Node2D) -> void:
 	_player.save_mushrooms(point)
@@ -59,3 +62,6 @@ func _on_mushroom_collected(mushroom: Node2D) -> void:
 
 func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
+
+func _level_completed() -> void:
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/levels/menu_level.tscn")
