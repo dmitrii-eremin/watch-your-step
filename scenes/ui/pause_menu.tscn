@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxoliq3ja2k75"]
+
+[ext_resource type="LabelSettings" uid="uid://b417rllb10c4o" path="res://ui/hud_labels_big.tres" id="1_6tw0m"]
+[ext_resource type="Script" uid="uid://dfqo8rr446jeb" path="res://scenes/ui/pause_menu.gd" id="1_8uki6"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8uki6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 0.5372549)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 48.0
+offset_bottom = 64.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+text = "PAUSE"
+label_settings = ExtResource("1_6tw0m")
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="."]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 24.0
+offset_right = 50.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
