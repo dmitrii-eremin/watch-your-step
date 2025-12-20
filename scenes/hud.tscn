@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dlgniouxy3wtk"]
+[gd_scene load_steps=9 format=3 uid="uid://dlgniouxy3wtk"]
 
 [ext_resource type="Script" uid="uid://cwbt24sknouwh" path="res://scenes/hud.gd" id="1_ahhtf"]
 [ext_resource type="Texture2D" uid="uid://ocqdsfosqwja" path="res://assets/sprites/characters/mushroom_brown.png" id="2_5ysmq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dgs2vs7k2tpas" path="res://assets/sprites/icons/house.png" id="4_6fi6k"]
 [ext_resource type="PackedScene" uid="uid://dxoliq3ja2k75" path="res://scenes/ui/pause_menu.tscn" id="6_047uy"]
 [ext_resource type="PackedScene" uid="uid://d2nytwo5l1yjr" path="res://scenes/ui/pause_button.tscn" id="7_5pdws"]
+[ext_resource type="PackedScene" uid="uid://gtn2wr0ntmue" path="res://scenes/ui/clock.tscn" id="7_hd3ao"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fi6k"]
 atlas = ExtResource("2_5ysmq")
@@ -73,4 +74,15 @@ offset_right = 328.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="Clock" parent="MarginContainer/Control" instance=ExtResource("7_hd3ao")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_vertical = 1
+
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="time_is_out" from="MarginContainer/Control/Clock" to="." method="_on_clock_time_is_out"]

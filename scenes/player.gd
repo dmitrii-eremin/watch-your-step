@@ -22,6 +22,11 @@ func update_virtual_joystick(direction: Vector2) -> void:
 func add_mushroom(mushroom: Node2D) -> void:
 	_mushrooms.push_back(mushroom)
 	mushroom.set_is_caught(true)
+
+func free_mushrooms() -> void:
+	for m in _mushrooms:
+		m.set_is_caught(false)
+	_mushrooms.clear()
 	
 func remove_mushroom(mushroom: Node2D) -> void:
 	var index: int = _mushrooms.find(mushroom)

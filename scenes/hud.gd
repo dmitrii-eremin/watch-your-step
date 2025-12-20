@@ -1,10 +1,13 @@
 extends CanvasLayer
 
+signal time_is_out()
+
 @onready var _stats_container: VBoxContainer = $MarginContainer/Control/StatsVBoxContainer
 @onready var _mushrooms_count_label: Label = $MarginContainer/Control/StatsVBoxContainer/HBoxContainer/CaughtMushroomsLabel
 @onready var _saved_mushrooms_label: Label = $MarginContainer/Control/StatsVBoxContainer/HBoxContainer2/SavedMushroomsLabel
 @onready var _pause_button := $MarginContainer/Control/PauseButton
 @onready var _pause_menu = $PauseMenu
+@onready var _clock = $MarginContainer/Control/Clock
 
 var _collected_mushrooms_count: int = 0
 var _original_mushrooms_count: int = 0
@@ -21,6 +24,12 @@ func update_mushrooms() -> void:
 func show_stats(visibility: bool) -> void:
 	_stats_container.visible = visibility
 	_pause_button.visible = visibility
+	_clock.visible = visibility
+	if visibility:
+		_clock.start()
+	else:
+		_clock.stop(true)
+		
 	
 func _ready() -> void:
 	_original_mushrooms_count = get_tree().get_nodes_in_group("mushroom").size()
@@ -38,3 +47,6 @@ func _on_pause_button_pressed() -> void:
 	if not _pause_button.visible:
 		return
 	_pause_menu.pause()
+
+func _on_clock_time_is_out() -> void:
+	time_is_out.emit()

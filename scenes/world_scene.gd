@@ -74,3 +74,7 @@ func _level_completed() -> void:
 func _on_player_dead() -> void:
 	Globals.is_died = true
 	Transition.change_scene("res://scenes/ui/level_completed.tscn")
+
+func _on_hud_time_is_out() -> void:
+	_player.free_mushrooms()
+	_player.take_damage_and_die()
