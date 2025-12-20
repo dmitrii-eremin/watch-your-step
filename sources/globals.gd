@@ -5,6 +5,7 @@ const LEVELS: Dictionary[String, String] = {
 	"level01": "res://scenes/levels/level_01.tscn",
 	"level02": "res://scenes/levels/level_02.tscn",
 	"level03": "res://scenes/levels/level_03.tscn",
+	"level04": "res://scenes/levels/level_04.tscn",
 }
 
 var current_level: String = "level00"

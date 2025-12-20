@@ -20,7 +20,8 @@ func _ready() -> void:
 	_update_seconds()
 	
 func _update_seconds() -> void:
-	var minutes = floor(_current_seconds / 60)
+	@warning_ignore("integer_division")
+	var minutes = int(_current_seconds / 60)
 	var seconds = _current_seconds % 60
 	_label.text = "%02d:%02d" % [minutes, seconds]
 
