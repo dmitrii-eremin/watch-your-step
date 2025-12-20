@@ -48,4 +48,4 @@ func _goto_next_level() -> void:
 		Transition.change_scene("res://scenes/levels/menu_level.tscn")
 	else:
 		Globals.current_level = next_level
-		Transition.change_scene(Globals.LEVELS[next_level])
+		Transition.change_scene(Globals.LEVELS[next_level].path)

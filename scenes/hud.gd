@@ -7,7 +7,8 @@ signal time_is_out()
 @onready var _saved_mushrooms_label: Label = $MarginContainer/Control/StatsVBoxContainer/HBoxContainer2/SavedMushroomsLabel
 @onready var _pause_button := $MarginContainer/Control/PauseButton
 @onready var _pause_menu = $PauseMenu
-@onready var _clock = $MarginContainer/Control/Clock
+@onready var _level_name = $MarginContainer/Control/VBoxContainer/LevelName
+@onready var _clock = $MarginContainer/Control/VBoxContainer/Clock
 
 var _collected_mushrooms_count: int = 0
 var _original_mushrooms_count: int = 0
@@ -25,6 +26,7 @@ func show_stats(visibility: bool) -> void:
 	_stats_container.visible = visibility
 	_pause_button.visible = visibility
 	_clock.visible = visibility
+	_level_name.visible = visibility
 	if visibility:
 		_clock.start()
 	else:
@@ -35,6 +37,7 @@ func _ready() -> void:
 	_original_mushrooms_count = get_tree().get_nodes_in_group("mushroom").size()
 	update_mushrooms()
 	_update_collected_mushrooms_label()
+	_level_name.text = Globals.LEVELS[Globals.current_level].name
 
 func _update_collected_mushrooms_label() -> void:
 	_saved_mushrooms_label.text = "%d/%d" % [_collected_mushrooms_count, _original_mushrooms_count]

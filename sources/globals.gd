@@ -4,13 +4,20 @@ class LevelInfo:
 	var name: String
 	var path: String
 	var seconds: int
+	
+	func _init(p_name: String, p_path: String, p_seconds: int) -> void:
+		name = p_name
+		path = p_path
+		seconds = p_seconds
 
-const LEVELS: Dictionary[String, String] = {
-	"level00": "res://scenes/levels/level_00.tscn",
-	"level01": "res://scenes/levels/level_01.tscn",
-	"level02": "res://scenes/levels/level_02.tscn",
-	"level03": "res://scenes/levels/level_03.tscn",
-	"level04": "res://scenes/levels/level_04.tscn",
+
+
+var LEVELS: Dictionary[String, LevelInfo] = {
+	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240),
+	"level01": LevelInfo.new("0-1", "res://scenes/levels/level_01.tscn", 300),
+	"level02": LevelInfo.new("0-2", "res://scenes/levels/level_02.tscn", 300),
+	"level03": LevelInfo.new("0-3", "res://scenes/levels/level_03.tscn", 300),
+	"level04": LevelInfo.new("0-4", "res://scenes/levels/level_04.tscn", 600),
 }
 
 var current_level: String = "level00"

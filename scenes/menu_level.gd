@@ -9,5 +9,5 @@ func _ready() -> void:
 
 func _on_start_game(_point: Node2D) -> void:
 	Globals.current_level = Globals.level_to_continue
-	Transition.change_scene(Globals.LEVELS[Globals.current_level])
+	Transition.change_scene(Globals.LEVELS[Globals.current_level].path)
 	

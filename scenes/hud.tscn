@@ -74,15 +74,24 @@ offset_right = 328.0
 grow_horizontal = 1
 grow_vertical = 1
 
-[node name="Clock" parent="MarginContainer/Control" instance=ExtResource("7_hd3ao")]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Control"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_vertical = 1
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="LevelName" type="Label" parent="MarginContainer/Control/VBoxContainer"]
+layout_mode = 2
+text = "0-0"
+label_settings = ExtResource("3_5ysmq")
+horizontal_alignment = 1
+
+[node name="Clock" parent="MarginContainer/Control/VBoxContainer" instance=ExtResource("7_hd3ao")]
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="time_is_out" from="MarginContainer/Control/Clock" to="." method="_on_clock_time_is_out"]
+[connection signal="time_is_out" from="MarginContainer/Control/VBoxContainer/Clock" to="." method="_on_clock_time_is_out"]
