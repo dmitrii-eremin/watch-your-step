@@ -13,6 +13,7 @@ offset_bottom = -232.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ic7of")
+initial_seconds = 0
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
