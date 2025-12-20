@@ -1,5 +1,10 @@
 extends Node
 
+class LevelInfo:
+	var name: String
+	var path: String
+	var seconds: int
+
 const LEVELS: Dictionary[String, String] = {
 	"level00": "res://scenes/levels/level_00.tscn",
 	"level01": "res://scenes/levels/level_01.tscn",

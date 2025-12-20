@@ -30,12 +30,14 @@ const _sprite_frames: Dictionary = {
 
 func _ready() -> void:
 	_sprite.sprite_frames = _sprite_frames[enemy_type]
-	path_follower.progress = 0.0
+	if path_follower != null:
+		path_follower.progress = 0.0
 	
 func _physics_process(delta: float) -> void:
-	path_follower.progress += speed * delta
-	_previous_position = global_position
-	global_position = path_follower.global_position
+	if path_follower != null:
+		path_follower.progress += speed * delta
+		_previous_position = global_position
+		global_position = path_follower.global_position
 	_select_animation()
 	
 func _select_animation() -> void:
