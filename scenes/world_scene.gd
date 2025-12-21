@@ -7,9 +7,16 @@ extends Node2D
 @onready var _camera = $YSortedObjects/Player/PlayerCamera
 
 func _ready() -> void:
+	_initialize_current_level()
 	_initialize_camera()
 	_initialize_mushrooms()
 	_initialize_house()
+	
+func _initialize_current_level() -> void:
+	var level_name: String = self.get_meta("level")
+	if level_name != null:
+		Globals.current_level = level_name
+		_hud.update_metadata()
 	
 func _initialize_house() -> void:
 	var houses = get_tree().get_nodes_in_group(&"house")

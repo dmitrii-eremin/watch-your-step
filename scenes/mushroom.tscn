@@ -8,8 +8,7 @@ radius = 2.0
 height = 6.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qxrkd"]
-radius = 5.0
-height = 14.0
+height = 24.0
 
 [node name="Mushroom" type="CharacterBody2D" groups=["mushroom"]]
 collision_layer = 0

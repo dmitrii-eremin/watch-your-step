@@ -31,16 +31,19 @@ func show_stats(visibility: bool) -> void:
 		_clock.start()
 	else:
 		_clock.stop(true)
-
-func _ready() -> void:
-	_original_mushrooms_count = get_tree().get_nodes_in_group("mushroom").size()
-	update_mushrooms()
-	_update_collected_mushrooms_label()
+		
+func update_metadata() -> void:
 	_level_name.text = Globals.LEVELS[Globals.current_level].name
 	
 	if Globals.LEVELS.has(Globals.current_level):
 		var level_info = Globals.LEVELS[Globals.current_level]
 		_clock.start(level_info.seconds)
+
+func _ready() -> void:
+	_original_mushrooms_count = get_tree().get_nodes_in_group("mushroom").size()
+	update_mushrooms()
+	_update_collected_mushrooms_label()
+	update_metadata()
 
 func _update_collected_mushrooms_label() -> void:
 	_saved_mushrooms_label.text = "%d/%d" % [_collected_mushrooms_count, _original_mushrooms_count]
