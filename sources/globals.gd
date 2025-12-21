@@ -10,8 +10,6 @@ class LevelInfo:
 		path = p_path
 		seconds = p_seconds
 
-
-
 var LEVELS: Dictionary[String, LevelInfo] = {
 	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240),
 	"level01": LevelInfo.new("0-1", "res://scenes/levels/level_01.tscn", 300),
@@ -20,6 +18,8 @@ var LEVELS: Dictionary[String, LevelInfo] = {
 	"level04": LevelInfo.new("0-4", "res://scenes/levels/level_04.tscn", 600),
 	"level05": LevelInfo.new("0-5", "res://scenes/levels/level_05.tscn", 700),
 	"level06": LevelInfo.new("0-6", "res://scenes/levels/level_06.tscn", 600),
+	
+	"level10": LevelInfo.new("1-0", "res://scenes/levels/level_10.tscn", 450),
 }
 
 var current_level: String = "level00"
