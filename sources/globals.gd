@@ -1,25 +1,31 @@
 extends Node
 
+enum Season {
+	Summer, Autumn, Winter,
+}
+
 class LevelInfo:
 	var name: String
 	var path: String
 	var seconds: int
+	var season: Season
 	
-	func _init(p_name: String, p_path: String, p_seconds: int) -> void:
+	func _init(p_name: String, p_path: String, p_seconds: int, p_season: Season) -> void:
 		name = p_name
 		path = p_path
 		seconds = p_seconds
+		season = p_season
 
 var LEVELS: Dictionary[String, LevelInfo] = {
-	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240),
-	"level01": LevelInfo.new("0-1", "res://scenes/levels/level_01.tscn", 300),
-	"level02": LevelInfo.new("0-2", "res://scenes/levels/level_02.tscn", 300),
-	"level03": LevelInfo.new("0-3", "res://scenes/levels/level_03.tscn", 400),
-	"level04": LevelInfo.new("0-4", "res://scenes/levels/level_04.tscn", 600),
-	"level05": LevelInfo.new("0-5", "res://scenes/levels/level_05.tscn", 700),
-	"level06": LevelInfo.new("0-6", "res://scenes/levels/level_06.tscn", 600),
+	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240, Season.Summer),
+	"level01": LevelInfo.new("0-1", "res://scenes/levels/level_01.tscn", 300, Season.Summer),
+	"level02": LevelInfo.new("0-2", "res://scenes/levels/level_02.tscn", 300, Season.Summer),
+	"level03": LevelInfo.new("0-3", "res://scenes/levels/level_03.tscn", 400, Season.Summer),
+	"level04": LevelInfo.new("0-4", "res://scenes/levels/level_04.tscn", 600, Season.Summer),
+	"level05": LevelInfo.new("0-5", "res://scenes/levels/level_05.tscn", 700, Season.Summer),
+	"level06": LevelInfo.new("0-6", "res://scenes/levels/level_06.tscn", 600, Season.Summer),
 	
-	"level10": LevelInfo.new("1-0", "res://scenes/levels/level_10.tscn", 450),
+	"level10": LevelInfo.new("1-0", "res://scenes/levels/level_10.tscn", 450, Season.Autumn),
 }
 
 var current_level: String = "level00"

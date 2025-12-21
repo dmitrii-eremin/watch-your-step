@@ -1,15 +1,11 @@
 @tool
 extends StaticBody2D
 
-enum Season {
-	Summer, Autumn
-}
-
 signal player_hit(point: Node2D)
 
 @export var is_opened: bool = true
 @export var label_text: String = ""
-@export var season: Season = Season.Summer
+@export var season: Globals.Season = Globals.Season.Summer
 
 @onready var _opened_door_sprite: Sprite2D = $OpenedDoorSprite
 @onready var _closed_door_sprite: Sprite2D = $ClosedDoorSprite
@@ -28,8 +24,8 @@ func _ready() -> void:
 	_load_label()
 	
 func _update_main_sprite() -> void:
-	_summer_sprite.visible = season == Season.Summer
-	_autumn_sprite.visible = season == Season.Autumn
+	_summer_sprite.visible = season == Globals.Season.Summer
+	_autumn_sprite.visible = season == Globals.Season.Autumn
 	
 func _update_door_sprite() -> void:
 	_opened_door_sprite.visible = is_opened

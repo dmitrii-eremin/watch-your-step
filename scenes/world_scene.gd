@@ -6,6 +6,8 @@ extends Node2D
 @onready var _tilemap: TileMapLayer = $WorldMap/TileMapLayer
 @onready var _camera = $YSortedObjects/Player/PlayerCamera
 
+var _level_completed_path: String = "res://scenes/ui/level_completed_summer.tscn"
+
 func _ready() -> void:
 	_initialize_current_level()
 	_initialize_camera()
@@ -16,7 +18,20 @@ func _initialize_current_level() -> void:
 	var level_name: String = self.get_meta("level")
 	if level_name != null:
 		Globals.current_level = level_name
+		_level_completed_path = _get_level_completed_path(level_name)
 		_hud.update_metadata()
+		
+func _get_level_completed_path(level_name: String) -> String:
+	if not Globals.LEVELS.has(level_name):
+		return "res://scenes/ui/level_completed_summer.tscn"
+	var season: Globals.Season = Globals.LEVELS[level_name].season
+	if season == Globals.Season.Summer:
+		return "res://scenes/ui/level_completed_summer.tscn"
+	elif season == Globals.Season.Autumn:
+		return "res://scenes/ui/level_completed_autumn.tscn"
+	elif season == Globals.Season.Winter:
+		return "res://scenes/ui/level_completed_winter.tscn"
+	return "res://scenes/ui/level_completed_summer.tscn"
 	
 func _initialize_house() -> void:
 	var houses = get_tree().get_nodes_in_group(&"house")
@@ -76,11 +91,11 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
 
 func _level_completed() -> void:
-	Transition.change_scene("res://scenes/ui/level_completed.tscn")
+	Transition.change_scene(_level_completed_path)
 
 func _on_player_dead() -> void:
 	Globals.is_died = true
-	Transition.change_scene("res://scenes/ui/level_completed.tscn")
+	Transition.change_scene(_level_completed_path)
 
 func _on_hud_time_is_out() -> void:
 	_player.free_mushrooms()
