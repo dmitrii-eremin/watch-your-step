@@ -26,6 +26,7 @@ var LEVELS: Dictionary[String, LevelInfo] = {
 	"level06": LevelInfo.new("0-6", "res://scenes/levels/level_06.tscn", 600, Season.Summer),
 	
 	"level10": LevelInfo.new("1-0", "res://scenes/levels/level_10.tscn", 450, Season.Autumn),
+	"level11": LevelInfo.new("1-1", "res://scenes/levels/level_11.tscn", 500, Season.Autumn),
 }
 
 var current_level: String = "level00"
