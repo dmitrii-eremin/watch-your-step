@@ -8,6 +8,9 @@ signal time_is_out()
 @onready var _label: Label = $Label
 @onready var _timer: Timer = $Timer
 
+func get_time_left() -> int:
+	return _current_seconds
+
 func start(seconds: int = initial_seconds) -> void:
 	_current_seconds = seconds
 	_update_seconds()

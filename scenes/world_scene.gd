@@ -91,6 +91,7 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 	_player.update_virtual_joystick(direction)
 
 func _level_completed() -> void:
+	Globals.time_left = _hud.get_time_left()
 	Transition.change_scene(_level_completed_path)
 
 func _on_player_dead() -> void:

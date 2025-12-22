@@ -16,6 +16,7 @@ tile_map_data = PackedByteArray("AAAFAAEAAAAIAAcAAAAHAAUAAAAIAAcAAAAFAAUAAAAJAAc
 
 [node name="MushroomHouse" parent="YSortedObjects" index="0"]
 position = Vector2(496, 240)
+season = 0
 
 [node name="Player" parent="YSortedObjects" index="1"]
 position = Vector2(28, 16)

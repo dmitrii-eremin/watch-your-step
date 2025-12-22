@@ -13,6 +13,9 @@ signal time_is_out()
 var _collected_mushrooms_count: int = 0
 var _original_mushrooms_count: int = 0
 
+func get_time_left() -> int:
+	return _clock.get_time_left()
+
 func collect_mushroom() -> void:
 	_collected_mushrooms_count += 1
 	_update_collected_mushrooms_label()
