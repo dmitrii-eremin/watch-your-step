@@ -7,7 +7,7 @@ extends Node2D
 @onready var _tilesets: Dictionary = {
 	LevelPreprocessor.LevelType.Summer: preload("res://tilesets/summer.tres"),
 	LevelPreprocessor.LevelType.Autumn: preload("res://tilesets/autumn.tres"),
-	LevelPreprocessor.LevelType.Winter: preload("res://tilesets/summer.tres"),
+	LevelPreprocessor.LevelType.Winter: preload("res://tilesets/winter.tres"),
 }
 
 var _is_already_processed: bool = false
