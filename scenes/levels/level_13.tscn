@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=4 uid="uid://cd1d70thtv1c2"]
+[gd_scene load_steps=6 format=4 uid="uid://cd1d70thtv1c2"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_0l3dn"]
 [ext_resource type="TileSet" uid="uid://7go4p7001ogc" path="res://tilesets/autumn.tres" id="2_2mki6"]
+[ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="3_2mki6"]
+[ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="4_y6ise"]
+[ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="5_pkyvj"]
 
 [node name="Level13" instance=ExtResource("1_0l3dn")]
 metadata/level = "level13"
@@ -20,3 +23,884 @@ season = 1
 
 [node name="Player" parent="YSortedObjects" index="1"]
 position = Vector2(944, 72)
+
+[node name="Obstacles" type="Node2D" parent="YSortedObjects" index="2"]
+y_sort_enabled = true
+
+[node name="Tree" parent="YSortedObjects/Obstacles" index="0" instance=ExtResource("3_2mki6")]
+position = Vector2(1112, 24)
+season = 1
+
+[node name="Tree2" parent="YSortedObjects/Obstacles" index="1" instance=ExtResource("3_2mki6")]
+position = Vector2(1088, 64)
+season = 1
+
+[node name="Tree3" parent="YSortedObjects/Obstacles" index="2" instance=ExtResource("3_2mki6")]
+position = Vector2(1056, 20)
+season = 1
+
+[node name="Tree4" parent="YSortedObjects/Obstacles" index="3" instance=ExtResource("3_2mki6")]
+position = Vector2(848, 8)
+season = 1
+
+[node name="Tree5" parent="YSortedObjects/Obstacles" index="4" instance=ExtResource("3_2mki6")]
+position = Vector2(912, 72)
+season = 1
+
+[node name="Tree6" parent="YSortedObjects/Obstacles" index="5" instance=ExtResource("3_2mki6")]
+position = Vector2(992, 24)
+season = 1
+
+[node name="Tree7" parent="YSortedObjects/Obstacles" index="6" instance=ExtResource("3_2mki6")]
+position = Vector2(1036, 79)
+season = 1
+
+[node name="Tree8" parent="YSortedObjects/Obstacles" index="7" instance=ExtResource("3_2mki6")]
+position = Vector2(348, 40)
+season = 1
+
+[node name="Tree9" parent="YSortedObjects/Obstacles" index="8" instance=ExtResource("3_2mki6")]
+position = Vector2(416, 58)
+season = 1
+
+[node name="Tree10" parent="YSortedObjects/Obstacles" index="9" instance=ExtResource("3_2mki6")]
+position = Vector2(300, 144)
+season = 1
+
+[node name="Tree11" parent="YSortedObjects/Obstacles" index="10" instance=ExtResource("3_2mki6")]
+position = Vector2(40, 46)
+season = 1
+
+[node name="Tree12" parent="YSortedObjects/Obstacles" index="11" instance=ExtResource("3_2mki6")]
+position = Vector2(236, 112)
+season = 1
+
+[node name="Tree13" parent="YSortedObjects/Obstacles" index="12" instance=ExtResource("3_2mki6")]
+position = Vector2(132, 167)
+season = 1
+
+[node name="Tree14" parent="YSortedObjects/Obstacles" index="13" instance=ExtResource("3_2mki6")]
+position = Vector2(252, 40)
+season = 1
+
+[node name="Tree15" parent="YSortedObjects/Obstacles" index="14" instance=ExtResource("3_2mki6")]
+position = Vector2(628, 175)
+season = 1
+
+[node name="Tree16" parent="YSortedObjects/Obstacles" index="15" instance=ExtResource("3_2mki6")]
+position = Vector2(524, 320)
+season = 1
+
+[node name="Tree17" parent="YSortedObjects/Obstacles" index="16" instance=ExtResource("3_2mki6")]
+position = Vector2(492, 276)
+season = 1
+
+[node name="Tree18" parent="YSortedObjects/Obstacles" index="17" instance=ExtResource("3_2mki6")]
+position = Vector2(284, 264)
+season = 1
+
+[node name="Tree19" parent="YSortedObjects/Obstacles" index="18" instance=ExtResource("3_2mki6")]
+position = Vector2(348, 328)
+season = 1
+
+[node name="Tree20" parent="YSortedObjects/Obstacles" index="19" instance=ExtResource("3_2mki6")]
+position = Vector2(428, 280)
+season = 1
+
+[node name="Tree21" parent="YSortedObjects/Obstacles" index="20" instance=ExtResource("3_2mki6")]
+position = Vector2(472, 335)
+season = 1
+
+[node name="Tree22" parent="YSortedObjects/Obstacles" index="21" instance=ExtResource("3_2mki6")]
+position = Vector2(668, 368)
+season = 1
+
+[node name="Tree23" parent="YSortedObjects/Obstacles" index="22" instance=ExtResource("3_2mki6")]
+position = Vector2(576, 160)
+season = 1
+
+[node name="Tree24" parent="YSortedObjects/Obstacles" index="23" instance=ExtResource("3_2mki6")]
+position = Vector2(544, 116)
+season = 1
+
+[node name="Tree25" parent="YSortedObjects/Obstacles" index="24" instance=ExtResource("3_2mki6")]
+position = Vector2(492, 51)
+season = 1
+
+[node name="Tree26" parent="YSortedObjects/Obstacles" index="25" instance=ExtResource("3_2mki6")]
+position = Vector2(400, 168)
+season = 1
+
+[node name="Tree27" parent="YSortedObjects/Obstacles" index="26" instance=ExtResource("3_2mki6")]
+position = Vector2(720, 240)
+season = 1
+
+[node name="Tree28" parent="YSortedObjects/Obstacles" index="27" instance=ExtResource("3_2mki6")]
+position = Vector2(492, 176)
+season = 1
+
+[node name="Tree29" parent="YSortedObjects/Obstacles" index="28" instance=ExtResource("3_2mki6")]
+position = Vector2(372, 592)
+season = 1
+
+[node name="Tree30" parent="YSortedObjects/Obstacles" index="29" instance=ExtResource("3_2mki6")]
+position = Vector2(232, 728)
+season = 1
+
+[node name="Tree31" parent="YSortedObjects/Obstacles" index="30" instance=ExtResource("3_2mki6")]
+position = Vector2(228, 588)
+season = 1
+
+[node name="Tree32" parent="YSortedObjects/Obstacles" index="31" instance=ExtResource("3_2mki6")]
+position = Vector2(20, 576)
+season = 1
+
+[node name="Tree33" parent="YSortedObjects/Obstacles" index="32" instance=ExtResource("3_2mki6")]
+position = Vector2(84, 640)
+season = 1
+
+[node name="Tree34" parent="YSortedObjects/Obstacles" index="33" instance=ExtResource("3_2mki6")]
+position = Vector2(28, 483)
+season = 1
+
+[node name="Tree35" parent="YSortedObjects/Obstacles" index="34" instance=ExtResource("3_2mki6")]
+position = Vector2(296, 622)
+season = 1
+
+[node name="Tree36" parent="YSortedObjects/Obstacles" index="35" instance=ExtResource("3_2mki6")]
+position = Vector2(528, 810)
+season = 1
+
+[node name="Tree37" parent="YSortedObjects/Obstacles" index="36" instance=ExtResource("3_2mki6")]
+position = Vector2(504, 850)
+season = 1
+
+[node name="Tree38" parent="YSortedObjects/Obstacles" index="37" instance=ExtResource("3_2mki6")]
+position = Vector2(472, 806)
+season = 1
+
+[node name="Tree39" parent="YSortedObjects/Obstacles" index="38" instance=ExtResource("3_2mki6")]
+position = Vector2(264, 794)
+season = 1
+
+[node name="Tree40" parent="YSortedObjects/Obstacles" index="39" instance=ExtResource("3_2mki6")]
+position = Vector2(328, 832)
+season = 1
+
+[node name="Tree41" parent="YSortedObjects/Obstacles" index="40" instance=ExtResource("3_2mki6")]
+position = Vector2(408, 810)
+season = 1
+
+[node name="Tree42" parent="YSortedObjects/Obstacles" index="41" instance=ExtResource("3_2mki6")]
+position = Vector2(452, 865)
+season = 1
+
+[node name="Tree43" parent="YSortedObjects/Obstacles" index="42" instance=ExtResource("3_2mki6")]
+position = Vector2(592, 735)
+season = 1
+
+[node name="Tree44" parent="YSortedObjects/Obstacles" index="43" instance=ExtResource("3_2mki6")]
+position = Vector2(528, 930)
+season = 1
+
+[node name="Tree45" parent="YSortedObjects/Obstacles" index="44" instance=ExtResource("3_2mki6")]
+position = Vector2(524, 646)
+season = 1
+
+[node name="Tree46" parent="YSortedObjects/Obstacles" index="45" instance=ExtResource("3_2mki6")]
+position = Vector2(316, 572)
+season = 1
+
+[node name="Tree47" parent="YSortedObjects/Obstacles" index="46" instance=ExtResource("3_2mki6")]
+position = Vector2(380, 698)
+season = 1
+
+[node name="Tree48" parent="YSortedObjects/Obstacles" index="47" instance=ExtResource("3_2mki6")]
+position = Vector2(460, 650)
+season = 1
+
+[node name="Tree49" parent="YSortedObjects/Obstacles" index="48" instance=ExtResource("3_2mki6")]
+position = Vector2(168, 565)
+season = 1
+
+[node name="Tree50" parent="YSortedObjects/Obstacles" index="49" instance=ExtResource("3_2mki6")]
+position = Vector2(904, 292)
+season = 1
+
+[node name="Tree51" parent="YSortedObjects/Obstacles" index="50" instance=ExtResource("3_2mki6")]
+position = Vector2(872, 424)
+season = 1
+
+[node name="Tree52" parent="YSortedObjects/Obstacles" index="51" instance=ExtResource("3_2mki6")]
+position = Vector2(856, 262)
+season = 1
+
+[node name="Tree53" parent="YSortedObjects/Obstacles" index="52" instance=ExtResource("3_2mki6")]
+position = Vector2(640, 276)
+season = 1
+
+[node name="Tree54" parent="YSortedObjects/Obstacles" index="53" instance=ExtResource("3_2mki6")]
+position = Vector2(720, 416)
+season = 1
+
+[node name="Tree55" parent="YSortedObjects/Obstacles" index="54" instance=ExtResource("3_2mki6")]
+position = Vector2(784, 292)
+season = 1
+
+[node name="Tree56" parent="YSortedObjects/Obstacles" index="55" instance=ExtResource("3_2mki6")]
+position = Vector2(820, 408)
+season = 1
+
+[node name="Tree57" parent="YSortedObjects/Obstacles" index="56" instance=ExtResource("3_2mki6")]
+position = Vector2(1148, 510)
+season = 1
+
+[node name="Tree58" parent="YSortedObjects/Obstacles" index="57" instance=ExtResource("3_2mki6")]
+position = Vector2(1124, 550)
+season = 1
+
+[node name="Tree59" parent="YSortedObjects/Obstacles" index="58" instance=ExtResource("3_2mki6")]
+position = Vector2(1092, 506)
+season = 1
+
+[node name="Tree60" parent="YSortedObjects/Obstacles" index="59" instance=ExtResource("3_2mki6")]
+position = Vector2(772, 488)
+season = 1
+
+[node name="Tree61" parent="YSortedObjects/Obstacles" index="60" instance=ExtResource("3_2mki6")]
+position = Vector2(1040, 616)
+season = 1
+
+[node name="Tree62" parent="YSortedObjects/Obstacles" index="61" instance=ExtResource("3_2mki6")]
+position = Vector2(1200, 524)
+season = 1
+
+[node name="Tree63" parent="YSortedObjects/Obstacles" index="62" instance=ExtResource("3_2mki6")]
+position = Vector2(1072, 565)
+season = 1
+
+[node name="Tree64" parent="YSortedObjects/Obstacles" index="63" instance=ExtResource("3_2mki6")]
+position = Vector2(1196, 292)
+season = 1
+
+[node name="Tree65" parent="YSortedObjects/Obstacles" index="64" instance=ExtResource("3_2mki6")]
+position = Vector2(1412, 291)
+season = 1
+
+[node name="Tree66" parent="YSortedObjects/Obstacles" index="65" instance=ExtResource("3_2mki6")]
+position = Vector2(1144, 312)
+season = 1
+
+[node name="Tree67" parent="YSortedObjects/Obstacles" index="66" instance=ExtResource("3_2mki6")]
+position = Vector2(952, 376)
+season = 1
+
+[node name="Tree68" parent="YSortedObjects/Obstacles" index="67" instance=ExtResource("3_2mki6")]
+position = Vector2(1020, 344)
+season = 1
+
+[node name="Tree69" parent="YSortedObjects/Obstacles" index="68" instance=ExtResource("3_2mki6")]
+position = Vector2(1080, 327)
+season = 1
+
+[node name="Tree70" parent="YSortedObjects/Obstacles" index="69" instance=ExtResource("3_2mki6")]
+position = Vector2(1064, 215)
+season = 1
+
+[node name="Tree71" parent="YSortedObjects/Obstacles" index="70" instance=ExtResource("3_2mki6")]
+position = Vector2(1104, 680)
+season = 1
+
+[node name="Tree72" parent="YSortedObjects/Obstacles" index="71" instance=ExtResource("3_2mki6")]
+position = Vector2(1488, 600)
+season = 1
+
+[node name="Tree73" parent="YSortedObjects/Obstacles" index="72" instance=ExtResource("3_2mki6")]
+position = Vector2(1384, 544)
+season = 1
+
+[node name="Tree74" parent="YSortedObjects/Obstacles" index="73" instance=ExtResource("3_2mki6")]
+position = Vector2(824, 688)
+season = 1
+
+[node name="Tree75" parent="YSortedObjects/Obstacles" index="74" instance=ExtResource("3_2mki6")]
+position = Vector2(888, 752)
+season = 1
+
+[node name="Tree76" parent="YSortedObjects/Obstacles" index="75" instance=ExtResource("3_2mki6")]
+position = Vector2(968, 632)
+season = 1
+
+[node name="Tree77" parent="YSortedObjects/Obstacles" index="76" instance=ExtResource("3_2mki6")]
+position = Vector2(724, 663)
+season = 1
+
+[node name="Tree78" parent="YSortedObjects/Obstacles" index="77" instance=ExtResource("3_2mki6")]
+position = Vector2(1424, 840)
+season = 1
+
+[node name="Tree79" parent="YSortedObjects/Obstacles" index="78" instance=ExtResource("3_2mki6")]
+position = Vector2(1244, 831)
+season = 1
+
+[node name="Tree80" parent="YSortedObjects/Obstacles" index="79" instance=ExtResource("3_2mki6")]
+position = Vector2(1136, 806)
+season = 1
+
+[node name="Tree81" parent="YSortedObjects/Obstacles" index="80" instance=ExtResource("3_2mki6")]
+position = Vector2(1068, 906)
+season = 1
+
+[node name="Tree82" parent="YSortedObjects/Obstacles" index="81" instance=ExtResource("3_2mki6")]
+position = Vector2(1112, 923)
+season = 1
+
+[node name="Tree83" parent="YSortedObjects/Obstacles" index="82" instance=ExtResource("3_2mki6")]
+position = Vector2(1212, 664)
+season = 1
+
+[node name="Tree84" parent="YSortedObjects/Obstacles" index="83" instance=ExtResource("3_2mki6")]
+position = Vector2(988, 1152)
+season = 1
+
+[node name="Tree85" parent="YSortedObjects/Obstacles" index="84" instance=ExtResource("3_2mki6")]
+position = Vector2(1384, 762)
+season = 1
+
+[node name="Tree86" parent="YSortedObjects/Obstacles" index="85" instance=ExtResource("3_2mki6")]
+position = Vector2(1360, 802)
+season = 1
+
+[node name="Tree87" parent="YSortedObjects/Obstacles" index="86" instance=ExtResource("3_2mki6")]
+position = Vector2(1328, 758)
+season = 1
+
+[node name="Tree88" parent="YSortedObjects/Obstacles" index="87" instance=ExtResource("3_2mki6")]
+position = Vector2(1152, 744)
+season = 1
+
+[node name="Tree89" parent="YSortedObjects/Obstacles" index="88" instance=ExtResource("3_2mki6")]
+position = Vector2(1368, 698)
+season = 1
+
+[node name="Tree90" parent="YSortedObjects/Obstacles" index="89" instance=ExtResource("3_2mki6")]
+position = Vector2(1440, 583)
+season = 1
+
+[node name="Tree91" parent="YSortedObjects/Obstacles" index="90" instance=ExtResource("3_2mki6")]
+position = Vector2(1308, 817)
+season = 1
+
+[node name="Tree92" parent="YSortedObjects/Obstacles" index="91" instance=ExtResource("3_2mki6")]
+position = Vector2(716, 824)
+season = 1
+
+[node name="Tree93" parent="YSortedObjects/Obstacles" index="92" instance=ExtResource("3_2mki6")]
+position = Vector2(692, 1024)
+season = 1
+
+[node name="Tree94" parent="YSortedObjects/Obstacles" index="93" instance=ExtResource("3_2mki6")]
+position = Vector2(660, 980)
+season = 1
+
+[node name="Tree95" parent="YSortedObjects/Obstacles" index="94" instance=ExtResource("3_2mki6")]
+position = Vector2(700, 920)
+season = 1
+
+[node name="Tree96" parent="YSortedObjects/Obstacles" index="95" instance=ExtResource("3_2mki6")]
+position = Vector2(568, 680)
+season = 1
+
+[node name="Tree97" parent="YSortedObjects/Obstacles" index="96" instance=ExtResource("3_2mki6")]
+position = Vector2(596, 984)
+season = 1
+
+[node name="Tree98" parent="YSortedObjects/Obstacles" index="97" instance=ExtResource("3_2mki6")]
+position = Vector2(640, 1039)
+season = 1
+
+[node name="Tree99" parent="YSortedObjects/Obstacles" index="98" instance=ExtResource("3_2mki6")]
+position = Vector2(680, 1280)
+season = 1
+
+[node name="Tree100" parent="YSortedObjects/Obstacles" index="99" instance=ExtResource("3_2mki6")]
+position = Vector2(936, 1242)
+season = 1
+
+[node name="Tree101" parent="YSortedObjects/Obstacles" index="100" instance=ExtResource("3_2mki6")]
+position = Vector2(904, 1198)
+season = 1
+
+[node name="Tree102" parent="YSortedObjects/Obstacles" index="101" instance=ExtResource("3_2mki6")]
+position = Vector2(696, 1186)
+season = 1
+
+[node name="Tree103" parent="YSortedObjects/Obstacles" index="102" instance=ExtResource("3_2mki6")]
+position = Vector2(760, 1250)
+season = 1
+
+[node name="Tree104" parent="YSortedObjects/Obstacles" index="103" instance=ExtResource("3_2mki6")]
+position = Vector2(840, 1202)
+season = 1
+
+[node name="Tree105" parent="YSortedObjects/Obstacles" index="104" instance=ExtResource("3_2mki6")]
+position = Vector2(884, 1257)
+season = 1
+
+[node name="Tree106" parent="YSortedObjects/Obstacles" index="105" instance=ExtResource("3_2mki6")]
+position = Vector2(648, 1123)
+season = 1
+
+[node name="Tree107" parent="YSortedObjects/Obstacles" index="106" instance=ExtResource("3_2mki6")]
+position = Vector2(792, 1127)
+season = 1
+
+[node name="Tree108" parent="YSortedObjects/Obstacles" index="107" instance=ExtResource("3_2mki6")]
+position = Vector2(956, 1038)
+season = 1
+
+[node name="Tree109" parent="YSortedObjects/Obstacles" index="108" instance=ExtResource("3_2mki6")]
+position = Vector2(788, 728)
+season = 1
+
+[node name="Tree110" parent="YSortedObjects/Obstacles" index="109" instance=ExtResource("3_2mki6")]
+position = Vector2(628, 848)
+season = 1
+
+[node name="Tree111" parent="YSortedObjects/Obstacles" index="110" instance=ExtResource("3_2mki6")]
+position = Vector2(812, 783)
+season = 1
+
+[node name="Tree112" parent="YSortedObjects/Obstacles" index="111" instance=ExtResource("3_2mki6")]
+position = Vector2(936, 1097)
+season = 1
+
+[node name="Tree113" parent="YSortedObjects/Obstacles" index="112" instance=ExtResource("3_2mki6")]
+position = Vector2(1208, 872)
+season = 1
+
+[node name="Tree114" parent="YSortedObjects/Obstacles" index="113" instance=ExtResource("3_2mki6")]
+position = Vector2(844, 1127)
+season = 1
+
+[node name="Tree115" parent="YSortedObjects/Obstacles" index="114" instance=ExtResource("3_2mki6")]
+position = Vector2(1012, 904)
+season = 1
+
+[node name="Tree116" parent="YSortedObjects/Obstacles" index="115" instance=ExtResource("3_2mki6")]
+position = Vector2(892, 712)
+season = 1
+
+[node name="Tree117" parent="YSortedObjects/Obstacles" index="116" instance=ExtResource("3_2mki6")]
+position = Vector2(924, 1016)
+season = 1
+
+[node name="Tree118" parent="YSortedObjects/Obstacles" index="117" instance=ExtResource("3_2mki6")]
+position = Vector2(1004, 968)
+season = 1
+
+[node name="Tree119" parent="YSortedObjects/Obstacles" index="118" instance=ExtResource("3_2mki6")]
+position = Vector2(648, 1242)
+season = 1
+
+[node name="Tree120" parent="YSortedObjects/Obstacles" index="119" instance=ExtResource("3_2mki6")]
+position = Vector2(1372, 1164)
+season = 1
+
+[node name="Tree121" parent="YSortedObjects/Obstacles" index="120" instance=ExtResource("3_2mki6")]
+position = Vector2(1344, 1209)
+season = 1
+
+[node name="Tree122" parent="YSortedObjects/Obstacles" index="121" instance=ExtResource("3_2mki6")]
+position = Vector2(1272, 1212)
+season = 1
+
+[node name="Tree123" parent="YSortedObjects/Obstacles" index="122" instance=ExtResource("3_2mki6")]
+position = Vector2(956, 1288)
+season = 1
+
+[node name="Tree124" parent="YSortedObjects/Obstacles" index="123" instance=ExtResource("3_2mki6")]
+position = Vector2(1196, 1223)
+season = 1
+
+[node name="Tree125" parent="YSortedObjects/Obstacles" index="124" instance=ExtResource("3_2mki6")]
+position = Vector2(1184, 1128)
+season = 1
+
+[node name="Tree126" parent="YSortedObjects/Obstacles" index="125" instance=ExtResource("3_2mki6")]
+position = Vector2(1252, 1177)
+season = 1
+
+[node name="Tree127" parent="YSortedObjects/Obstacles" index="126" instance=ExtResource("3_2mki6")]
+position = Vector2(1320, 1120)
+season = 1
+
+[node name="Tree128" parent="YSortedObjects/Obstacles" index="127" instance=ExtResource("3_2mki6")]
+position = Vector2(1200, 1170)
+season = 1
+
+[node name="Tree129" parent="YSortedObjects/Obstacles" index="128" instance=ExtResource("3_2mki6")]
+position = Vector2(1372, 998)
+season = 1
+
+[node name="Tree130" parent="YSortedObjects/Obstacles" index="129" instance=ExtResource("3_2mki6")]
+position = Vector2(1140, 888)
+season = 1
+
+[node name="Tree131" parent="YSortedObjects/Obstacles" index="130" instance=ExtResource("3_2mki6")]
+position = Vector2(1220, 1074)
+season = 1
+
+[node name="Tree132" parent="YSortedObjects/Obstacles" index="131" instance=ExtResource("3_2mki6")]
+position = Vector2(1300, 1008)
+season = 1
+
+[node name="Tree133" parent="YSortedObjects/Obstacles" index="132" instance=ExtResource("3_2mki6")]
+position = Vector2(1344, 1081)
+season = 1
+
+[node name="Tree134" parent="YSortedObjects/Obstacles" index="133" instance=ExtResource("3_2mki6")]
+position = Vector2(244, 513)
+season = 1
+
+[node name="Tree135" parent="YSortedObjects/Obstacles" index="134" instance=ExtResource("3_2mki6")]
+position = Vector2(96, 1031)
+season = 1
+
+[node name="Tree136" parent="YSortedObjects/Obstacles" index="135" instance=ExtResource("3_2mki6")]
+position = Vector2(64, 802)
+season = 1
+
+[node name="Tree137" parent="YSortedObjects/Obstacles" index="136" instance=ExtResource("3_2mki6")]
+position = Vector2(88, 426)
+season = 1
+
+[node name="Tree138" parent="YSortedObjects/Obstacles" index="137" instance=ExtResource("3_2mki6")]
+position = Vector2(144, 480)
+season = 1
+
+[node name="Tree139" parent="YSortedObjects/Obstacles" index="138" instance=ExtResource("3_2mki6")]
+position = Vector2(248, 850)
+season = 1
+
+[node name="Tree140" parent="YSortedObjects/Obstacles" index="139" instance=ExtResource("3_2mki6")]
+position = Vector2(32, 824)
+season = 1
+
+[node name="Tree141" parent="YSortedObjects/Obstacles" index="140" instance=ExtResource("3_2mki6")]
+position = Vector2(364, 1209)
+season = 1
+
+[node name="Tree142" parent="YSortedObjects/Obstacles" index="141" instance=ExtResource("3_2mki6")]
+position = Vector2(396, 1111)
+season = 1
+
+[node name="Tree143" parent="YSortedObjects/Obstacles" index="142" instance=ExtResource("3_2mki6")]
+position = Vector2(308, 1205)
+season = 1
+
+[node name="Tree144" parent="YSortedObjects/Obstacles" index="143" instance=ExtResource("3_2mki6")]
+position = Vector2(100, 1193)
+season = 1
+
+[node name="Tree145" parent="YSortedObjects/Obstacles" index="144" instance=ExtResource("3_2mki6")]
+position = Vector2(160, 1230)
+season = 1
+
+[node name="Tree146" parent="YSortedObjects/Obstacles" index="145" instance=ExtResource("3_2mki6")]
+position = Vector2(244, 1209)
+season = 1
+
+[node name="Tree147" parent="YSortedObjects/Obstacles" index="146" instance=ExtResource("3_2mki6")]
+position = Vector2(252, 1033)
+season = 1
+
+[node name="Tree148" parent="YSortedObjects/Obstacles" index="147" instance=ExtResource("3_2mki6")]
+position = Vector2(44, 1120)
+season = 1
+
+[node name="Tree149" parent="YSortedObjects/Obstacles" index="148" instance=ExtResource("3_2mki6")]
+position = Vector2(424, 1159)
+season = 1
+
+[node name="Tree150" parent="YSortedObjects/Obstacles" index="149" instance=ExtResource("3_2mki6")]
+position = Vector2(60, 1063)
+season = 1
+
+[node name="Tree151" parent="YSortedObjects/Obstacles" index="150" instance=ExtResource("3_2mki6")]
+position = Vector2(152, 1033)
+season = 1
+
+[node name="Tree152" parent="YSortedObjects/Obstacles" index="151" instance=ExtResource("3_2mki6")]
+position = Vector2(216, 1097)
+season = 1
+
+[node name="Tree153" parent="YSortedObjects/Obstacles" index="152" instance=ExtResource("3_2mki6")]
+position = Vector2(296, 1049)
+season = 1
+
+[node name="Tree154" parent="YSortedObjects/Obstacles" index="153" instance=ExtResource("3_2mki6")]
+position = Vector2(340, 1104)
+season = 1
+
+[node name="Tree155" parent="YSortedObjects/Obstacles" index="154" instance=ExtResource("3_2mki6")]
+position = Vector2(1460, 160)
+season = 1
+
+[node name="Tree156" parent="YSortedObjects/Obstacles" index="155" instance=ExtResource("3_2mki6")]
+position = Vector2(1348, 303)
+season = 1
+
+[node name="Tree157" parent="YSortedObjects/Obstacles" index="156" instance=ExtResource("3_2mki6")]
+position = Vector2(1488, 104)
+season = 1
+
+[node name="Tree158" parent="YSortedObjects/Obstacles" index="157" instance=ExtResource("3_2mki6")]
+position = Vector2(1296, 53)
+season = 1
+
+[node name="Tree159" parent="YSortedObjects/Obstacles" index="158" instance=ExtResource("3_2mki6")]
+position = Vector2(1260, 208)
+season = 1
+
+[node name="Tree160" parent="YSortedObjects/Obstacles" index="159" instance=ExtResource("3_2mki6")]
+position = Vector2(1289, 144)
+season = 1
+
+[node name="Tree161" parent="YSortedObjects/Obstacles" index="160" instance=ExtResource("3_2mki6")]
+position = Vector2(1120, 232)
+season = 1
+
+[node name="Tree162" parent="YSortedObjects/Obstacles" index="161" instance=ExtResource("3_2mki6")]
+position = Vector2(1484, 232)
+season = 1
+
+[node name="Tree163" parent="YSortedObjects/Obstacles" index="162" instance=ExtResource("3_2mki6")]
+position = Vector2(1460, 688)
+season = 1
+
+[node name="Tree164" parent="YSortedObjects/Obstacles" index="163" instance=ExtResource("3_2mki6")]
+position = Vector2(1240, 544)
+season = 1
+
+[node name="Tree165" parent="YSortedObjects/Obstacles" index="164" instance=ExtResource("3_2mki6")]
+position = Vector2(1476, 276)
+season = 1
+
+[node name="Tree166" parent="YSortedObjects/Obstacles" index="165" instance=ExtResource("3_2mki6")]
+position = Vector2(1464, 776)
+season = 1
+
+[node name="Tree167" parent="YSortedObjects/Obstacles" index="166" instance=ExtResource("3_2mki6")]
+position = Vector2(1472, 544)
+season = 1
+
+[node name="Tree168" parent="YSortedObjects/Obstacles" index="167" instance=ExtResource("3_2mki6")]
+position = Vector2(1332, 528)
+season = 1
+
+[node name="Tree169" parent="YSortedObjects/Obstacles" index="168" instance=ExtResource("3_2mki6")]
+position = Vector2(1484, 44)
+season = 1
+
+[node name="Tree170" parent="YSortedObjects/Obstacles" index="169" instance=ExtResource("3_2mki6")]
+position = Vector2(1460, 84)
+season = 1
+
+[node name="Tree171" parent="YSortedObjects/Obstacles" index="170" instance=ExtResource("3_2mki6")]
+position = Vector2(1428, 40)
+season = 1
+
+[node name="Tree172" parent="YSortedObjects/Obstacles" index="171" instance=ExtResource("3_2mki6")]
+position = Vector2(1280, 280)
+season = 1
+
+[node name="Tree173" parent="YSortedObjects/Obstacles" index="172" instance=ExtResource("3_2mki6")]
+position = Vector2(1380, 346)
+season = 1
+
+[node name="Tree174" parent="YSortedObjects/Obstacles" index="173" instance=ExtResource("3_2mki6")]
+position = Vector2(1364, 44)
+season = 1
+
+[node name="Tree175" parent="YSortedObjects/Obstacles" index="174" instance=ExtResource("3_2mki6")]
+position = Vector2(952, 240)
+season = 1
+
+[node name="Stone" parent="YSortedObjects/Obstacles" index="175" instance=ExtResource("4_y6ise")]
+position = Vector2(356, 240)
+season = 1
+
+[node name="Stone2" parent="YSortedObjects/Obstacles" index="176" instance=ExtResource("4_y6ise")]
+position = Vector2(104, 75)
+season = 1
+
+[node name="Stone3" parent="YSortedObjects/Obstacles" index="177" instance=ExtResource("4_y6ise")]
+position = Vector2(732, 351)
+season = 1
+
+[node name="Stone4" parent="YSortedObjects/Obstacles" index="178" instance=ExtResource("4_y6ise")]
+position = Vector2(552, 221)
+season = 1
+
+[node name="Stone5" parent="YSortedObjects/Obstacles" index="179" instance=ExtResource("4_y6ise")]
+position = Vector2(440, 717)
+season = 1
+
+[node name="Stone6" parent="YSortedObjects/Obstacles" index="180" instance=ExtResource("4_y6ise")]
+position = Vector2(148, 680)
+season = 1
+
+[node name="Stone7" parent="YSortedObjects/Obstacles" index="181" instance=ExtResource("4_y6ise")]
+position = Vector2(124, 824)
+season = 1
+
+[node name="Stone8" parent="YSortedObjects/Obstacles" index="182" instance=ExtResource("4_y6ise")]
+position = Vector2(1376, 208)
+season = 1
+
+[node name="Stone9" parent="YSortedObjects/Obstacles" index="183" instance=ExtResource("4_y6ise")]
+position = Vector2(696, 705)
+season = 1
+
+[node name="Stone10" parent="YSortedObjects/Obstacles" index="184" instance=ExtResource("4_y6ise")]
+position = Vector2(1232, 599)
+season = 1
+
+[node name="Stone11" parent="YSortedObjects/Obstacles" index="185" instance=ExtResource("4_y6ise")]
+position = Vector2(592, 1049)
+season = 1
+
+[node name="Stone12" parent="YSortedObjects/Obstacles" index="186" instance=ExtResource("4_y6ise")]
+position = Vector2(260, 1136)
+season = 1
+
+[node name="Stone13" parent="YSortedObjects/Obstacles" index="187" instance=ExtResource("4_y6ise")]
+position = Vector2(760, 1160)
+season = 1
+
+[node name="Stone14" parent="YSortedObjects/Obstacles" index="188" instance=ExtResource("4_y6ise")]
+position = Vector2(1268, 1015)
+season = 1
+
+[node name="Stone15" parent="YSortedObjects/Obstacles" index="189" instance=ExtResource("4_y6ise")]
+position = Vector2(1200, 595)
+season = 1
+
+[node name="Stone16" parent="YSortedObjects/Obstacles" index="190" instance=ExtResource("4_y6ise")]
+position = Vector2(1484, 837)
+season = 1
+
+[node name="Mushrooms" type="Node2D" parent="YSortedObjects" index="3"]
+y_sort_enabled = true
+
+[node name="Mushroom" parent="YSortedObjects/Mushrooms" index="0" instance=ExtResource("5_pkyvj")]
+position = Vector2(1016, 5)
+
+[node name="Mushroom2" parent="YSortedObjects/Mushrooms" index="1" instance=ExtResource("5_pkyvj")]
+position = Vector2(904, 224)
+
+[node name="Mushroom3" parent="YSortedObjects/Mushrooms" index="2" instance=ExtResource("5_pkyvj")]
+position = Vector2(1340, 32)
+
+[node name="Mushroom4" parent="YSortedObjects/Mushrooms" index="3" instance=ExtResource("5_pkyvj")]
+position = Vector2(1480, 119)
+
+[node name="Mushroom5" parent="YSortedObjects/Mushrooms" index="4" instance=ExtResource("5_pkyvj")]
+position = Vector2(1460, 256)
+
+[node name="Mushroom6" parent="YSortedObjects/Mushrooms" index="5" instance=ExtResource("5_pkyvj")]
+position = Vector2(1268, 233)
+
+[node name="Mushroom7" parent="YSortedObjects/Mushrooms" index="6" instance=ExtResource("5_pkyvj")]
+position = Vector2(592, 335)
+
+[node name="Mushroom8" parent="YSortedObjects/Mushrooms" index="7" instance=ExtResource("5_pkyvj")]
+position = Vector2(744, 332)
+
+[node name="Mushroom9" parent="YSortedObjects/Mushrooms" index="8" instance=ExtResource("5_pkyvj")]
+position = Vector2(440, 8)
+
+[node name="Mushroom10" parent="YSortedObjects/Mushrooms" index="9" instance=ExtResource("5_pkyvj")]
+position = Vector2(528, 14)
+
+[node name="Mushroom11" parent="YSortedObjects/Mushrooms" index="10" instance=ExtResource("5_pkyvj")]
+position = Vector2(324, 310)
+
+[node name="Mushroom12" parent="YSortedObjects/Mushrooms" index="11" instance=ExtResource("5_pkyvj")]
+position = Vector2(560, 111)
+
+[node name="Mushroom13" parent="YSortedObjects/Mushrooms" index="12" instance=ExtResource("5_pkyvj")]
+position = Vector2(88, 60)
+
+[node name="Mushroom14" parent="YSortedObjects/Mushrooms" index="13" instance=ExtResource("5_pkyvj")]
+position = Vector2(52, 408)
+
+[node name="Mushroom15" parent="YSortedObjects/Mushrooms" index="14" instance=ExtResource("5_pkyvj")]
+position = Vector2(268, 528)
+
+[node name="Mushroom16" parent="YSortedObjects/Mushrooms" index="15" instance=ExtResource("5_pkyvj")]
+position = Vector2(20, 609)
+
+[node name="Mushroom17" parent="YSortedObjects/Mushrooms" index="16" instance=ExtResource("5_pkyvj")]
+position = Vector2(88, 712)
+
+[node name="Mushroom18" parent="YSortedObjects/Mushrooms" index="17" instance=ExtResource("5_pkyvj")]
+position = Vector2(232, 805)
+
+[node name="Mushroom19" parent="YSortedObjects/Mushrooms" index="18" instance=ExtResource("5_pkyvj")]
+position = Vector2(452, 698)
+
+[node name="Mushroom20" parent="YSortedObjects/Mushrooms" index="19" instance=ExtResource("5_pkyvj")]
+position = Vector2(584, 656)
+
+[node name="Mushroom21" parent="YSortedObjects/Mushrooms" index="20" instance=ExtResource("5_pkyvj")]
+position = Vector2(496, 895)
+
+[node name="Mushroom22" parent="YSortedObjects/Mushrooms" index="21" instance=ExtResource("5_pkyvj")]
+position = Vector2(724, 698)
+
+[node name="Mushroom23" parent="YSortedObjects/Mushrooms" index="22" instance=ExtResource("5_pkyvj")]
+position = Vector2(1064, 600)
+
+[node name="Mushroom24" parent="YSortedObjects/Mushrooms" index="23" instance=ExtResource("5_pkyvj")]
+position = Vector2(1452, 801)
+
+[node name="Mushroom25" parent="YSortedObjects/Mushrooms" index="24" instance=ExtResource("5_pkyvj")]
+position = Vector2(1456, 483)
+
+[node name="Mushroom26" parent="YSortedObjects/Mushrooms" index="25" instance=ExtResource("5_pkyvj")]
+position = Vector2(1036, 857)
+
+[node name="Mushroom27" parent="YSortedObjects/Mushrooms" index="26" instance=ExtResource("5_pkyvj")]
+position = Vector2(864, 1072)
+
+[node name="Mushroom28" parent="YSortedObjects/Mushrooms" index="27" instance=ExtResource("5_pkyvj")]
+position = Vector2(628, 1219)
+
+[node name="Mushroom29" parent="YSortedObjects/Mushrooms" index="28" instance=ExtResource("5_pkyvj")]
+position = Vector2(916, 1272)
+
+[node name="Mushroom30" parent="YSortedObjects/Mushrooms" index="29" instance=ExtResource("5_pkyvj")]
+position = Vector2(520, 1182)
+
+[node name="Mushroom31" parent="YSortedObjects/Mushrooms" index="30" instance=ExtResource("5_pkyvj")]
+position = Vector2(84, 1056)
+
+[node name="Mushroom32" parent="YSortedObjects/Mushrooms" index="31" instance=ExtResource("5_pkyvj")]
+position = Vector2(128, 1228)
+
+[node name="Mushroom33" parent="YSortedObjects/Mushrooms" index="32" instance=ExtResource("5_pkyvj")]
+position = Vector2(316, 1145)
+
+[node name="Mushroom34" parent="YSortedObjects/Mushrooms" index="33" instance=ExtResource("5_pkyvj")]
+position = Vector2(1360, 1022)
+
+[node name="Mushroom35" parent="YSortedObjects/Mushrooms" index="34" instance=ExtResource("5_pkyvj")]
+position = Vector2(1224, 1212)
+
+[node name="Mushroom36" parent="YSortedObjects/Mushrooms" index="35" instance=ExtResource("5_pkyvj")]
+position = Vector2(1372, 1186)
+
+[node name="Enemies" type="Node2D" parent="YSortedObjects" index="4"]
+y_sort_enabled = true
