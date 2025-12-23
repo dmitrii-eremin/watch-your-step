@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://e8gexplukuwo"]
+
+[ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_5k350"]
+[ext_resource type="TileSet" uid="uid://cov4qvv0lopil" path="res://tilesets/winter.tres" id="2_ipl4r"]
+
+[node name="Level21" instance=ExtResource("1_5k350")]
+metadata/level = "level21"
+
+[node name="TileMapLayer" parent="WorldMap" index="0"]
+tile_map_data = PackedByteArray(0, 0, 4, 0, 7, 0, 3, 0, 1, 0, 11, 0, 0, 0)
+tile_set = ExtResource("2_ipl4r")
+
+[node name="SecondGroundLevelLayer" parent="WorldMap" index="1"]
+tile_set = ExtResource("2_ipl4r")
+
+[node name="MushroomHouse" parent="YSortedObjects" index="0"]
+season = 2
