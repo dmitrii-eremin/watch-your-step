@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfav76elus1cx"]
+[gd_scene load_steps=9 format=3 uid="uid://cfav76elus1cx"]
 
 [ext_resource type="Texture2D" uid="uid://fpbo30grw362" path="res://assets/sprites/objects/summer_and_spring.png" id="1_avsvi"]
 [ext_resource type="Script" uid="uid://c7725bna0pu0v" path="res://scenes/obstacle.gd" id="1_vplca"]
 [ext_resource type="Texture2D" uid="uid://c0gn8rmclr58k" path="res://assets/sprites/objects/autumn.png" id="3_viusy"]
+[ext_resource type="Texture2D" uid="uid://c8o7sle2sjtyv" path="res://assets/sprites/objects/winter.png" id="4_qd6xs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vplca"]
 atlas = ExtResource("1_avsvi")
@@ -11,6 +12,10 @@ region = Rect2(104, 160, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qd6xs"]
 atlas = ExtResource("3_viusy")
 region = Rect2(60, 144, 36, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ake3r"]
+atlas = ExtResource("4_qd6xs")
+region = Rect2(60, 160, 36, 48)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_viusy"]
 radius = 5.0
@@ -26,6 +31,10 @@ texture = SubResource("AtlasTexture_vplca")
 [node name="Autumn" type="Sprite2D" parent="."]
 position = Vector2(-2, -17)
 texture = SubResource("AtlasTexture_qd6xs")
+
+[node name="Winter" type="Sprite2D" parent="."]
+position = Vector2(-2, -17)
+texture = SubResource("AtlasTexture_ake3r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

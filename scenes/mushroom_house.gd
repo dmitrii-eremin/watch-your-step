@@ -11,8 +11,10 @@ signal player_hit(point: Node2D)
 @onready var _closed_door_sprite: Sprite2D = $ClosedDoorSprite
 @onready var _door_point: Node2D = $DoorPoint
 @onready var _label: Label = $Label
+
 @onready var _summer_sprite: Sprite2D = $SummerSprite2D
 @onready var _autumn_sprite: Sprite2D = $AutumnSprite2D
+@onready var _winter_sprite: Sprite2D = $WinterSprite2D
 
 func open_door(opened: bool) -> void:
 	is_opened = opened
@@ -26,6 +28,7 @@ func _ready() -> void:
 func _update_main_sprite() -> void:
 	_summer_sprite.visible = season == Globals.Season.Summer
 	_autumn_sprite.visible = season == Globals.Season.Autumn
+	_winter_sprite.visible = season == Globals.Season.Winter
 	
 func _update_door_sprite() -> void:
 	_opened_door_sprite.visible = is_opened
