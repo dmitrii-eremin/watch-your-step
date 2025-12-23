@@ -18,19 +18,20 @@ class LevelInfo:
 
 var LEVELS: Dictionary[String, LevelInfo] = {
 	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240, Season.Summer),
-	"level01": LevelInfo.new("0-1", "res://scenes/levels/level_01.tscn", 360, Season.Summer),
-	"level02": LevelInfo.new("0-2", "res://scenes/levels/level_02.tscn", 360, Season.Summer),
-	"level03": LevelInfo.new("0-3", "res://scenes/levels/level_03.tscn", 460, Season.Summer),
-	"level04": LevelInfo.new("0-4", "res://scenes/levels/level_04.tscn", 660, Season.Summer),
-	"level05": LevelInfo.new("0-5", "res://scenes/levels/level_05.tscn", 720, Season.Summer),
-	"level06": LevelInfo.new("0-6", "res://scenes/levels/level_06.tscn", 660, Season.Summer),
+
+	"level01": LevelInfo.new("1-1", "res://scenes/levels/level_01.tscn", 360, Season.Summer),
+	"level02": LevelInfo.new("1-2", "res://scenes/levels/level_02.tscn", 360, Season.Summer),
+	"level03": LevelInfo.new("1-3", "res://scenes/levels/level_03.tscn", 460, Season.Summer),
+	"level04": LevelInfo.new("1-4", "res://scenes/levels/level_04.tscn", 660, Season.Summer),
+	"level05": LevelInfo.new("1-5", "res://scenes/levels/level_05.tscn", 720, Season.Summer),
+	"level06": LevelInfo.new("1-6", "res://scenes/levels/level_06.tscn", 660, Season.Summer),
 	
-	"level10": LevelInfo.new("1-0", "res://scenes/levels/level_10.tscn", 550, Season.Autumn),
-	"level11": LevelInfo.new("1-1", "res://scenes/levels/level_11.tscn", 600, Season.Autumn),
-	"level12": LevelInfo.new("1-2", "res://scenes/levels/level_12.tscn", 600, Season.Autumn),
-	"level13": LevelInfo.new("1-3", "res://scenes/levels/level_13.tscn", 900, Season.Autumn),
-	"level14": LevelInfo.new("1-4", "res://scenes/levels/level_14.tscn", 720, Season.Autumn),
-	"level15": LevelInfo.new("1-5", "res://scenes/levels/level_15.tscn", 800, Season.Autumn),
+	"level10": LevelInfo.new("2-1", "res://scenes/levels/level_10.tscn", 550, Season.Autumn),
+	"level11": LevelInfo.new("2-2", "res://scenes/levels/level_11.tscn", 600, Season.Autumn),
+	"level12": LevelInfo.new("2-3", "res://scenes/levels/level_12.tscn", 600, Season.Autumn),
+	"level13": LevelInfo.new("2-4", "res://scenes/levels/level_13.tscn", 900, Season.Autumn),
+	"level14": LevelInfo.new("2-5", "res://scenes/levels/level_14.tscn", 720, Season.Autumn),
+	"level15": LevelInfo.new("2-6", "res://scenes/levels/level_15.tscn", 800, Season.Autumn),
 }
 
 var current_level: String = "level00"
