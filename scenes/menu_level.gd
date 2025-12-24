@@ -11,3 +11,5 @@ func _on_start_game(_point: Node2D) -> void:
 	Globals.current_level = Globals.level_to_continue
 	Transition.change_scene(Globals.LEVELS[Globals.current_level].path)
 	
+func _on_select_level_house_player_hit(point: Node2D) -> void:
+	Transition.change_scene("res://scenes/levels/select_level.tscn")
