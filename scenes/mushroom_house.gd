@@ -37,6 +37,10 @@ func _update_door_sprite() -> void:
 func _load_label() -> void:
 	_label.text = label_text
 	_label.visible = label_text != ""
+	
+func set_house_label(value: String) -> void:
+	label_text = value
+	_load_label()
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("player"):

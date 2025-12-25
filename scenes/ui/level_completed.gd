@@ -27,6 +27,10 @@ func _ready() -> void:
 	_update_texts()
 	Globals.is_died = false
 
+	if not is_died:
+		var scores: Scores = Scores.new()
+		scores.update_score(Globals.current_level, Globals.collected_mushrooms_count, Globals.target_mushrooms_count)
+
 func _update_texts() -> void:
 	_title_label.text = TITLES[is_died]
 	_action_label.text = ACTIONS[is_died]
