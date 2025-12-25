@@ -4,8 +4,6 @@
 
 [resource]
 font = ExtResource("1_ck1ab")
-font_size = 128
-font_color = Color(1, 1, 1, 0.38431373)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 0
