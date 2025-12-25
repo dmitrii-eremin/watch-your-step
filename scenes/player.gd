@@ -10,6 +10,8 @@ signal dead()
 @onready var _old_global_pos: Vector2 = global_position
 @onready var _died_timer: Timer = $DiedTimer
 
+@onready var _sound_step_dirt = $Sounds/StepDirt
+
 var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
 var _checkpoints: Array[Vector2] = []
