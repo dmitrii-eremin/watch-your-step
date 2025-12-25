@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const _not_ready_yet: String = "You are not ready yet.\nCome back later."
+const _not_ready_yet: String = "I am not ready yet\nCome back later."
 
 @onready var _label: Label = $Label
 

@@ -42,7 +42,6 @@ var LEVELS: Dictionary[String, LevelInfo] = {
 }
 
 var current_level: String = "level00"
-var level_to_continue: String = "level00"
 
 var target_mushrooms_count: int = 0
 var collected_mushrooms_count: int = 0
@@ -55,3 +54,12 @@ func get_next_level() -> String:
 	if current_index == -1 or current_index == keys.size() - 1:
 		return ""
 	return keys[current_index + 1]
+
+func get_level_to_continue() -> String:
+	var scores: Scores = Scores.new()
+	var levels = LEVELS.keys()
+
+	for level_name in levels:
+		if scores.get_score(level_name) == 0:
+			return level_name
+	return levels[levels.size() - 1]
