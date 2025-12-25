@@ -22,7 +22,8 @@ tile_map_data = PackedByteArray("AAAbAA8AAAAIAAcAAAAgAA8AAAAIAAcAAAAfAAoAAAAJAAc
 position = Vector2(-224, 8)
 
 [node name="Player" parent="YSortedObjects" index="1"]
-position = Vector2(48, 136)
+position = Vector2(184, 112)
+speed = 125.0
 
 [node name="Houses" type="Node2D" parent="YSortedObjects" index="2"]
 y_sort_enabled = true

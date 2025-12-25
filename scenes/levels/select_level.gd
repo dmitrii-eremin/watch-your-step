@@ -7,7 +7,6 @@ func _ready() -> void:
 	_hud.show_stats(false)
 	_original_mushroom_house.call_deferred("queue_free")
 
-#func _on_start_game(_point: Node2D) -> void:
-	#Globals.current_level = Globals.level_to_continue
-	#Transition.change_scene(Globals.LEVELS[Globals.current_level].path)
-	#
+func _on_house_player_hit(_point: Node2D, scene_name: String) -> void:
+	var target_scene = "res://scenes/levels/%s.tscn" % [scene_name]
+	Transition.change_scene(target_scene)
