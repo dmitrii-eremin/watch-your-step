@@ -149,6 +149,15 @@ free_will = true
 position = Vector2(608, 51)
 free_will = true
 
+[node name="CollisionShape2D" parent="WorldBoundaries/left" index="0"]
+position = Vector2(-144, 136)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/top" index="0"]
+position = Vector2(1456, -176)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
+position = Vector2(832, 152)
+
 [connection signal="player_hit" from="YSortedObjects/MushroomHouse" to="." method="_on_start_game"]
 [connection signal="player_hit" from="YSortedObjects/Houses/StartGameHouse" to="." method="_on_start_game"]
 [connection signal="player_hit" from="YSortedObjects/Houses/SelectLevelHouse" to="." method="_on_select_level_house_player_hit"]

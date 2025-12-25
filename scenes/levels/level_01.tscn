@@ -16,7 +16,6 @@ tile_map_data = PackedByteArray("AAAFAAEAAAAIAAcAAAAHAAUAAAAIAAcAAAAFAAUAAAAJAAc
 
 [node name="MushroomHouse" parent="YSortedObjects" index="0"]
 position = Vector2(496, 240)
-season = 0
 
 [node name="Player" parent="YSortedObjects" index="1"]
 position = Vector2(28, 16)
@@ -80,3 +79,15 @@ position = Vector2(160, 336)
 
 [node name="Mushroom7" parent="YSortedObjects/Mushrooms" index="6" instance=ExtResource("4_uvc87")]
 position = Vector2(360, 328)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/left" index="0"]
+position = Vector2(-8, 184)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/bottom" index="0"]
+position = Vector2(280, 408)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/top" index="0"]
+position = Vector2(288, -40)
+
+[node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
+position = Vector2(584, 192)
