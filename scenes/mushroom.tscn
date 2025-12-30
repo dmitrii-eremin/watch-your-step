@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5ke8t4tm5p1c"]
+[gd_scene load_steps=9 format=3 uid="uid://b5ke8t4tm5p1c"]
 
 [ext_resource type="Script" uid="uid://cejq087vkw2em" path="res://scenes/mushroom.gd" id="1_b0s10"]
 [ext_resource type="SpriteFrames" uid="uid://71dejfe5ue10" path="res://animations/brown_mushroom.tres" id="2_0bdi0"]
 [ext_resource type="AudioStream" uid="uid://cg0q5ch2r4b8l" path="res://assets/sounds/mushroom_picked_up.wav" id="3_qxrkd"]
 [ext_resource type="AudioStream" uid="uid://c6lbsxdxfsaxq" path="res://assets/sounds/mushroom_in_house.wav" id="4_6c3h1"]
+[ext_resource type="AudioStream" uid="uid://bi0c1wi8dtqdr" path="res://assets/sounds/before_explosion.wav" id="5_f4pa7"]
+[ext_resource type="AudioStream" uid="uid://ds0u7s1we4ii0" path="res://assets/sounds/explosion.wav" id="6_jekqn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0bdi0"]
 radius = 2.0
@@ -19,7 +21,7 @@ script = ExtResource("1_b0s10")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 8)
 sprite_frames = ExtResource("2_0bdi0")
-animation = &"walk"
+animation = &"dead"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -50,7 +52,15 @@ stream = ExtResource("3_qxrkd")
 [node name="Collected" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("4_6c3h1")
 
+[node name="Dying" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_f4pa7")
+
+[node name="Explode" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_jekqn")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
 [connection signal="timeout" from="FreeWillTimer" to="." method="_on_free_will_timer_timeout"]
 [connection signal="finished" from="Sounds/Collected" to="." method="_on_collected_finished"]
+[connection signal="finished" from="Sounds/Dying" to="." method="_on_dying_finished"]
+[connection signal="finished" from="Sounds/Explode" to="." method="_on_explode_finished"]

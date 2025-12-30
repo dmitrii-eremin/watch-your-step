@@ -22,6 +22,8 @@ signal collected(mushroom: Node2D)
 
 @onready var _sound_picked_up := $Sounds/PickedUp
 @onready var _sound_collected := $Sounds/Collected
+@onready var _sound_dying := $Sounds/Dying
+@onready var _sound_explode := $Sounds/Explode
 
 var _final_target: Node2D
 
@@ -77,6 +79,8 @@ func hit() -> void:
 	take_damage.emit(self)
 	
 func die() -> void:
+	if not _is_dying:
+		_sound_dying.play()
 	_is_dying = true
 
 func _physics_process(_delta: float) -> void:
@@ -151,7 +155,14 @@ func _on_player_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if _sprite.animation == &"dead":
-		dead.emit(self)
+		visible = false
+		_sound_explode.play()
 
 func _on_collected_finished() -> void:
 	call_deferred("queue_free")
+
+func _on_dying_finished() -> void:
+	pass
+
+func _on_explode_finished() -> void:
+	dead.emit(self)
