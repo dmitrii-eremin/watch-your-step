@@ -19,6 +19,9 @@ signal collected(mushroom: Node2D)
 @onready var _target: Vector2 = global_position
 @onready var _original_position: Vector2 = global_position
 @onready var _timer_delay: float = _free_will_timer.wait_time
+
+@onready var _sound_picked_up := $Sounds/PickedUp
+
 var _final_target: Node2D
 
 var _old_velocity: Vector2 = Vector2.ONE
@@ -138,6 +141,7 @@ func _select_animation() -> void:
 func _on_player_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if not _is_caught:
+			_sound_picked_up.play()
 			player_caught_mushroom.emit(body, self)
 		elif _final_target == null:
 			hit()

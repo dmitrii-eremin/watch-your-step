@@ -10,6 +10,8 @@ signal dead()
 @onready var _died_timer: Timer = $DiedTimer
 @onready var _follow_points: FollowPoints = $FollowPoints
 
+@onready var _sound_steps := $Sounds/Steps
+
 var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
 var _is_dead: bool = false
@@ -66,11 +68,16 @@ func _physics_process(_delta: float) -> void:
 
 func _process(_delta: float) -> void:
 	_select_animation()
+	_play_sounds()
 	
 func _ready() -> void:
 	_sprite.stop()
 	_neko_sprite.stop()
 	_select_animation()
+	
+func _play_sounds() -> void:
+	if _sprite.animation == &"walk" and not _sound_steps.playing:
+		_sound_steps.play()
 	
 func _process_collisions() -> void:
 	for i in range(get_slide_collision_count()):
