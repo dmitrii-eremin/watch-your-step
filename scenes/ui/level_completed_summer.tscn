@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://ogr3jtl6utoc"]
+[gd_scene load_steps=9 format=4 uid="uid://ogr3jtl6utoc"]
 
 [ext_resource type="Script" uid="uid://d3envf50l2nrc" path="res://scenes/ui/level_completed.gd" id="1_v4f0h"]
 [ext_resource type="TileSet" uid="uid://dcalb8tlrt0of" path="res://tilesets/summer.tres" id="2_5c0b5"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="4_b53hv"]
 [ext_resource type="PackedScene" uid="uid://doocrvi4mvtx0" path="res://scenes/ui/jumping_label.tscn" id="5_q3qww"]
 [ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="6_6nsc7"]
+[ext_resource type="AudioStream" uid="uid://bkqaqsuoxexnd" path="res://assets/music/win.wav" id="7_t6a6s"]
+[ext_resource type="AudioStream" uid="uid://c20y6kacoeiwt" path="res://assets/music/lose.wav" id="8_b53hv"]
 
 [node name="LevelCompletedSummer" type="Node2D"]
 script = ExtResource("1_v4f0h")
@@ -114,3 +116,11 @@ grow_horizontal = 2
 size_flags_horizontal = 3
 text = "Press to continue..."
 horizontal_alignment = 1
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Win" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_t6a6s")
+
+[node name="Lose" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_b53hv")

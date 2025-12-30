@@ -120,7 +120,6 @@ func _on_reached_final_destination() -> void:
 		return
 	_is_reached = true
 	await create_tween().tween_property(self, "modulate:a", 0, 0.35).finished
-	collected.emit(self)
 	_sound_collected.play()
 
 func _process(_delta: float) -> void:
@@ -159,6 +158,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		_sound_explode.play()
 
 func _on_collected_finished() -> void:
+	collected.emit(self)
 	call_deferred("queue_free")
 
 func _on_dying_finished() -> void:

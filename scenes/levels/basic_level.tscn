@@ -76,6 +76,12 @@ shape = SubResource("RectangleShape2D_aperb")
 position = Vector2(520, 152)
 shape = SubResource("RectangleShape2D_4tl2j")
 
+[node name="Sounds" type="Node" parent="."]
+
+[node name="MainTheme" type="AudioStreamPlayer" parent="Sounds"]
+volume_db = -8.0
+autoplay = true
+
 [connection signal="time_is_out" from="HUD" to="." method="_on_hud_time_is_out"]
 [connection signal="on_joystick_input" from="HUD/VirtualJoystick" to="." method="_on_virtual_joystick_on_joystick_input"]
 [connection signal="timeout" from="MushroomDeadTimer" to="." method="_on_mushroom_dead_timer_timeout"]

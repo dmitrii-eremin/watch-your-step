@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=4 uid="uid://fxx3rsebu526"]
+[gd_scene load_steps=27 format=4 uid="uid://fxx3rsebu526"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_xbig6"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="2_j2blp"]
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="3_sjpyf"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_sjpyf"]
 [ext_resource type="PackedScene" uid="uid://c5dyq0xckel6v" path="res://scenes/enemy.tscn" id="5_atdb5"]
+[ext_resource type="AudioStream" uid="uid://if0q5uxx4ag1" path="res://assets/music/In the back pocket_100 BPM.WAV" id="6_tbrpi"]
 
 [sub_resource type="Curve2D" id="Curve2D_tbrpi"]
 _data = {
@@ -582,7 +583,7 @@ y_sort_enabled = true
 [node name="Enemy1" type="Node2D" parent="YSortedObjects/Enemies" index="0"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy1" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1088, 94.209625)
+position = Vector2(1088, 104.00001)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 3
 
@@ -590,14 +591,14 @@ enemy_type = 3
 curve = SubResource("Curve2D_tbrpi")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy1/Path2D" index="0"]
-position = Vector2(1088, 94.209625)
+position = Vector2(1088, 104.00001)
 rotation = 1.5707964
-progress = 86.3328
+progress = 95.99954
 
 [node name="Enemy2" type="Node2D" parent="YSortedObjects/Enemies" index="1"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy2" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(289.6912, 192)
+position = Vector2(279.86853, 192)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 2
 
@@ -605,27 +606,27 @@ enemy_type = 2
 curve = SubResource("Curve2D_atdb5")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy2/Path2D" index="0"]
-position = Vector2(289.6912, 192)
+position = Vector2(279.86853, 192)
 rotation = 3.1415925
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D" type="Node2D" parent="YSortedObjects/Enemies" index="2"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(166.31775, 232)
+position = Vector2(175.98764, 232)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Node2D" index="1"]
 curve = SubResource("Curve2D_yc2un")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D/Path2D" index="0"]
-position = Vector2(166.31775, 232)
-progress = 278.33243
+position = Vector2(175.98764, 232)
+progress = 287.9994
 
 [node name="Node2D2" type="Node2D" parent="YSortedObjects/Enemies" index="3"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D2" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(737.6023, 56)
+position = Vector2(728.02826, 56)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 2
 
@@ -633,28 +634,28 @@ enemy_type = 2
 curve = SubResource("Curve2D_s7m4s")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D2/Path2D" index="0"]
-position = Vector2(737.6023, 56)
+position = Vector2(728.02826, 56)
 rotation = 3.1415925
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D3" type="Node2D" parent="YSortedObjects/Enemies" index="4"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D3" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(737.6692, 224)
+position = Vector2(728.00104, 224)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Node2D3" index="1"]
 curve = SubResource("Curve2D_6h3uw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D3/Path2D" index="0"]
-position = Vector2(737.6692, 224)
+position = Vector2(728.00104, 224)
 rotation = 3.1415925
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D4" type="Node2D" parent="YSortedObjects/Enemies" index="5"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D4" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1382.348, 40)
+position = Vector2(1391.9996, 40)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 1
 
@@ -662,26 +663,27 @@ enemy_type = 1
 curve = SubResource("Curve2D_17n5y")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D4/Path2D" index="0"]
-position = Vector2(1382.348, 40)
-progress = 278.33243
+position = Vector2(1391.9996, 40)
+progress = 287.9994
 
 [node name="Node2D5" type="Node2D" parent="YSortedObjects/Enemies" index="6"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D5" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1678.3726, 112.001335)
+position = Vector2(1680, 104.01763)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Node2D5" index="1"]
 curve = SubResource("Curve2D_tg547")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D5/Path2D" index="0"]
-position = Vector2(1678.3726, 112.001335)
-progress = 278.33243
+position = Vector2(1680, 104.01763)
+rotation = -1.5707964
+progress = 287.9994
 
 [node name="Node2D6" type="Node2D" parent="YSortedObjects/Enemies" index="7"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D6" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1944, 89.63361)
+position = Vector2(1944, 79.951416)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 2
 
@@ -689,14 +691,14 @@ enemy_type = 2
 curve = SubResource("Curve2D_6vksy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D6/Path2D" index="0"]
-position = Vector2(1944, 89.63361)
+position = Vector2(1944, 79.951416)
 rotation = -1.5707964
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D7" type="Node2D" parent="YSortedObjects/Enemies" index="8"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D7" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(2088, 62.331806)
+position = Vector2(2088, 71.99924)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 1
 
@@ -704,14 +706,14 @@ enemy_type = 1
 curve = SubResource("Curve2D_pwpgl")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D7/Path2D" index="0"]
-position = Vector2(2088, 62.331806)
+position = Vector2(2088, 71.99924)
 rotation = 1.5707964
-progress = 54.332184
+progress = 63.998814
 
 [node name="Node2D8" type="Node2D" parent="YSortedObjects/Enemies" index="9"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D8" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1448, 310.3318)
+position = Vector2(1448, 319.9992)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 3
 
@@ -719,14 +721,14 @@ enemy_type = 3
 curve = SubResource("Curve2D_sppnv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D8/Path2D" index="0"]
-position = Vector2(1448, 310.3318)
+position = Vector2(1448, 319.9992)
 rotation = 1.5707964
-progress = 54.332184
+progress = 63.998814
 
 [node name="Node2D9" type="Node2D" parent="YSortedObjects/Enemies" index="10"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D9" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1279.8286, 521.4053)
+position = Vector2(1287.9994, 520)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 3
 
@@ -734,14 +736,13 @@ enemy_type = 3
 curve = SubResource("Curve2D_cdd1g")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D9/Path2D" index="0"]
-position = Vector2(1279.8286, 521.4053)
-rotation = -1.5707964
-progress = 278.33243
+position = Vector2(1287.9994, 520)
+progress = 287.9994
 
 [node name="Node2D10" type="Node2D" parent="YSortedObjects/Enemies" index="11"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D10" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1016, 350.32657)
+position = Vector2(1016, 360.0008)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 2
 
@@ -749,14 +750,14 @@ enemy_type = 2
 curve = SubResource("Curve2D_ejjlu")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D10/Path2D" index="0"]
-position = Vector2(1016, 350.32657)
+position = Vector2(1016, 360.0008)
 rotation = 1.5707964
-progress = 22.334103
+progress = 32.000786
 
 [node name="Node2D11" type="Node2D" parent="YSortedObjects/Enemies" index="12"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D11" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(672.15906, 592)
+position = Vector2(647.99286, 592)
 speed = 50.0
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 6
@@ -765,14 +766,14 @@ enemy_type = 6
 curve = SubResource("Curve2D_gbsts")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D11/Path2D" index="0"]
-position = Vector2(672.15906, 592)
+position = Vector2(647.99286, 592)
 rotation = 3.1415925
-progress = 183.83565
+progress = 208.00217
 
 [node name="Node2D12" type="Node2D" parent="YSortedObjects/Enemies" index="13"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D12" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(224, 558.334)
+position = Vector2(224, 568.0008)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 1
 
@@ -780,14 +781,14 @@ enemy_type = 1
 curve = SubResource("Curve2D_3d6ih")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D12/Path2D" index="0"]
-position = Vector2(224, 558.334)
+position = Vector2(224, 568.0008)
 rotation = 1.5707964
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D13" type="Node2D" parent="YSortedObjects/Enemies" index="14"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D13" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(222.3677, 640)
+position = Vector2(232.0408, 640)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 3
 
@@ -795,13 +796,13 @@ enemy_type = 3
 curve = SubResource("Curve2D_6sve2")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D13/Path2D" index="0"]
-position = Vector2(222.3677, 640)
-progress = 278.33243
+position = Vector2(232.0408, 640)
+progress = 287.9994
 
 [node name="Node2D14" type="Node2D" parent="YSortedObjects/Enemies" index="15"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D14" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(176.18112, 464)
+position = Vector2(152.00517, 464)
 speed = 50.0
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 6
@@ -810,14 +811,14 @@ enemy_type = 6
 curve = SubResource("Curve2D_56vtv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D14/Path2D" index="0"]
-position = Vector2(176.18112, 464)
+position = Vector2(152.00517, 464)
 rotation = 3.1415925
-progress = 263.83432
+progress = 288.00128
 
 [node name="Node2D15" type="Node2D" parent="YSortedObjects/Enemies" index="16"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D15" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1616, 487.82224)
+position = Vector2(1616, 511.99655)
 speed = 50.0
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 6
@@ -826,28 +827,28 @@ enemy_type = 6
 curve = SubResource("Curve2D_lesd3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D15/Path2D" index="0"]
-position = Vector2(1616, 487.82224)
+position = Vector2(1616, 511.99655)
 rotation = 1.5707964
-progress = 39.832314
+progress = 63.998943
 
 [node name="Node2D16" type="Node2D" parent="YSortedObjects/Enemies" index="17"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D16" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(2064, 617.6871)
+position = Vector2(2064, 608.0171)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Node2D16" index="1"]
 curve = SubResource("Curve2D_64yx1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D16/Path2D" index="0"]
-position = Vector2(2064, 617.6871)
+position = Vector2(2064, 608.0171)
 rotation = -1.5707964
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D17" type="Node2D" parent="YSortedObjects/Enemies" index="18"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D17" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(1817.6747, 584)
+position = Vector2(1808.0093, 584)
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 2
 
@@ -855,14 +856,14 @@ enemy_type = 2
 curve = SubResource("Curve2D_c7h1x")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D17/Path2D" index="0"]
-position = Vector2(1817.6747, 584)
+position = Vector2(1808.0093, 584)
 rotation = 3.1415925
-progress = 278.33243
+progress = 287.9994
 
 [node name="Node2D18" type="Node2D" parent="YSortedObjects/Enemies" index="19"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Node2D18" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_atdb5")]
-position = Vector2(2336.5151, 448)
+position = Vector2(2343.9507, 448)
 speed = 15.0
 path_follower = NodePath("../Path2D/PathFollow2D")
 enemy_type = 3
@@ -871,11 +872,14 @@ enemy_type = 3
 curve = SubResource("Curve2D_1dtt1")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Node2D18/Path2D" index="0"]
-position = Vector2(2336.5151, 448)
-progress = 0.75
+position = Vector2(2343.9507, 448)
+progress = 8.0
 
 [node name="CollisionShape2D" parent="WorldBoundaries/bottom" index="0"]
 position = Vector2(1424, 712)
 
 [node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
 position = Vector2(2456, 346)
+
+[node name="MainTheme" parent="Sounds" index="0"]
+stream = ExtResource("6_tbrpi")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://blqs6xt3fsfd6"]
+[gd_scene load_steps=6 format=4 uid="uid://blqs6xt3fsfd6"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_rhuve"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="3_0fj3b"]
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="4_jdp5k"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_vwcxs"]
+[ext_resource type="AudioStream" uid="uid://8vx2qsv0tpn6" path="res://assets/music/In early time.WAV" id="5_jdp5k"]
 
 [node name="Level00" instance=ExtResource("1_rhuve")]
 metadata/level = "level00"
@@ -85,3 +86,6 @@ position = Vector2(344, 104)
 
 [node name="Mushroom6" parent="YSortedObjects/Mushrooms" index="5" instance=ExtResource("4_vwcxs")]
 position = Vector2(489, 113)
+
+[node name="MainTheme" parent="Sounds" index="0"]
+stream = ExtResource("5_jdp5k")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://kn5omaan40iy"]
+[gd_scene load_steps=6 format=4 uid="uid://kn5omaan40iy"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_cctgl"]
 [ext_resource type="Script" uid="uid://cew60hqrp11m2" path="res://scenes/levels/select_level.gd" id="2_hivfa"]
 [ext_resource type="PackedScene" uid="uid://bi3db3u4t6gm1" path="res://scenes/mushroom_house.tscn" id="3_2mq08"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_uahbn"]
+[ext_resource type="AudioStream" uid="uid://253balv08mni" path="res://assets/music/menu.wav" id="5_fxalm"]
 
 [node name="SelectLevel" instance=ExtResource("1_cctgl")]
 script = ExtResource("2_hivfa")
@@ -172,6 +173,9 @@ position = Vector2(1448, 1024)
 
 [node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
 position = Vector2(1480, 152)
+
+[node name="MainTheme" parent="Sounds" index="0"]
+stream = ExtResource("5_fxalm")
 
 [connection signal="player_hit" from="YSortedObjects/Houses/Level00" to="." method="_on_house_player_hit" binds= ["level_00"]]
 [connection signal="player_hit" from="YSortedObjects/Houses/Level11" to="." method="_on_house_player_hit" binds= ["level_01"]]

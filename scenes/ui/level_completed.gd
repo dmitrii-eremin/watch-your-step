@@ -6,6 +6,9 @@ extends Node2D
 @onready var _action_label: Label = $CanvasLayer/JumpingLabel2
 @onready var _collected: Label = $CanvasLayer/CollectedLabel
 
+@onready var _sound_win := $Sounds/Win
+@onready var _sound_lose := $Sounds/Lose
+
 var _is_already_handler: bool = false
 
 const TITLES: Dictionary[bool, String] = {
@@ -24,6 +27,10 @@ func set_is_died(died: bool) -> void:
 
 func _ready() -> void:
 	set_is_died(Globals.is_died)
+	if Globals.is_died:
+		_sound_lose.play()
+	else:
+		_sound_win.play()
 	_update_texts()
 	Globals.is_died = false
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://b38pq3e622jly"]
+[gd_scene load_steps=6 format=4 uid="uid://b38pq3e622jly"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_m802k"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="2_i2aat"]
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="3_2djvx"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_uvc87"]
+[ext_resource type="AudioStream" uid="uid://bph0gsj3vmj4f" path="res://assets/music/Around the Bend.WAV" id="5_qdh5e"]
 
 [node name="Level01" instance=ExtResource("1_m802k")]
 metadata/level = "level01"
@@ -91,3 +92,6 @@ position = Vector2(288, -40)
 
 [node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
 position = Vector2(584, 192)
+
+[node name="MainTheme" parent="Sounds" index="0"]
+stream = ExtResource("5_qdh5e")

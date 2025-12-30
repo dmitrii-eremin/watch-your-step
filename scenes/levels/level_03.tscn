@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://by8we5n6yautg"]
+[gd_scene load_steps=11 format=4 uid="uid://by8we5n6yautg"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_lcxk4"]
 [ext_resource type="PackedScene" uid="uid://cfav76elus1cx" path="res://scenes/tree.tscn" id="2_r8ojw"]
 [ext_resource type="PackedScene" uid="uid://y1k0bbofm7jh" path="res://scenes/stone.tscn" id="3_1jnh5"]
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="4_jgt0v"]
 [ext_resource type="PackedScene" uid="uid://c5dyq0xckel6v" path="res://scenes/enemy.tscn" id="5_hvqp8"]
+[ext_resource type="AudioStream" uid="uid://bgieqsvy4jh2x" path="res://assets/music/Catch The Mystery.WAV" id="6_r8ojw"]
 
 [sub_resource type="Curve2D" id="Curve2D_47vhb"]
 _data = {
@@ -166,57 +167,57 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy1" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_hvqp8")]
-position = Vector2(248, 208.66742)
+position = Vector2(248, 227.0151)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Enemy1" index="1"]
 curve = SubResource("Curve2D_47vhb")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy1/Path2D" index="0"]
-position = Vector2(248, 208.66742)
+position = Vector2(248, 227.0151)
 rotation = 1.5707964
-progress = 104.667564
+progress = 123.00035
 
 [node name="Enemy2" type="Node2D" parent="YSortedObjects/Enemies" index="1"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy2" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_hvqp8")]
-position = Vector2(8, 87.43298)
+position = Vector2(48, 115.004745)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Enemy2" index="1"]
 curve = SubResource("Curve2D_2isfw")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy2/Path2D" index="0"]
-position = Vector2(8, 87.43298)
-rotation = -1.5707964
-progress = 200.66342
+position = Vector2(48, 115.004745)
+rotation = 1.5707964
+progress = 123.00035
 
 [node name="Enemy3" type="Node2D" parent="YSortedObjects/Enemies" index="2"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy3" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_hvqp8")]
-position = Vector2(808.66016, 192)
+position = Vector2(874.9627, 192)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Enemy3" index="1"]
 curve = SubResource("Curve2D_lr72k")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy3/Path2D" index="0"]
-position = Vector2(808.66016, 192)
-progress = 56.661907
+position = Vector2(874.9627, 192)
+progress = 123.00035
 
 [node name="Enemy4" type="Node2D" parent="YSortedObjects/Enemies" index="3"]
 
 [node name="Enemy" parent="YSortedObjects/Enemies/Enemy4" index="0" node_paths=PackedStringArray("path_follower") instance=ExtResource("5_hvqp8")]
-position = Vector2(584, 432.63382)
+position = Vector2(612.99805, 352)
 path_follower = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="YSortedObjects/Enemies/Enemy4" index="1"]
 curve = SubResource("Curve2D_76l1x")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="YSortedObjects/Enemies/Enemy4/Path2D" index="0"]
-position = Vector2(584, 432.63382)
-rotation = 1.5707964
-progress = 376.67307
+position = Vector2(612.99805, 352)
+rotation = 3.1415925
+progress = 123.00035
 
 [node name="Player" parent="YSortedObjects" index="4"]
 position = Vector2(40, 408)
@@ -232,3 +233,6 @@ position = Vector2(380, -8)
 
 [node name="CollisionShape2D" parent="WorldBoundaries/right" index="0"]
 position = Vector2(904, 272)
+
+[node name="MainTheme" parent="Sounds" index="0"]
+stream = ExtResource("6_r8ojw")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgieqsvy4jh2x"
+path="res://.godot/imported/Catch The Mystery.WAV-a202c74c5bd59826c6ff1fa705e0684d.sample"
+
+[deps]
+
+source_file="res://assets/music/Catch The Mystery.WAV"
+dest_files=["res://.godot/imported/Catch The Mystery.WAV-a202c74c5bd59826c6ff1fa705e0684d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
