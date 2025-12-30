@@ -21,6 +21,7 @@ signal collected(mushroom: Node2D)
 @onready var _timer_delay: float = _free_will_timer.wait_time
 
 @onready var _sound_picked_up := $Sounds/PickedUp
+@onready var _sound_collected := $Sounds/Collected
 
 var _final_target: Node2D
 
@@ -116,7 +117,7 @@ func _on_reached_final_destination() -> void:
 	_is_reached = true
 	await create_tween().tween_property(self, "modulate:a", 0, 0.35).finished
 	collected.emit(self)
-	call_deferred("queue_free")
+	_sound_collected.play()
 
 func _process(_delta: float) -> void:
 	if not free_will:
@@ -151,3 +152,6 @@ func _on_player_detection_area_body_entered(body: Node2D) -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if _sprite.animation == &"dead":
 		dead.emit(self)
+
+func _on_collected_finished() -> void:
+	call_deferred("queue_free")
