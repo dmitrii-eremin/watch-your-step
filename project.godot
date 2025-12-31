@@ -20,6 +20,7 @@ config/icon="uid://b1v4qqmliwxls"
 
 Transition="*res://scenes/ui/transition.tscn"
 Globals="*res://sources/globals.gd"
+SoundsManager="*res://scenes/sounds_manager.tscn"
 
 [display]
 

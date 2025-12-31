@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddlqc111rcn7b"]
+
+[ext_resource type="Script" uid="uid://baekr51eg0o5k" path="res://scenes/sounds_manager.gd" id="1_5l5yj"]
+[ext_resource type="AudioStream" uid="uid://d3fbb8rnm0nj" path="res://assets/sounds/select.wav" id="1_tuw8c"]
+
+[node name="SoundsManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_5l5yj")
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tuw8c")
+volume_db = 12.0

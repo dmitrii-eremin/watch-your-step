@@ -3,6 +3,7 @@ extends CanvasLayer
 signal on_resume()
 
 func pause() -> void:
+	SoundsManager.play_select_sound()
 	get_tree().paused = true
 	show()
 
@@ -15,11 +16,13 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 
 func _on_main_menu_button_pressed() -> void:
+	SoundsManager.play_select_sound()
 	get_tree().paused = false
 	hide()
 	Transition.change_scene("res://scenes/levels/menu_level.tscn")
 	
 func _on_resume_button_pressed() -> void:
+	SoundsManager.play_select_sound()
 	get_tree().paused = false
 	hide()
 	on_resume.emit()
