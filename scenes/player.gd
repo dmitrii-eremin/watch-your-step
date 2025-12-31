@@ -11,6 +11,7 @@ signal dead()
 @onready var _follow_points: FollowPoints = $FollowPoints
 
 @onready var _sound_steps := $Sounds/Steps
+@onready var _sound_hurt := $Sounds/Hurt
 
 var _old_velocity: Vector2 = Vector2.ONE
 var _mushrooms: Array[Node2D] = []
@@ -51,6 +52,7 @@ func take_damage_and_die() -> void:
 	_is_dead = true
 	for mushroom in _mushrooms:
 		mushroom.set_is_caught(false)
+	_sound_hurt.play()
 	_mushrooms.clear()
 	_follow_points.clear()
 	_sprite.play(&"die")
