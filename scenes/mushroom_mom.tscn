@@ -1,0 +1,68 @@
+[gd_scene load_steps=11 format=3 uid="uid://48fj6d0g2vmg"]
+
+[ext_resource type="PackedScene" uid="uid://dapajjda17nh" path="res://scenes/secret_npc.tscn" id="1_g3eaq"]
+[ext_resource type="Texture2D" uid="uid://cj3h4664wodhu" path="res://assets/sprites/characters/cat.png" id="2_o5t8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3h17"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kdkq"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d24v"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ybhc"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64sqk"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y62bb"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ngw"]
+atlas = ExtResource("2_o5t8y")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qy5rg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3h17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kdkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d24v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ybhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64sqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y62bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ngw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="MushroomMom" instance=ExtResource("1_g3eaq")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_qy5rg")
+frame_progress = 0.013475318
+flip_h = true
