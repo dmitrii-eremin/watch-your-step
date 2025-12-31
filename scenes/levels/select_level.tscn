@@ -24,114 +24,114 @@ y_sort_enabled = true
 
 [node name="Level00" parent="YSortedObjects/Houses" index="0" instance=ExtResource("3_2mq08")]
 position = Vector2(104, 457)
-label_text = "LEVEL 0-0"
+label_text = "COMMON_LEVEL 0-0"
 metadata/scene_name = "level00"
 
 [node name="Level11" parent="YSortedObjects/Houses" index="1" instance=ExtResource("3_2mq08")]
 position = Vector2(296, 461)
-label_text = "LEVEL 1-1"
+label_text = "COMMON_LEVEL 1-1"
 metadata/scene_name = "level01"
 
 [node name="Level12" parent="YSortedObjects/Houses" index="2" instance=ExtResource("3_2mq08")]
 position = Vector2(488, 459)
-label_text = "LEVEL 1-2"
+label_text = "COMMON_LEVEL 1-2"
 metadata/scene_name = "level02"
 
 [node name="Level13" parent="YSortedObjects/Houses" index="3" instance=ExtResource("3_2mq08")]
 position = Vector2(680, 461)
-label_text = "LEVEL 1-3"
+label_text = "COMMON_LEVEL 1-3"
 metadata/scene_name = "level03"
 
 [node name="Level14" parent="YSortedObjects/Houses" index="4" instance=ExtResource("3_2mq08")]
 position = Vector2(873, 459)
-label_text = "LEVEL 1-4"
+label_text = "COMMON_LEVEL 1-4"
 metadata/scene_name = "level04"
 
 [node name="Level15" parent="YSortedObjects/Houses" index="5" instance=ExtResource("3_2mq08")]
 position = Vector2(1064, 461)
-label_text = "LEVEL 1-5"
+label_text = "COMMON_LEVEL 1-5"
 metadata/scene_name = "level05"
 
 [node name="Level16" parent="YSortedObjects/Houses" index="6" instance=ExtResource("3_2mq08")]
 position = Vector2(1256, 461)
-label_text = "LEVEL 1-6"
+label_text = "COMMON_LEVEL 1-6"
 metadata/scene_name = "level06"
 
 [node name="Level21" parent="YSortedObjects/Houses" index="7" instance=ExtResource("3_2mq08")]
 position = Vector2(104, 265)
-label_text = "LEVEL 2-1"
+label_text = "COMMON_LEVEL 2-1"
 season = 1
 metadata/scene_name = "level10"
 
 [node name="Level22" parent="YSortedObjects/Houses" index="8" instance=ExtResource("3_2mq08")]
 position = Vector2(296, 264)
-label_text = "LEVEL 2-2"
+label_text = "COMMON_LEVEL 2-2"
 season = 1
 metadata/scene_name = "level11"
 
 [node name="Level23" parent="YSortedObjects/Houses" index="9" instance=ExtResource("3_2mq08")]
 position = Vector2(488, 265)
-label_text = "LEVEL 2-3"
+label_text = "COMMON_LEVEL 2-3"
 season = 1
 metadata/scene_name = "level12"
 
 [node name="Level24" parent="YSortedObjects/Houses" index="10" instance=ExtResource("3_2mq08")]
 position = Vector2(680, 265)
-label_text = "LEVEL 2-4"
+label_text = "COMMON_LEVEL 2-4"
 season = 1
 metadata/scene_name = "level13"
 
 [node name="Level25" parent="YSortedObjects/Houses" index="11" instance=ExtResource("3_2mq08")]
 position = Vector2(875, 264)
-label_text = "LEVEL 2-5"
+label_text = "COMMON_LEVEL 2-5"
 season = 1
 metadata/scene_name = "level14"
 
 [node name="Level26" parent="YSortedObjects/Houses" index="12" instance=ExtResource("3_2mq08")]
 position = Vector2(1064, 265)
-label_text = "LEVEL 2-6"
+label_text = "COMMON_LEVEL 2-6"
 season = 1
 metadata/scene_name = "level15"
 
 [node name="Level33" parent="YSortedObjects/Houses" index="13" instance=ExtResource("3_2mq08")]
 position = Vector2(488, 79)
-label_text = "LEVEL 3-3"
+label_text = "COMMON_LEVEL 3-3"
 season = 2
 metadata/scene_name = "level22"
 
 [node name="Level34" parent="YSortedObjects/Houses" index="14" instance=ExtResource("3_2mq08")]
 position = Vector2(680, 79)
-label_text = "LEVEL 3-4"
+label_text = "COMMON_LEVEL 3-4"
 season = 2
 metadata/scene_name = "level23"
 
 [node name="Level35" parent="YSortedObjects/Houses" index="15" instance=ExtResource("3_2mq08")]
 position = Vector2(873, 84)
-label_text = "LEVEL 3-5"
+label_text = "COMMON_LEVEL 3-5"
 season = 2
 metadata/scene_name = "level24"
 
 [node name="Level36" parent="YSortedObjects/Houses" index="16" instance=ExtResource("3_2mq08")]
 position = Vector2(1064, 84)
-label_text = "LEVEL 3-6"
+label_text = "COMMON_LEVEL 3-6"
 season = 2
 metadata/scene_name = "level25"
 
 [node name="Level31" parent="YSortedObjects/Houses" index="17" instance=ExtResource("3_2mq08")]
 position = Vector2(104, 71)
-label_text = "LEVEL 3-1"
+label_text = "COMMON_LEVEL 3-1"
 season = 2
 metadata/scene_name = "level20"
 
 [node name="Level32" parent="YSortedObjects/Houses" index="18" instance=ExtResource("3_2mq08")]
 position = Vector2(296, 71)
-label_text = "LEVEL 3-2"
+label_text = "COMMON_LEVEL 3-2"
 season = 2
 metadata/scene_name = "level21"
 
 [node name="HouseBack" parent="YSortedObjects/Houses" index="19" instance=ExtResource("3_2mq08")]
 position = Vector2(704, 688)
-label_text = "MAIN MENU"
+label_text = "MENU_GOTO_MAIN_MENU"
 
 [node name="Mushrooms" type="Node2D" parent="YSortedObjects" index="3"]
 y_sort_enabled = true

@@ -12,13 +12,13 @@ extends Node2D
 var _is_already_handler: bool = false
 
 const TITLES: Dictionary[bool, String] = {
-	false: "Level Completed!",
-	true: "You lost. Maybe next time...",
+	false: "LEVEL_COMPLETED_WIN_TITLE",
+	true: "LEVEL_COMPLETED_LOST_TITLE",
 }
 
 const ACTIONS: Dictionary[bool, String] = {
-	false: "Press to continue...",
-	true: "Press to restart...",
+	false: "LEVEL_COMPLETED_WIN_ACTIONS",
+	true: "LEVEL_COMPLETED_LOST_ACTIONS",
 }
 
 func set_is_died(died: bool) -> void:
@@ -39,8 +39,8 @@ func _ready() -> void:
 		scores.update_score(Globals.current_level, Globals.collected_mushrooms_count, Globals.target_mushrooms_count)
 
 func _update_texts() -> void:
-	_title_label.text = TITLES[is_died]
-	_action_label.text = ACTIONS[is_died]
+	_title_label.text = tr(TITLES[is_died])
+	_action_label.text = tr(ACTIONS[is_died])
 	_collected.text = "%d/%d" % [
 		Globals.collected_mushrooms_count,
 		Globals.target_mushrooms_count,

@@ -106,14 +106,7 @@ offset_left = 504.0
 offset_top = -35.0
 offset_right = 760.0
 offset_bottom = 50.0
-text = "Code and Idea:
-    Arctic Code Games
-
-Art and Music:
-    Free
-
-Thanks for playing!
-I hope you enjoy the game!"
+text = "MENU_AUTHORS_CONTENT"
 autowrap_trim_flags = 0
 
 [node name="NPC" type="Node2D" parent="YSortedObjects" index="5"]

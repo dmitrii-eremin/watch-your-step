@@ -15,9 +15,9 @@ func _update_house_labels() -> void:
 		_update_house_label(house)
 
 func _update_house_label(house: Node2D) -> void:
-	var scene_name: Variant = house.get_meta(&"scene_name")
-	if scene_name == null:
+	if not house.has_meta(&"scene_name"):
 		return
+	var scene_name: String = house.get_meta(&"scene_name")
 	var info = Globals.LEVELS[scene_name]
 	if info == null:
 		return
@@ -28,7 +28,7 @@ func _update_house_label(house: Node2D) -> void:
 	var collected: String = ("%d" % [scores.get_score(scene_name)]) if scores.get_score(scene_name) > 0 else "?"
 	var target: String = ("%d" % [scores.get_target(scene_name)]) if scores.get_target(scene_name) > 0 else "?"
 	if is_opened:
-		house.set_house_label("LEVEL %s\n%s/%s" % [info.name, collected, target])
+		house.set_house_label("%s %s\n%s/%s" % [tr(&"COMMON_LEVEL"), info.name, collected, target])
 	else:
 		house.set_house_label("???\n?/?")
 	house.open_door(is_opened)
