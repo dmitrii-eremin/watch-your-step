@@ -31,11 +31,11 @@ y_sort_enabled = true
 
 [node name="StartGameHouse" parent="YSortedObjects/Houses" index="0" instance=ExtResource("3_rviff")]
 position = Vector2(184, -55)
-label_text = "START GAME"
+label_text = "MENU_START_GAME"
 
 [node name="SelectLevelHouse" parent="YSortedObjects/Houses" index="1" instance=ExtResource("3_rviff")]
 position = Vector2(16, -3)
-label_text = "SELECT LEVEL"
+label_text = "MENU_SELECT_LEVEL"
 
 [node name="Trees" type="Node2D" parent="YSortedObjects" index="3"]
 y_sort_enabled = true
@@ -99,7 +99,7 @@ offset_left = 360.0
 offset_top = 39.0
 offset_right = 440.0
 offset_bottom = 47.0
-text = "AUTHORS ->"
+text = "MENU_AUTHORS_POINTER"
 
 [node name="AuthorsLabel2" parent="YSortedObjects/Labels" index="1" instance=ExtResource("6_xnw2a")]
 offset_left = 504.0
@@ -121,6 +121,7 @@ y_sort_enabled = true
 
 [node name="SecretNpc" parent="YSortedObjects/NPC" index="0" instance=ExtResource("7_xvx8b")]
 position = Vector2(680, 239)
+npc_text = "MENU_SECRET_NPC"
 
 [node name="Mushroom" parent="YSortedObjects/NPC" index="1" instance=ExtResource("8_o3mdm")]
 position = Vector2(48, 176)

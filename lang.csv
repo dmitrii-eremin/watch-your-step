@@ -1,0 +1,6 @@
+keys,en,ru,fin
+MENU_START_GAME,"Start Game","Начать игру","Jatka peli"
+MENU_SELECT_LEVEL,"Select Level","Выбрать уровень","Valitse taso"
+MENU_AUTHORS_POINTER,"Authors ->","Авторы ->","Tekijät ->"
+MENU_AUTHORS_CONTENT,"Code and Idea:\n    Arctic Code Games\n\nArt and Music:\n    Free\n\nThanks for playing!\nI hope you enjoy the game!","Код и идея:\n    Arctic Code Games\n\nАрт и музыка:\n    бесплатно\n\nСпасибо за игру!\nНадеюсь, что вам понравилось!","Koodi ja idea:\n    Arctic Code Games\n\nKuvat ja musiikki:\n    vapaa\n\nKiitos pelaamisesta!\nToivottavasti olet viihtynyt!"
+MENU_SECRET_NPC,"I am not ready yet\nCome back later.","Я еще не готов,\nвозвращайся позже.","En ole valmis vielä,\nTule takaisin myöhemmin."

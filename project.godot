@@ -68,6 +68,10 @@ look_at_whole_world={
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://lang.en.translation", "res://lang.fin.translation", "res://lang.ru.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
