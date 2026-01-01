@@ -14,3 +14,12 @@ func _on_start_game(_point: Node2D) -> void:
 	
 func _on_select_level_house_player_hit(_point: Node2D) -> void:
 	Transition.change_scene("res://scenes/levels/select_level.tscn")
+
+func _on_language_npc_language_change(lang: LanguageNpc.Language) -> void:
+	match lang:
+		LanguageNpc.Language.Finnish:
+			TranslationServer.set_locale("fi")
+		LanguageNpc.Language.Russian:
+			TranslationServer.set_locale("ru")
+		LanguageNpc.Language.English:
+			TranslationServer.set_locale("en")

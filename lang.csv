@@ -15,3 +15,4 @@ LEVEL_COMPLETED_WIN_TITLE,"Level Completed!","Уровень завершен!",
 LEVEL_COMPLETED_WIN_ACTIONS,"Press to continue...","Нажми для продолжения...","Paina jatkaaksesi..."
 LEVEL_COMPLETED_LOST_TITLE,"You lost. Maybe next time...","Ты проиграл. Может быть, в следующий раз...","Hävisit. Ehkä seuraavalla kerralla..."
 LEVEL_COMPLETED_LOST_ACTIONS,"Press to restart...","Нажми, чтобы начать заново...","Paina aloittaaksesi uudelleen..."
+LANGUAGE_CHANGED_MESSAGE,"Language changed","Язык поменян","Kieli vaihdettu"
