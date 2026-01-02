@@ -46,6 +46,7 @@ var current_level: String = "level00"
 var target_mushrooms_count: int = 0
 var collected_mushrooms_count: int = 0
 var time_left: int = 0
+var time_spent: int = 0
 var is_died: bool = false
 
 func get_next_level() -> String:

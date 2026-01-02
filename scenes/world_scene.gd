@@ -7,13 +7,15 @@ extends Node2D
 @onready var _camera = $YSortedObjects/Player/PlayerCamera
 
 var _level_completed_path: String = "res://scenes/ui/level_completed_summer.tscn"
+var _seconds_passed: int = 0
 
 func _ready() -> void:
 	_initialize_current_level()
 	_initialize_camera()
 	_initialize_mushrooms()
 	_initialize_house()
-	
+	_seconds_passed = 0
+
 func _initialize_current_level() -> void:
 	var level_name: String = self.get_meta("level")
 	if level_name != null:
@@ -92,6 +94,7 @@ func _on_virtual_joystick_on_joystick_input(direction: Vector2) -> void:
 
 func _level_completed() -> void:
 	Globals.time_left = _hud.get_time_left()
+	Globals.time_spent = _seconds_passed
 	Transition.change_scene(_level_completed_path)
 
 func _on_player_dead() -> void:
@@ -101,3 +104,6 @@ func _on_player_dead() -> void:
 func _on_hud_time_is_out() -> void:
 	_player.free_mushrooms()
 	_player.take_damage_and_die()
+
+func _on_time_passed_timer_timeout() -> void:
+	_seconds_passed += 1
