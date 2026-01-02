@@ -196,4 +196,4 @@ stream = ExtResource("5_fxalm")
 [connection signal="player_hit" from="YSortedObjects/Houses/Level36" to="." method="_on_house_player_hit" binds= ["level_25"]]
 [connection signal="player_hit" from="YSortedObjects/Houses/Level31" to="." method="_on_house_player_hit" binds= ["level_20"]]
 [connection signal="player_hit" from="YSortedObjects/Houses/Level32" to="." method="_on_house_player_hit" binds= ["level_21"]]
-[connection signal="player_hit" from="YSortedObjects/Houses/HouseBack" to="." method="_on_house_player_hit" binds= ["menu_level"]]
+[connection signal="player_hit" from="YSortedObjects/Houses/HouseBack" to="." method="_on_house_back_player_hit"]
