@@ -90,7 +90,7 @@ position = Vector2(489, 113)
 
 [node name="MushroomMom" parent="YSortedObjects/Mushrooms" index="6" instance=ExtResource("5_2isfw")]
 position = Vector2(80, 101)
-npc_text = "Oh no, all my\\nmushrooms\\nare lost. Could you\\nplease help me\\nto find them?"
+npc_text = "MUSHROOM_MOM_MESSAGE"
 
 [node name="MainTheme" parent="Sounds" index="0"]
 stream = ExtResource("5_jdp5k")
