@@ -38,6 +38,7 @@ func _ready() -> void:
 	if not is_died:
 		var scores: Scores = Scores.new()
 		scores.update_score(Globals.current_level, Globals.collected_mushrooms_count, Globals.target_mushrooms_count)
+		scores.update_time_spent(Globals.current_level, Globals.time_spent)
 
 func _update_texts() -> void:
 	_title_label.text = tr(TITLES[is_died])

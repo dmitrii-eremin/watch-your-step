@@ -27,3 +27,17 @@ func update_score(level_name, score: int, target_score: int) -> void:
 	var old_score = get_score(level_name)
 	if score > old_score:
 		set_score(level_name, score, target_score)
+
+func set_time_spent(level_name: String, seconds: int) -> void:
+	var score_file = ConfigFile.new()
+	score_file.load(FILENAME)
+	score_file.set_value(level_name, "time_spent", seconds)
+	score_file.save(FILENAME)
+
+func get_time_spent(level_name: String) -> int:
+	return get_value(level_name, "time_spent")
+
+func update_time_spent(level_name: String, seconds: int) -> void:
+	var old_value = get_time_spent(level_name)
+	if seconds < old_value:
+		set_time_spent(level_name, seconds)
