@@ -27,11 +27,29 @@ func _update_house_label(house: Node2D) -> void:
 
 	var collected: String = ("%d" % [scores.get_score(scene_name)]) if scores.get_score(scene_name) > 0 else "?"
 	var target: String = ("%d" % [scores.get_target(scene_name)]) if scores.get_target(scene_name) > 0 else "?"
+	
+	var label_value: String = ""
+	
 	if is_opened:
-		house.set_house_label("%s %s\n%s/%s" % [tr(&"COMMON_LEVEL"), info.name, collected, target])
+		label_value = "%s %s\n%s/%s" % [tr(&"COMMON_LEVEL"), info.name, collected, target]
 	else:
-		house.set_house_label("???\n?/?")
+		label_value = "???\n?/?"
+		
+	var spent_time: int = scores.get_time_spent(scene_name)
+	if spent_time > 0:
+		var res: String = _convert_time_spent_to_string(spent_time)
+		label_value += "\n%s" % [res]
+
+	house.set_house_label(label_value)
+
 	house.open_door(is_opened)
+	
+func _convert_time_spent_to_string(value: int) -> String:
+	@warning_ignore("integer_division")
+	var minutes = int(value / 60)
+	var seconds = value % 60
+	return "%02d:%02d" % [minutes, seconds]
+
 
 func _on_house_player_hit(_point: Node2D, scene_name: String) -> void:
 	var found_level_name: String = ""
