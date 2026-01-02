@@ -2,8 +2,10 @@ extends "res://scenes/world_scene.gd"
 
 @onready var _original_mushroom_house = $YSortedObjects/MushroomHouse
 
+var _prefs: Preferences = Preferences.new()
+
 func _ready() -> void:
-	TranslationServer.set_locale(OS.get_locale_language())
+	TranslationServer.set_locale(_prefs.get_language())
 	_initialize_camera()
 	_hud.show_stats(false)
 	_original_mushroom_house.call_deferred("queue_free")
@@ -18,8 +20,12 @@ func _on_select_level_house_player_hit(_point: Node2D) -> void:
 func _on_language_npc_language_change(lang: LanguageNpc.Language) -> void:
 	match lang:
 		LanguageNpc.Language.Finnish:
-			TranslationServer.set_locale("fi")
+			_set_language("fi")
 		LanguageNpc.Language.Russian:
-			TranslationServer.set_locale("ru")
+			_set_language("ru")
 		LanguageNpc.Language.English:
-			TranslationServer.set_locale("en")
+			_set_language("en")
+
+func _set_language(lang: String) -> void:
+	TranslationServer.set_locale(lang)
+	_prefs.set_language(lang)
