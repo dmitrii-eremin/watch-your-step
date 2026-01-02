@@ -3,6 +3,10 @@ class_name Scores
 
 const FILENAME: String = "user://scores.data"
 
+class Score:
+	var collected: int
+	var total: int
+
 func get_value(level_name: String, value_name: String) -> int:
 	var score_file = ConfigFile.new()
 	var err = score_file.load(FILENAME)
@@ -41,3 +45,28 @@ func update_time_spent(level_name: String, seconds: int) -> void:
 	var old_value = get_time_spent(level_name)
 	if seconds < old_value or old_value == 0:
 		set_time_spent(level_name, seconds)
+
+func set_game_completed(completed: bool) -> void:
+	var score_file = ConfigFile.new()
+	score_file.load(FILENAME)
+	score_file.set_value("common", "game_completed", completed)
+	score_file.save(FILENAME)
+
+func is_game_completed() -> bool:
+	var score_file = ConfigFile.new()
+	var err = score_file.load(FILENAME)
+	if err != OK: 
+		return 0
+	return score_file.get_value("common", "game_completed", false)
+
+func get_score_for_level(level_name: String) -> Score:
+	var s: Score = Score.new()
+	s.collected = get_score(level_name)
+	s.total = get_target(level_name)
+	return s
+
+func get_all_scores() -> Array[Score]:
+	var scores: Array[Score] = []
+	for level_name in Globals.LEVELS.keys():
+		scores.push_back(get_score_for_level(level_name))
+	return scores

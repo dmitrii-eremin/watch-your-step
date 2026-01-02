@@ -10,8 +10,13 @@ signal time_is_out()
 @onready var _level_name = $MarginContainer/Control/VBoxContainer/LevelName
 @onready var _clock = $MarginContainer/Control/VBoxContainer/Clock
 
+@onready var _overall_stats_container := $MarginContainer/Control/OverallStatsContainer
+@onready var _overall_mushrooms_label := $MarginContainer/Control/OverallStatsContainer/HBoxContainer/MushroomsCountLabel
+
 var _collected_mushrooms_count: int = 0
 var _original_mushrooms_count: int = 0
+
+var _scores: Scores = Scores.new()
 
 func get_time_left() -> int:
 	return _clock.get_time_left()
@@ -30,6 +35,7 @@ func show_stats(visibility: bool) -> void:
 	_pause_button.visible = visibility
 	_clock.visible = visibility
 	_level_name.visible = visibility
+	_overall_stats_container.visible = not visibility
 	if visibility:
 		_clock.start()
 	else:
@@ -47,6 +53,7 @@ func _ready() -> void:
 	update_mushrooms()
 	_update_collected_mushrooms_label()
 	update_metadata()
+	_update_overall_stats()
 
 func _update_collected_mushrooms_label() -> void:
 	_saved_mushrooms_label.text = "%d/%d" % [_collected_mushrooms_count, _original_mushrooms_count]
@@ -62,3 +69,13 @@ func _on_pause_button_pressed() -> void:
 
 func _on_clock_time_is_out() -> void:
 	time_is_out.emit()
+	
+func _update_overall_stats() -> void:
+	var scores := _scores.get_all_scores()
+	var collected: int = 0
+	var total: int = 0
+	for score in scores:
+		collected += score.collected
+		total += score.total
+	var total_s: String = ("%d" % [total]) if _scores.is_game_completed() else "??"
+	_overall_mushrooms_label.text = "%d/%s" % [collected, total_s]

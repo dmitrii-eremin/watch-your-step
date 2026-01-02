@@ -39,6 +39,11 @@ func _ready() -> void:
 		var scores: Scores = Scores.new()
 		scores.update_score(Globals.current_level, Globals.collected_mushrooms_count, Globals.target_mushrooms_count)
 		scores.update_time_spent(Globals.current_level, Globals.time_spent)
+		if _is_last_level():
+			scores.set_game_completed(true)
+
+func _is_last_level() -> bool:
+	return Globals.current_level == Globals.LEVELS.keys().back()
 
 func _update_texts() -> void:
 	_title_label.text = tr(TITLES[is_died])

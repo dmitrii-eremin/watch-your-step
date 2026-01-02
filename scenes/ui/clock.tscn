@@ -12,6 +12,7 @@ offset_right = -320.0
 offset_bottom = -232.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_vertical = 0
 script = ExtResource("1_ic7of")
 initial_seconds = 0
 

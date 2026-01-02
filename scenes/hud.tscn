@@ -93,5 +93,23 @@ horizontal_alignment = 1
 [node name="Clock" parent="MarginContainer/Control/VBoxContainer" instance=ExtResource("7_hd3ao")]
 layout_mode = 2
 
+[node name="OverallStatsContainer" type="VBoxContainer" parent="MarginContainer/Control"]
+visible = false
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Control/OverallStatsContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Control/OverallStatsContainer/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6fi6k")
+
+[node name="MushroomsCountLabel" type="Label" parent="MarginContainer/Control/OverallStatsContainer/HBoxContainer"]
+layout_mode = 2
+text = "12/43"
+label_settings = ExtResource("3_5ysmq")
+
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="time_is_out" from="MarginContainer/Control/VBoxContainer/Clock" to="." method="_on_clock_time_is_out"]
