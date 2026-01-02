@@ -99,6 +99,7 @@ func _level_completed() -> void:
 
 func _on_player_dead() -> void:
 	Globals.is_died = true
+	Globals.time_spent = _seconds_passed
 	Transition.change_scene(_level_completed_path)
 
 func _on_hud_time_is_out() -> void:

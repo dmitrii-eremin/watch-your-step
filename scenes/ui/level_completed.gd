@@ -5,6 +5,7 @@ extends Node2D
 @onready var _title_label: Label = $CanvasLayer/JumpingLabel
 @onready var _action_label: Label = $CanvasLayer/JumpingLabel2
 @onready var _collected: Label = $CanvasLayer/CollectedLabel
+@onready var _time_spent_label := $CanvasLayer/TimeSpentLabel
 
 @onready var _sound_win := $Sounds/Win
 @onready var _sound_lose := $Sounds/Lose
@@ -45,6 +46,7 @@ func _update_texts() -> void:
 		Globals.collected_mushrooms_count,
 		Globals.target_mushrooms_count,
 	]
+	_time_spent_label.text = _get_time_spent()
 
 func _process(_delta: float) -> void:
 	if Input.is_anything_pressed():
@@ -60,3 +62,9 @@ func _goto_next_level() -> void:
 	else:
 		Globals.current_level = next_level
 		Transition.change_scene(Globals.LEVELS[next_level].path)
+		
+func _get_time_spent() -> String:
+	@warning_ignore("integer_division")
+	var minutes = int(Globals.time_spent / 60)
+	var seconds = Globals.time_spent % 60
+	return "%02d:%02d" % [minutes, seconds]

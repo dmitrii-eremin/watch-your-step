@@ -16,3 +16,4 @@ LEVEL_COMPLETED_WIN_ACTIONS,"Press to continue...","Нажми для продо
 LEVEL_COMPLETED_LOST_TITLE,"You lost. Maybe next time...","Ты проиграл. Может быть, в следующий раз...","Hävisit. Ehkä seuraavalla kerralla..."
 LEVEL_COMPLETED_LOST_ACTIONS,"Press to restart...","Нажми, чтобы начать заново...","Paina aloittaaksesi uudelleen..."
 LANGUAGE_CHANGED_MESSAGE,"Language changed","Язык изменен","Kieli vaihdettu"
+TIME_SPENT,"Time spent:","Потраченное время:","Kulutettu aika:"
