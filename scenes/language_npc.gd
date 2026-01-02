@@ -10,19 +10,19 @@ enum Language {
 signal language_change(lang: Language)
 
 const _flags: Dictionary = {
-	Language.English: "🇺🇸",
-	Language.Russian: "🇷🇺",
-	Language.Finnish: "🇫🇮",
+	Language.English: &"en",
+	Language.Russian: &"ru",
+	Language.Finnish: &"fi",
 }
 
 @export var language: Language = Language.English
 
-@onready var _label := $Label
+@onready var _languages_icon := $Languages
 @onready var _lang_changed := $LanguageChangedLabel
 @onready var _lang_changed_timer := $Timer
 
 func _ready() -> void:
-	_label.text = _flags[language]
+	_languages_icon.play(_flags[language])
 
 func _on_hit_area_body_entered(body: Node2D) -> void:
 	if not body.is_in_group(&"player"):

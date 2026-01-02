@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ctbkmmh82e20r"]
+[gd_scene load_steps=18 format=3 uid="uid://ctbkmmh82e20r"]
 
 [ext_resource type="Script" uid="uid://fwqhpfmvd6om" path="res://scenes/language_npc.gd" id="1_40vkl"]
 [ext_resource type="Texture2D" uid="uid://cgiiptkua7tam" path="res://assets/sprites/characters/soldier.png" id="1_iejvt"]
 [ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="3_kc3pb"]
+[ext_resource type="Texture2D" uid="uid://wfoqspwpqvtk" path="res://assets/sprites/icons/languages.png" id="4_s44rx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_40vkl"]
 atlas = ExtResource("1_iejvt")
@@ -58,10 +59,47 @@ animations = [{
 radius = 5.0
 height = 12.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_40vkl"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40vkl"]
 size = Vector2(13, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0svxj"]
+atlas = ExtResource("4_s44rx")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvxlg"]
+atlas = ExtResource("4_s44rx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc1sa"]
+atlas = ExtResource("4_s44rx")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wx261"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0svxj")
+}],
+"loop": true,
+"name": &"en",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvxlg")
+}],
+"loop": true,
+"name": &"fi",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc1sa")
+}],
+"loop": true,
+"name": &"ru",
+"speed": 5.0
+}]
 
 [node name="LanguageNPC" type="CharacterBody2D"]
 script = ExtResource("1_40vkl")
@@ -76,14 +114,6 @@ frame_progress = 0.18391952
 position = Vector2(0, 3)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_40vkl")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -8.0
-offset_top = -35.0
-offset_right = 32.0
-offset_bottom = -12.0
-text = "🇺🇸"
-label_settings = SubResource("LabelSettings_40vkl")
 
 [node name="HitArea" type="Area2D" parent="."]
 collision_layer = 3
@@ -105,8 +135,13 @@ label_settings = ExtResource("3_kc3pb")
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
+
+[node name="Languages" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -22)
+sprite_frames = SubResource("SpriteFrames_wx261")
+animation = &"fi"
 
 [connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
