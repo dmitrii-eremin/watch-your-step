@@ -1,6 +1,6 @@
 ![banner](splash.png)
 
-<iframe frameborder="0" src="https://itch.io/embed/4165281?linkback=true&amp;border_width=4&amp;dark=true" width="558" height="173"><a href="https://dmitriieremin.itch.io/watch-your-step">Watch Your Step by dmitrii.eremin</a></iframe>
+<a href="https://dmitriieremin.itch.io/watch-your-step">![widget](docs/widget.png)</a>
 
 **Watch Your Step** is a fun and accessible arcade–puzzle game set in a lively forest world.
 
