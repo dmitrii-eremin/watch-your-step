@@ -111,5 +111,6 @@ layout_mode = 2
 text = "12/43"
 label_settings = ExtResource("3_5ysmq")
 
+[connection signal="on_restart" from="PauseMenu" to="." method="_on_pause_menu_on_restart"]
 [connection signal="pressed" from="MarginContainer/Control/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="time_is_out" from="MarginContainer/Control/VBoxContainer/Clock" to="." method="_on_clock_time_is_out"]

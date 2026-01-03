@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal on_resume()
+signal on_restart()
 
 func pause() -> void:
 	SoundsManager.play_select_sound()
@@ -26,3 +27,9 @@ func _on_resume_button_pressed() -> void:
 	get_tree().paused = false
 	hide()
 	on_resume.emit()
+
+func _on_restart_button_pressed() -> void:
+	SoundsManager.play_select_sound()
+	get_tree().paused = false
+	hide()
+	on_restart.emit()

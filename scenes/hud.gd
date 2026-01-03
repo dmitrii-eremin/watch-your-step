@@ -79,3 +79,6 @@ func _update_overall_stats() -> void:
 		total += score.total
 	var total_s: String = ("%d" % [total]) if _scores.is_game_completed() else "??"
 	_overall_mushrooms_label.text = "%d/%s" % [collected, total_s]
+
+func _on_pause_menu_on_restart() -> void:
+	Transition.change_scene(Globals.LEVELS[Globals.current_level].path)

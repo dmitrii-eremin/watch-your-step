@@ -20,8 +20,8 @@ color = Color(0, 0, 0, 0.5372549)
 [node name="Label" type="Label" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 48.0
-offset_bottom = 64.0
+offset_top = 24.0
+offset_bottom = 40.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 text = "PAUSE_TITLE"
@@ -34,9 +34,9 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 128.0
-offset_top = 96.0
+offset_top = 56.0
 offset_right = 224.0
-offset_bottom = 144.0
+offset_bottom = 104.0
 grow_horizontal = 1
 grow_vertical = 1
 title = "PAUSE_RESUME"
@@ -47,12 +47,26 @@ anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 offset_left = 128.0
-offset_top = 148.0
+offset_top = 168.0
 offset_right = 224.0
-offset_bottom = 196.0
+offset_bottom = 216.0
 grow_horizontal = 1
 grow_vertical = 1
 title = "PAUSE_MAIN_MENU"
 
+[node name="RestartButton" parent="." instance=ExtResource("3_f6eus")]
+z_index = 200
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 128.0
+offset_top = 112.0
+offset_right = 224.0
+offset_bottom = 160.0
+grow_horizontal = 1
+grow_vertical = 1
+title = "PAUSE_RESTART"
+
 [connection signal="pressed" from="ResumeGameButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="MainMenuGameButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
