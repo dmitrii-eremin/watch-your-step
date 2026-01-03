@@ -19,26 +19,26 @@ class LevelInfo:
 var LEVELS: Dictionary[String, LevelInfo] = {
 	"level00": LevelInfo.new("0-0", "res://scenes/levels/level_00.tscn", 240, Season.Summer),
 
-	"level01": LevelInfo.new("1-1", "res://scenes/levels/level_01.tscn", 360, Season.Summer),
-	"level02": LevelInfo.new("1-2", "res://scenes/levels/level_02.tscn", 360, Season.Summer),
-	"level03": LevelInfo.new("1-3", "res://scenes/levels/level_03.tscn", 460, Season.Summer),
-	"level04": LevelInfo.new("1-4", "res://scenes/levels/level_04.tscn", 660, Season.Summer),
+	"level01": LevelInfo.new("1-1", "res://scenes/levels/level_01.tscn", 180, Season.Summer),
+	"level02": LevelInfo.new("1-2", "res://scenes/levels/level_02.tscn", 240, Season.Summer),
+	"level03": LevelInfo.new("1-3", "res://scenes/levels/level_03.tscn", 240, Season.Summer),
+	"level04": LevelInfo.new("1-4", "res://scenes/levels/level_04.tscn", 480, Season.Summer),
 	"level05": LevelInfo.new("1-5", "res://scenes/levels/level_05.tscn", 720, Season.Summer),
-	"level06": LevelInfo.new("1-6", "res://scenes/levels/level_06.tscn", 660, Season.Summer),
+	"level06": LevelInfo.new("1-6", "res://scenes/levels/level_06.tscn", 1020, Season.Summer),
 	
-	"level10": LevelInfo.new("2-1", "res://scenes/levels/level_10.tscn", 550, Season.Autumn),
-	"level11": LevelInfo.new("2-2", "res://scenes/levels/level_11.tscn", 600, Season.Autumn),
-	"level12": LevelInfo.new("2-3", "res://scenes/levels/level_12.tscn", 600, Season.Autumn),
+	"level10": LevelInfo.new("2-1", "res://scenes/levels/level_10.tscn", 660, Season.Autumn),
+	"level11": LevelInfo.new("2-2", "res://scenes/levels/level_11.tscn", 540, Season.Autumn),
+	"level12": LevelInfo.new("2-3", "res://scenes/levels/level_12.tscn", 540, Season.Autumn),
 	"level13": LevelInfo.new("2-4", "res://scenes/levels/level_13.tscn", 900, Season.Autumn),
-	"level14": LevelInfo.new("2-5", "res://scenes/levels/level_14.tscn", 720, Season.Autumn),
-	"level15": LevelInfo.new("2-6", "res://scenes/levels/level_15.tscn", 800, Season.Autumn),
+	"level14": LevelInfo.new("2-5", "res://scenes/levels/level_14.tscn", 660, Season.Autumn),
+	"level15": LevelInfo.new("2-6", "res://scenes/levels/level_15.tscn", 420, Season.Autumn),
 	
-	"level20": LevelInfo.new("3-1", "res://scenes/levels/level_20.tscn", 600, Season.Winter),
-	"level21": LevelInfo.new("3-2", "res://scenes/levels/level_21.tscn", 600, Season.Winter),
-	"level22": LevelInfo.new("3-3", "res://scenes/levels/level_22.tscn", 600, Season.Winter),
-	"level23": LevelInfo.new("3-4", "res://scenes/levels/level_23.tscn", 600, Season.Winter),
-	"level24": LevelInfo.new("3-5", "res://scenes/levels/level_24.tscn", 600, Season.Winter),
-	"level25": LevelInfo.new("3-6", "res://scenes/levels/level_25.tscn", 600, Season.Winter),
+	"level20": LevelInfo.new("3-1", "res://scenes/levels/level_20.tscn", 420, Season.Winter),
+	"level21": LevelInfo.new("3-2", "res://scenes/levels/level_21.tscn", 540, Season.Winter),
+	"level22": LevelInfo.new("3-3", "res://scenes/levels/level_22.tscn", 420, Season.Winter),
+	"level23": LevelInfo.new("3-4", "res://scenes/levels/level_23.tscn", 660, Season.Winter),
+	"level24": LevelInfo.new("3-5", "res://scenes/levels/level_24.tscn", 480, Season.Winter),
+	"level25": LevelInfo.new("3-6", "res://scenes/levels/level_25.tscn", 300, Season.Winter),
 }
 
 var current_level: String = "level00"
