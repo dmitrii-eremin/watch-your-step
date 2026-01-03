@@ -4,19 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://kkk2dkwvuh0u" path="res://assets/sprites/objects/goblets.png" id="1_w2jqe"]
 [ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="3_5q15c"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_juxvy"]
-atlas = ExtResource("1_w2jqe")
-region = Rect2(0, 0, 32, 33)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5q15c"]
 atlas = ExtResource("1_w2jqe")
-region = Rect2(32, 0, 32, 33)
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweba"]
+atlas = ExtResource("1_w2jqe")
+region = Rect2(24, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sweba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_juxvy")
+"texture": SubResource("AtlasTexture_5q15c")
 }],
 "loop": true,
 "name": &"golden",
@@ -24,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5q15c")
+"texture": SubResource("AtlasTexture_sweba")
 }],
 "loop": true,
 "name": &"silver",
@@ -32,28 +32,27 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juxvy"]
-radius = 5.0
-height = 16.0
+radius = 2.0
+height = 10.0
 
 [node name="Goblet" type="StaticBody2D"]
 script = ExtResource("1_juxvy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sweba")
-animation = &"golden"
+animation = &"silver"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 14)
+position = Vector2(0, 11)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_juxvy")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
 offset_left = -147.0
-offset_top = 23.0
+offset_top = 16.0
 offset_right = 148.0
-offset_bottom = 46.0
+offset_bottom = 39.0
 size_flags_horizontal = 6
 text = "GAME_COMPLETED"
 label_settings = ExtResource("3_5q15c")

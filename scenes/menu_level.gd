@@ -35,6 +35,6 @@ func _set_language(lang: String) -> void:
 	_prefs.set_language(lang)
 
 func _update_goblets() -> void:
-	_silver_goblet.visible = true # _scores.is_game_completed()
-	_golden_goblet.visible = true # _scores.is_game_completed() and _scores.is_all_mushrooms_collected()
+	_silver_goblet.visible =  _scores.is_game_completed()
+	_golden_goblet.visible =  _scores.is_game_completed() and _scores.is_all_mushrooms_collected()
 	
