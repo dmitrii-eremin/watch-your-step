@@ -21,8 +21,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
 		_handle_touch_input(event)
-	elif event is InputEventScreenDrag and _is_pressed and event.index == _touch_index:
-		_current_touch_position = event.position
 		get_tree().root.set_input_as_handled()
 
 func _handle_touch_input(event: InputEventScreenTouch) -> void:
@@ -46,6 +44,9 @@ func _handle_touch_input(event: InputEventScreenTouch) -> void:
 
 func _process(_delta: float) -> void:
 	if _is_pressed and _touch_index >= 0:
+		# Track the current touch position in real-time
+		_current_touch_position = get_global_mouse_position()
+		
 		var local_pos = _current_touch_position - global_position
 		var direction = (local_pos - _base_position).normalized()
 		var distance = (local_pos - _base_position).length()
