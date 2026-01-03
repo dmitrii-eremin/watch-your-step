@@ -70,3 +70,10 @@ func get_all_scores() -> Array[Score]:
 	for level_name in Globals.LEVELS.keys():
 		scores.push_back(get_score_for_level(level_name))
 	return scores
+	
+func is_all_mushrooms_collected() -> bool:
+	var all_scores = get_all_scores()
+	for score in all_scores:
+		if score.collected < score.total:
+			return false
+	return true

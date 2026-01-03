@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://08nc0uh0bbk8"]
+
+[ext_resource type="Script" uid="uid://bd8lio53pneam" path="res://scenes/goblet.gd" id="1_juxvy"]
+[ext_resource type="Texture2D" uid="uid://kkk2dkwvuh0u" path="res://assets/sprites/objects/goblets.png" id="1_w2jqe"]
+[ext_resource type="LabelSettings" uid="uid://bhlktkb5elsox" path="res://ui/hud_labels.tres" id="3_5q15c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juxvy"]
+atlas = ExtResource("1_w2jqe")
+region = Rect2(0, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q15c"]
+atlas = ExtResource("1_w2jqe")
+region = Rect2(32, 0, 32, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sweba"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juxvy")
+}],
+"loop": true,
+"name": &"golden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5q15c")
+}],
+"loop": true,
+"name": &"silver",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_juxvy"]
+radius = 5.0
+height = 16.0
+
+[node name="Goblet" type="StaticBody2D"]
+script = ExtResource("1_juxvy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sweba")
+animation = &"golden"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_juxvy")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = -147.0
+offset_top = 23.0
+offset_right = 148.0
+offset_bottom = 46.0
+size_flags_horizontal = 6
+text = "GAME_COMPLETED"
+label_settings = ExtResource("3_5q15c")
+horizontal_alignment = 1

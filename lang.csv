@@ -18,3 +18,5 @@ LEVEL_COMPLETED_LOST_TITLE,"You lost. Maybe next time...","Ты проиграл
 LEVEL_COMPLETED_LOST_ACTIONS,"Press to restart...","Нажми, чтобы начать заново...","Paina aloittaaksesi uudelleen..."
 LANGUAGE_CHANGED_MESSAGE,"Language changed","Язык изменен","Kieli vaihdettu"
 TIME_SPENT,"Time spent:","Потраченное время:","Kulutettu aika:"
+GAME_COMPLETED,"Game completed!","Игра пройдена!","Peli suoritettu!"
+ALL_MUSHROOMS_COLLECTED,"All mushrooms collected!","Все грибы собраны!","Kaikki sienet on kerätty!"

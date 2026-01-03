@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bkdmhajy8tit8"]
+[gd_scene load_steps=12 format=4 uid="uid://bkdmhajy8tit8"]
 
 [ext_resource type="PackedScene" uid="uid://ddtoa4aqk6jy3" path="res://scenes/levels/basic_level.tscn" id="1_innd5"]
 [ext_resource type="Script" uid="uid://rybh67mjuw1o" path="res://scenes/menu_level.gd" id="2_p36d1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b5ke8t4tm5p1c" path="res://scenes/mushroom.tscn" id="8_o3mdm"]
 [ext_resource type="AudioStream" uid="uid://253balv08mni" path="res://assets/music/menu.wav" id="9_61gwb"]
 [ext_resource type="PackedScene" uid="uid://ctbkmmh82e20r" path="res://scenes/language_npc.tscn" id="9_id2og"]
+[ext_resource type="PackedScene" uid="uid://08nc0uh0bbk8" path="res://scenes/goblet.tscn" id="10_dp8es"]
 
 [node name="MenuLevel" instance=ExtResource("1_innd5")]
 script = ExtResource("2_p36d1")
@@ -155,6 +156,18 @@ language = 1
 [node name="LanguageNPC_Finnish" parent="YSortedObjects/NPC" index="10" instance=ExtResource("9_id2og")]
 position = Vector2(192, 200)
 language = 2
+
+[node name="Goblets" type="Node2D" parent="YSortedObjects" index="6"]
+y_sort_enabled = true
+
+[node name="GoldenGoblet" parent="YSortedObjects/Goblets" index="0" instance=ExtResource("10_dp8es")]
+visible = false
+position = Vector2(272, 128)
+type = 1
+
+[node name="SilverGoblet" parent="YSortedObjects/Goblets" index="1" instance=ExtResource("10_dp8es")]
+visible = false
+position = Vector2(272, 72)
 
 [node name="CollisionShape2D" parent="WorldBoundaries/left" index="0"]
 position = Vector2(-144, 136)
