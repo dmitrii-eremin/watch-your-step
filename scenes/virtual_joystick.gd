@@ -34,6 +34,7 @@ func _handle_touch_input(event: InputEventScreenTouch) -> void:
 			_stick_position = _base_position
 			_current_touch_position = event.position
 			queue_redraw()
+			get_tree().root.set_input_as_handled()
 	else:
 		if _touch_index == event.index:
 			_is_pressed = false
@@ -41,6 +42,7 @@ func _handle_touch_input(event: InputEventScreenTouch) -> void:
 			_stick_position = _base_position
 			on_joystick_input.emit(Vector2.ZERO)
 			queue_redraw()
+			get_tree().root.set_input_as_handled()
 
 func _process(_delta: float) -> void:
 	if _is_pressed and _touch_index >= 0:
