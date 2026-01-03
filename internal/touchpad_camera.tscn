@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://i3vhm3tb5rvs"]
-
-[ext_resource type="Script" uid="uid://jf5c0qywdtw1" path="res://internal/touchpad_camera.gd" id="1_5oyrk"]
-
-[node name="TouchpadCamera" type="Camera2D"]
-script = ExtResource("1_5oyrk")
